@@ -2,7 +2,7 @@ name: Azure Networking APIs
 description: A collection of Azure Networking APIs for managing virtual networks, load balancers, application gateways, and network security
 image: https://azure.microsoft.com/svghandler/azure-networking.svg
 created: 2024-01-15 00:00:00+00:00
-modified: '2026-03-04'
+modified: '2026-03-16'
 specificationVersion: '0.18'
 tags:
 - networking
