@@ -26,6 +26,8 @@ apis:
       - Virtual Networks
       - Vnet
     properties:
+      - url: openapi/microsoft-azure-networking-openapi.yml
+        type: OpenAPI
       - type: X-documentation
         url: https://docs.microsoft.com/en-us/rest/api/virtualnetwork/
       - type: X-openapi
