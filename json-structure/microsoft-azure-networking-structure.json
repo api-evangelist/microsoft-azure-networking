@@ -1,0 +1,177 @@
+{
+  "provider": "Azure Networking",
+  "providerId": "microsoft-azure-networking",
+  "kind": "json-structure",
+  "description": "Structural overview of the Azure Networking API surface; extracted from openapi/.",
+  "schemaCount": 8,
+  "operationCount": 13,
+  "schemas": [
+    {
+      "name": "VirtualNetwork",
+      "type": "object",
+      "propertyCount": 6,
+      "required": []
+    },
+    {
+      "name": "VirtualNetworkListResult",
+      "type": "object",
+      "propertyCount": 2,
+      "required": []
+    },
+    {
+      "name": "Subnet",
+      "type": "object",
+      "propertyCount": 3,
+      "required": []
+    },
+    {
+      "name": "SubnetListResult",
+      "type": "object",
+      "propertyCount": 2,
+      "required": []
+    },
+    {
+      "name": "VirtualNetworkPeering",
+      "type": "object",
+      "propertyCount": 3,
+      "required": []
+    },
+    {
+      "name": "VirtualNetworkPeeringListResult",
+      "type": "object",
+      "propertyCount": 2,
+      "required": []
+    },
+    {
+      "name": "AddressSpace",
+      "type": "object",
+      "propertyCount": 1,
+      "required": []
+    },
+    {
+      "name": "DhcpOptions",
+      "type": "object",
+      "propertyCount": 1,
+      "required": []
+    }
+  ],
+  "operations": [
+    {
+      "method": "GET",
+      "path": "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Network/virtualNetworks",
+      "operationId": "VirtualNetworks_List",
+      "summary": "Azure Networking List virtual networks",
+      "tags": [
+        "Virtual Networks"
+      ]
+    },
+    {
+      "method": "GET",
+      "path": "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Network/virtualNetworks/{virtualNetworkName}",
+      "operationId": "VirtualNetworks_Get",
+      "summary": "Azure Networking Get virtual network",
+      "tags": [
+        "Virtual Networks"
+      ]
+    },
+    {
+      "method": "PUT",
+      "path": "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Network/virtualNetworks/{virtualNetworkName}",
+      "operationId": "VirtualNetworks_CreateOrUpdate",
+      "summary": "Azure Networking Create or update virtual network",
+      "tags": [
+        "Virtual Networks"
+      ]
+    },
+    {
+      "method": "DELETE",
+      "path": "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Network/virtualNetworks/{virtualNetworkName}",
+      "operationId": "VirtualNetworks_Delete",
+      "summary": "Azure Networking Delete virtual network",
+      "tags": [
+        "Virtual Networks"
+      ]
+    },
+    {
+      "method": "GET",
+      "path": "/subscriptions/{subscriptionId}/providers/Microsoft.Network/virtualNetworks",
+      "operationId": "VirtualNetworks_ListAll",
+      "summary": "Azure Networking List all virtual networks",
+      "tags": [
+        "Virtual Networks"
+      ]
+    },
+    {
+      "method": "GET",
+      "path": "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Network/virtualNetworks/{virtualNetworkName}/subnets",
+      "operationId": "Subnets_List",
+      "summary": "Azure Networking List subnets",
+      "tags": [
+        "Subnets"
+      ]
+    },
+    {
+      "method": "GET",
+      "path": "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Network/virtualNetworks/{virtualNetworkName}/subnets/{subnetName}",
+      "operationId": "Subnets_Get",
+      "summary": "Azure Networking Get subnet",
+      "tags": [
+        "Subnets"
+      ]
+    },
+    {
+      "method": "PUT",
+      "path": "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Network/virtualNetworks/{virtualNetworkName}/subnets/{subnetName}",
+      "operationId": "Subnets_CreateOrUpdate",
+      "summary": "Azure Networking Create or update subnet",
+      "tags": [
+        "Subnets"
+      ]
+    },
+    {
+      "method": "DELETE",
+      "path": "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Network/virtualNetworks/{virtualNetworkName}/subnets/{subnetName}",
+      "operationId": "Subnets_Delete",
+      "summary": "Azure Networking Delete subnet",
+      "tags": [
+        "Subnets"
+      ]
+    },
+    {
+      "method": "GET",
+      "path": "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Network/virtualNetworks/{virtualNetworkName}/virtualNetworkPeerings",
+      "operationId": "VirtualNetworkPeerings_List",
+      "summary": "Azure Networking List virtual network peerings",
+      "tags": [
+        "Virtual Network Peerings"
+      ]
+    },
+    {
+      "method": "GET",
+      "path": "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Network/virtualNetworks/{virtualNetworkName}/virtualNetworkPeerings/{virtualNetworkPeeringName}",
+      "operationId": "VirtualNetworkPeerings_Get",
+      "summary": "Azure Networking Get virtual network peering",
+      "tags": [
+        "Virtual Network Peerings"
+      ]
+    },
+    {
+      "method": "PUT",
+      "path": "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Network/virtualNetworks/{virtualNetworkName}/virtualNetworkPeerings/{virtualNetworkPeeringName}",
+      "operationId": "VirtualNetworkPeerings_CreateOrUpdate",
+      "summary": "Azure Networking Create or update virtual network peering",
+      "tags": [
+        "Virtual Network Peerings"
+      ]
+    },
+    {
+      "method": "DELETE",
+      "path": "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Network/virtualNetworks/{virtualNetworkName}/virtualNetworkPeerings/{virtualNetworkPeeringName}",
+      "operationId": "VirtualNetworkPeerings_Delete",
+      "summary": "Azure Networking Delete virtual network peering",
+      "tags": [
+        "Virtual Network Peerings"
+      ]
+    }
+  ]
+}

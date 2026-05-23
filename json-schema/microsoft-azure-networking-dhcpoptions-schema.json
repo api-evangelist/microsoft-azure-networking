@@ -1,0 +1,16 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "#/components/schemas/DhcpOptions",
+  "title": "DhcpOptions",
+  "type": "object",
+  "description": "DhcpOptions contains an array of DNS servers.",
+  "properties": {
+    "dnsServers": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "description": "The list of DNS servers IP addresses."
+    }
+  }
+}

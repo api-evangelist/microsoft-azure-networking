@@ -1,0 +1,20 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "#/components/schemas/SubnetListResult",
+  "title": "SubnetListResult",
+  "type": "object",
+  "description": "Response for the ListSubnets API service call.",
+  "properties": {
+    "value": {
+      "type": "array",
+      "items": {
+        "$ref": "#/components/schemas/Subnet"
+      },
+      "description": "The subnets in a virtual network."
+    },
+    "nextLink": {
+      "type": "string",
+      "description": "The URL to get the next set of results."
+    }
+  }
+}

@@ -1,0 +1,117 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "#/components/schemas/LoadBalancer",
+  "title": "LoadBalancer",
+  "type": "object",
+  "description": "A load balancer resource.",
+  "properties": {
+    "id": {
+      "type": "string",
+      "readOnly": true,
+      "description": "Resource ID."
+    },
+    "name": {
+      "type": "string",
+      "readOnly": true,
+      "description": "Resource name."
+    },
+    "type": {
+      "type": "string",
+      "readOnly": true,
+      "description": "Resource type."
+    },
+    "location": {
+      "type": "string",
+      "description": "Resource location."
+    },
+    "tags": {
+      "type": "object",
+      "additionalProperties": {
+        "type": "string"
+      },
+      "description": "Resource tags."
+    },
+    "sku": {
+      "type": "object",
+      "description": "The load balancer SKU.",
+      "properties": {
+        "name": {
+          "type": "string",
+          "description": "Name of the load balancer SKU.",
+          "enum": [
+            "Basic",
+            "Standard",
+            "Gateway"
+          ]
+        },
+        "tier": {
+          "type": "string",
+          "description": "Tier of the load balancer SKU.",
+          "enum": [
+            "Regional",
+            "Global"
+          ]
+        }
+      }
+    },
+    "properties": {
+      "type": "object",
+      "description": "Properties of the load balancer.",
+      "properties": {
+        "frontendIPConfigurations": {
+          "type": "array",
+          "items": {
+            "$ref": "#/components/schemas/FrontendIPConfiguration"
+          },
+          "description": "Object representing the frontend IPs to be used for the load balancer."
+        },
+        "backendAddressPools": {
+          "type": "array",
+          "items": {
+            "$ref": "#/components/schemas/BackendAddressPool"
+          },
+          "description": "Collection of backend address pools used by a load balancer."
+        },
+        "loadBalancingRules": {
+          "type": "array",
+          "items": {
+            "$ref": "#/components/schemas/LoadBalancingRule"
+          },
+          "description": "Object collection representing the load balancing rules."
+        },
+        "probes": {
+          "type": "array",
+          "items": {
+            "$ref": "#/components/schemas/Probe"
+          },
+          "description": "Collection of probe objects used in the load balancer."
+        },
+        "inboundNatRules": {
+          "type": "array",
+          "items": {
+            "$ref": "#/components/schemas/InboundNatRule"
+          },
+          "description": "Collection of inbound NAT rules used by a load balancer."
+        },
+        "outboundRules": {
+          "type": "array",
+          "items": {
+            "$ref": "#/components/schemas/OutboundRule"
+          },
+          "description": "The outbound rules."
+        },
+        "provisioningState": {
+          "type": "string",
+          "readOnly": true,
+          "description": "The provisioning state of the load balancer resource.",
+          "enum": [
+            "Succeeded",
+            "Updating",
+            "Deleting",
+            "Failed"
+          ]
+        }
+      }
+    }
+  }
+}

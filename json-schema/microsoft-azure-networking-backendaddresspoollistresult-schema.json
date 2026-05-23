@@ -1,0 +1,21 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "#/components/schemas/BackendAddressPoolListResult",
+  "title": "BackendAddressPoolListResult",
+  "type": "object",
+  "description": "Response for ListBackendAddressPools API service call.",
+  "properties": {
+    "value": {
+      "type": "array",
+      "items": {
+        "$ref": "#/components/schemas/BackendAddressPool"
+      },
+      "description": "A list of backend address pools."
+    },
+    "nextLink": {
+      "type": "string",
+      "readOnly": true,
+      "description": "The URL to get the next set of results."
+    }
+  }
+}

@@ -1,0 +1,20 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "#/components/schemas/VirtualNetworkListResult",
+  "title": "VirtualNetworkListResult",
+  "type": "object",
+  "description": "Response for the ListVirtualNetworks API service call.",
+  "properties": {
+    "value": {
+      "type": "array",
+      "items": {
+        "$ref": "#/components/schemas/VirtualNetwork"
+      },
+      "description": "A list of virtual networks in a resource group."
+    },
+    "nextLink": {
+      "type": "string",
+      "description": "The URL to get the next set of results."
+    }
+  }
+}

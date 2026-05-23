@@ -1,0 +1,54 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "#/components/schemas/FrontendIPConfiguration",
+  "title": "FrontendIPConfiguration",
+  "type": "object",
+  "description": "Frontend IP address of the load balancer.",
+  "properties": {
+    "id": {
+      "type": "string",
+      "description": "Resource ID."
+    },
+    "name": {
+      "type": "string",
+      "description": "The name of the resource."
+    },
+    "properties": {
+      "type": "object",
+      "properties": {
+        "privateIPAddress": {
+          "type": "string",
+          "description": "The private IP address of the IP configuration."
+        },
+        "privateIPAllocationMethod": {
+          "type": "string",
+          "enum": [
+            "Static",
+            "Dynamic"
+          ],
+          "description": "The private IP address allocation method."
+        },
+        "publicIPAddress": {
+          "type": "object",
+          "properties": {
+            "id": {
+              "type": "string",
+              "description": "Resource ID."
+            }
+          },
+          "description": "The reference to the public IP resource."
+        },
+        "subnet": {
+          "type": "object",
+          "properties": {
+            "id": {
+              "type": "string",
+              "description": "Resource ID."
+            }
+          },
+          "description": "The reference to the subnet resource."
+        }
+      }
+    }
+  }
+}

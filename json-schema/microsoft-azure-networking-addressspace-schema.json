@@ -1,0 +1,16 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "#/components/schemas/AddressSpace",
+  "title": "AddressSpace",
+  "type": "object",
+  "description": "AddressSpace contains an array of IP address ranges.",
+  "properties": {
+    "addressPrefixes": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "description": "A list of address blocks reserved for this virtual network in CIDR notation."
+    }
+  }
+}

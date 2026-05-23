@@ -1,0 +1,21 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "#/components/schemas/LoadBalancerLoadBalancingRuleListResult",
+  "title": "LoadBalancerLoadBalancingRuleListResult",
+  "type": "object",
+  "description": "Response for ListLoadBalancingRules API service call.",
+  "properties": {
+    "value": {
+      "type": "array",
+      "items": {
+        "$ref": "#/components/schemas/LoadBalancingRule"
+      },
+      "description": "A list of load balancing rules."
+    },
+    "nextLink": {
+      "type": "string",
+      "readOnly": true,
+      "description": "The URL to get the next set of results."
+    }
+  }
+}

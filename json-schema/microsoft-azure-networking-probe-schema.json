@@ -1,0 +1,47 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "#/components/schemas/Probe",
+  "title": "Probe",
+  "type": "object",
+  "description": "A load balancer probe.",
+  "properties": {
+    "id": {
+      "type": "string",
+      "description": "Resource ID."
+    },
+    "name": {
+      "type": "string",
+      "description": "The name of the resource."
+    },
+    "properties": {
+      "type": "object",
+      "properties": {
+        "protocol": {
+          "type": "string",
+          "enum": [
+            "Http",
+            "Tcp",
+            "Https"
+          ],
+          "description": "The protocol of the endpoint."
+        },
+        "port": {
+          "type": "integer",
+          "description": "The port for communicating the probe."
+        },
+        "intervalInSeconds": {
+          "type": "integer",
+          "description": "The interval between probes in seconds."
+        },
+        "numberOfProbes": {
+          "type": "integer",
+          "description": "The number of probes where if no response the load balancer marks the status as down."
+        },
+        "requestPath": {
+          "type": "string",
+          "description": "The URI used for requesting health status from the VM."
+        }
+      }
+    }
+  }
+}

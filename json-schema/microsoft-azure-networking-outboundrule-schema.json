@@ -1,0 +1,60 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "#/components/schemas/OutboundRule",
+  "title": "OutboundRule",
+  "type": "object",
+  "description": "Outbound rule of the load balancer.",
+  "properties": {
+    "id": {
+      "type": "string",
+      "description": "Resource ID."
+    },
+    "name": {
+      "type": "string",
+      "description": "The name of the resource."
+    },
+    "properties": {
+      "type": "object",
+      "properties": {
+        "allocatedOutboundPorts": {
+          "type": "integer",
+          "description": "The number of outbound ports to be used for NAT."
+        },
+        "frontendIPConfigurations": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "id": {
+                "type": "string"
+              }
+            }
+          },
+          "description": "The frontend IP addresses of the load balancer."
+        },
+        "backendAddressPool": {
+          "type": "object",
+          "properties": {
+            "id": {
+              "type": "string"
+            }
+          },
+          "description": "A reference to a pool of DIPs."
+        },
+        "protocol": {
+          "type": "string",
+          "enum": [
+            "Tcp",
+            "Udp",
+            "All"
+          ],
+          "description": "The protocol for the outbound rule."
+        },
+        "idleTimeoutInMinutes": {
+          "type": "integer",
+          "description": "The timeout for the TCP idle connection."
+        }
+      }
+    }
+  }
+}

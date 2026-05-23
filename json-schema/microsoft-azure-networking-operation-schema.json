@@ -1,0 +1,31 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "#/components/schemas/Operation",
+  "title": "Operation",
+  "type": "object",
+  "properties": {
+    "name": {
+      "type": "string"
+    },
+    "display": {
+      "type": "object",
+      "properties": {
+        "provider": {
+          "type": "string"
+        },
+        "resource": {
+          "type": "string"
+        },
+        "operation": {
+          "type": "string"
+        },
+        "description": {
+          "type": "string"
+        }
+      }
+    },
+    "isDataAction": {
+      "type": "boolean"
+    }
+  }
+}

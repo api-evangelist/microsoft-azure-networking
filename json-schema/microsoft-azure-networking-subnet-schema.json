@@ -1,0 +1,137 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "#/components/schemas/Subnet",
+  "title": "Subnet",
+  "type": "object",
+  "description": "Subnet in a virtual network resource.",
+  "properties": {
+    "id": {
+      "type": "string",
+      "readOnly": true,
+      "description": "Resource ID."
+    },
+    "name": {
+      "type": "string",
+      "description": "The name of the resource."
+    },
+    "properties": {
+      "type": "object",
+      "description": "Properties of the subnet.",
+      "properties": {
+        "addressPrefix": {
+          "type": "string",
+          "description": "The address prefix for the subnet."
+        },
+        "addressPrefixes": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          },
+          "description": "List of address prefixes for the subnet."
+        },
+        "networkSecurityGroup": {
+          "type": "object",
+          "description": "The reference to the network security group resource.",
+          "properties": {
+            "id": {
+              "type": "string",
+              "description": "Resource ID."
+            }
+          }
+        },
+        "routeTable": {
+          "type": "object",
+          "description": "The reference to the route table resource.",
+          "properties": {
+            "id": {
+              "type": "string",
+              "description": "Resource ID."
+            }
+          }
+        },
+        "natGateway": {
+          "type": "object",
+          "description": "NAT gateway associated with this subnet.",
+          "properties": {
+            "id": {
+              "type": "string",
+              "description": "Resource ID."
+            }
+          }
+        },
+        "serviceEndpoints": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "service": {
+                "type": "string",
+                "description": "The type of the endpoint service."
+              },
+              "locations": {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                },
+                "description": "A list of locations."
+              },
+              "provisioningState": {
+                "type": "string",
+                "readOnly": true,
+                "description": "The provisioning state of the service endpoint."
+              }
+            }
+          },
+          "description": "An array of service endpoints."
+        },
+        "delegations": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "id": {
+                "type": "string",
+                "description": "Resource ID."
+              },
+              "name": {
+                "type": "string",
+                "description": "The name of the resource."
+              },
+              "properties": {
+                "type": "object",
+                "properties": {
+                  "serviceName": {
+                    "type": "string",
+                    "description": "The name of the service to whom the subnet should be delegated."
+                  }
+                }
+              }
+            }
+          },
+          "description": "An array of references to the delegations on the subnet."
+        },
+        "privateEndpointNetworkPolicies": {
+          "type": "string",
+          "description": "Enable or disable network policies on private endpoints in the subnet.",
+          "enum": [
+            "Enabled",
+            "Disabled"
+          ]
+        },
+        "privateLinkServiceNetworkPolicies": {
+          "type": "string",
+          "description": "Enable or disable network policies on private link service in the subnet.",
+          "enum": [
+            "Enabled",
+            "Disabled"
+          ]
+        },
+        "provisioningState": {
+          "type": "string",
+          "readOnly": true,
+          "description": "The provisioning state of the subnet resource."
+        }
+      }
+    }
+  }
+}

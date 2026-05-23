@@ -1,0 +1,56 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "#/components/schemas/InboundNatRule",
+  "title": "InboundNatRule",
+  "type": "object",
+  "description": "Inbound NAT rule of the load balancer.",
+  "properties": {
+    "id": {
+      "type": "string",
+      "description": "Resource ID."
+    },
+    "name": {
+      "type": "string",
+      "description": "The name of the resource."
+    },
+    "properties": {
+      "type": "object",
+      "properties": {
+        "frontendIPConfiguration": {
+          "type": "object",
+          "properties": {
+            "id": {
+              "type": "string"
+            }
+          },
+          "description": "A reference to frontend IP addresses."
+        },
+        "protocol": {
+          "type": "string",
+          "enum": [
+            "Udp",
+            "Tcp",
+            "All"
+          ],
+          "description": "The reference to the transport protocol."
+        },
+        "frontendPort": {
+          "type": "integer",
+          "description": "The port for the external endpoint."
+        },
+        "backendPort": {
+          "type": "integer",
+          "description": "The port used for the internal endpoint."
+        },
+        "idleTimeoutInMinutes": {
+          "type": "integer",
+          "description": "The timeout for the TCP idle connection."
+        },
+        "enableFloatingIP": {
+          "type": "boolean",
+          "description": "Configures a virtual machine endpoint for the floating IP capability."
+        }
+      }
+    }
+  }
+}

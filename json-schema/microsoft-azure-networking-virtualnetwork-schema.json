@@ -1,0 +1,80 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "#/components/schemas/VirtualNetwork",
+  "title": "VirtualNetwork",
+  "type": "object",
+  "description": "A virtual network in a resource group.",
+  "properties": {
+    "id": {
+      "type": "string",
+      "readOnly": true,
+      "description": "Resource ID."
+    },
+    "name": {
+      "type": "string",
+      "readOnly": true,
+      "description": "Resource name."
+    },
+    "type": {
+      "type": "string",
+      "readOnly": true,
+      "description": "Resource type."
+    },
+    "location": {
+      "type": "string",
+      "description": "Resource location."
+    },
+    "tags": {
+      "type": "object",
+      "additionalProperties": {
+        "type": "string"
+      },
+      "description": "Resource tags."
+    },
+    "properties": {
+      "type": "object",
+      "description": "Properties of the virtual network.",
+      "properties": {
+        "addressSpace": {
+          "$ref": "#/components/schemas/AddressSpace"
+        },
+        "dhcpOptions": {
+          "$ref": "#/components/schemas/DhcpOptions"
+        },
+        "subnets": {
+          "type": "array",
+          "items": {
+            "$ref": "#/components/schemas/Subnet"
+          },
+          "description": "A list of subnets in a virtual network."
+        },
+        "virtualNetworkPeerings": {
+          "type": "array",
+          "items": {
+            "$ref": "#/components/schemas/VirtualNetworkPeering"
+          },
+          "description": "A list of peerings in a virtual network."
+        },
+        "provisioningState": {
+          "type": "string",
+          "readOnly": true,
+          "description": "The provisioning state of the virtual network resource.",
+          "enum": [
+            "Succeeded",
+            "Updating",
+            "Deleting",
+            "Failed"
+          ]
+        },
+        "enableDdosProtection": {
+          "type": "boolean",
+          "description": "Indicates if DDoS protection is enabled for all protected resources in the virtual network."
+        },
+        "enableVmProtection": {
+          "type": "boolean",
+          "description": "Indicates if VM protection is enabled for all subnets in the virtual network."
+        }
+      }
+    }
+  }
+}

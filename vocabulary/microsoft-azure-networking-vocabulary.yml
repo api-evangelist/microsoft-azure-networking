@@ -1,0 +1,12 @@
+name: Azure Networking Domain Vocabulary
+provider: Azure Networking
+providerId: microsoft-azure-networking
+description: Tag-derived vocabulary for the Azure Networking API surface; sourced from openapi/ tags.
+terms:
+- term: Subnets
+  description: Operations for managing subnets within a virtual network, including creation, configuration, and delegation.
+- term: Virtual Network Peerings
+  description: Operations for creating and managing peering connections between virtual networks.
+- term: Virtual Networks
+  description: Operations for creating, updating, deleting, and listing Azure Virtual Networks within subscriptions and resource
+    groups.

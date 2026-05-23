@@ -1,0 +1,83 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "#/components/schemas/LoadBalancingRule",
+  "title": "LoadBalancingRule",
+  "type": "object",
+  "description": "A load balancing rule for a load balancer.",
+  "properties": {
+    "id": {
+      "type": "string",
+      "description": "Resource ID."
+    },
+    "name": {
+      "type": "string",
+      "description": "The name of the resource."
+    },
+    "properties": {
+      "type": "object",
+      "properties": {
+        "frontendIPConfiguration": {
+          "type": "object",
+          "properties": {
+            "id": {
+              "type": "string"
+            }
+          },
+          "description": "A reference to frontend IP addresses."
+        },
+        "backendAddressPool": {
+          "type": "object",
+          "properties": {
+            "id": {
+              "type": "string"
+            }
+          },
+          "description": "A reference to a pool of DIPs."
+        },
+        "probe": {
+          "type": "object",
+          "properties": {
+            "id": {
+              "type": "string"
+            }
+          },
+          "description": "The reference to the load balancer probe."
+        },
+        "protocol": {
+          "type": "string",
+          "enum": [
+            "Udp",
+            "Tcp",
+            "All"
+          ],
+          "description": "The reference to the transport protocol."
+        },
+        "frontendPort": {
+          "type": "integer",
+          "description": "The port for the external endpoint."
+        },
+        "backendPort": {
+          "type": "integer",
+          "description": "The port used for internal connections on the endpoint."
+        },
+        "idleTimeoutInMinutes": {
+          "type": "integer",
+          "description": "The timeout for the TCP idle connection."
+        },
+        "enableFloatingIP": {
+          "type": "boolean",
+          "description": "Configures a virtual machine endpoint for the floating IP capability."
+        },
+        "loadDistribution": {
+          "type": "string",
+          "enum": [
+            "Default",
+            "SourceIP",
+            "SourceIPProtocol"
+          ],
+          "description": "The load distribution policy for this rule."
+        }
+      }
+    }
+  }
+}
