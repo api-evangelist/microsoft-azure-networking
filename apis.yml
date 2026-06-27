@@ -435,7 +435,7 @@ common:
     url: https://azure.microsoft.com/en-us/updates/?query=networking
   - type: Pricing
     url: https://azure.microsoft.com/en-us/pricing/
-  - type: SignUp
+  - type: Signup
     url: https://azure.microsoft.com/en-us/free/
   - type: Login
     url: https://portal.azure.com/#home
