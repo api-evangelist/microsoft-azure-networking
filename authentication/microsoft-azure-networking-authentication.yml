@@ -1,0 +1,21 @@
+generated: '2026-07-11'
+method: derived
+source: openapi/azure-networking-load-balancer-openapi.yml, openapi/azure-networking-virtual-networks-openapi.yml,
+  openapi/microsoft-azure-networking-openapi.yml
+summary:
+  types:
+  - oauth2
+  oauth2_flows:
+  - implicit
+schemes:
+- name: OAuth2Auth
+  type: oauth2
+  flows:
+  - flow: implicit
+    authorizationUrl: https://login.microsoftonline.com/common/oauth2/authorize
+    scopes: 1
+  description: Azure Active Directory OAuth2 Flow
+  sources:
+  - openapi/azure-networking-load-balancer-openapi.yml
+  - openapi/azure-networking-virtual-networks-openapi.yml
+  - openapi/microsoft-azure-networking-openapi.yml

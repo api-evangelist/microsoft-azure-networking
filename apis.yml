@@ -405,6 +405,10 @@ apis:
       - type: Authentication
         url: https://learn.microsoft.com/en-us/azure/active-directory/develop/v2-oauth2-auth-code-flow
 common:
+  - type: DomainSecurity
+    url: security/microsoft-azure-networking-domain-security.yml
+  - type: Authentication
+    url: authentication/microsoft-azure-networking-authentication.yml
   - type: OAuthScopes
     url: scopes/microsoft-azure-networking-scopes.yml
   - type: X-portal
