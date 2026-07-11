@@ -1,0 +1,32 @@
+generated: '2026-07-11'
+method: derived
+source: openapi/azure-networking-load-balancer-openapi.yml, openapi/azure-networking-virtual-networks-openapi.yml,
+  openapi/microsoft-azure-networking-openapi.yml
+schemes:
+- name: OAuth2Auth
+  source: openapi/azure-networking-load-balancer-openapi.yml
+  flows:
+  - flow: implicit
+    authorizationUrl: https://login.microsoftonline.com/common/oauth2/authorize
+  description: Azure Active Directory OAuth2 Flow
+- name: OAuth2Auth
+  source: openapi/azure-networking-virtual-networks-openapi.yml
+  flows:
+  - flow: implicit
+    authorizationUrl: https://login.microsoftonline.com/common/oauth2/authorize
+  description: Azure Active Directory OAuth2 Flow
+- name: azure_auth
+  source: openapi/microsoft-azure-networking-openapi.yml
+  flows:
+  - flow: implicit
+    authorizationUrl: https://login.microsoftonline.com/common/oauth2/authorize
+  description: Azure Active Directory OAuth2 Flow.
+scopes:
+- scope: user_impersonation
+  description: Access Azure Load Balancer API
+  flows:
+  - implicit
+  sources:
+  - openapi/azure-networking-load-balancer-openapi.yml
+  - openapi/azure-networking-virtual-networks-openapi.yml
+  - openapi/microsoft-azure-networking-openapi.yml
