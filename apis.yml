@@ -405,6 +405,8 @@ apis:
       - type: Authentication
         url: https://learn.microsoft.com/en-us/azure/active-directory/develop/v2-oauth2-auth-code-flow
 common:
+  - type: AgenticAccess
+    url: agentic-access/microsoft-azure-networking-agentic-access.yml
   - type: DomainSecurity
     url: security/microsoft-azure-networking-domain-security.yml
   - type: Authentication
