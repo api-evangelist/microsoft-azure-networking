@@ -1,0 +1,103 @@
+openapi: 3.1.0
+info:
+  title: Azure Networking Azure Load Balancer Backend Address Pools Operations API
+  description: Distribute traffic across multiple virtual machines and services with Azure Load Balancer. This API provides operations for creating, configuring, and managing load balancers including frontend IP configurations, backend address pools, health probes, load balancing rules, inbound NAT rules, and outbound rules.
+  version: '2024-05-01'
+  contact:
+    name: Microsoft Azure Support
+    url: https://azure.microsoft.com/en-us/support/
+  license:
+    name: Microsoft API License
+    url: https://learn.microsoft.com/en-us/legal/microsoft-apis/terms-of-use
+servers:
+- url: https://management.azure.com
+  description: Azure Resource Manager
+security:
+- OAuth2Auth: []
+tags:
+- name: Operations
+  description: Operations operations
+paths:
+  /providers/Microsoft.Network/operations:
+    get:
+      operationId: listOperations
+      summary: Azure Virtual Network REST API List operations
+      description: Lists all available REST API operations for Microsoft.Network.
+      tags:
+      - Operations
+      parameters:
+      - $ref: '#/components/parameters/apiVersion'
+      responses:
+        '200':
+          description: Operations list
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/OperationList'
+        default:
+          description: Error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+components:
+  schemas:
+    Operation:
+      type: object
+      properties:
+        name:
+          type: string
+        display:
+          type: object
+          properties:
+            provider:
+              type: string
+            resource:
+              type: string
+            operation:
+              type: string
+            description:
+              type: string
+        isDataAction:
+          type: boolean
+    OperationList:
+      type: object
+      properties:
+        value:
+          type: array
+          items:
+            $ref: '#/components/schemas/Operation'
+        nextLink:
+          type: string
+    ErrorResponse:
+      type: object
+      properties:
+        error:
+          type: object
+          properties:
+            code:
+              type: string
+            message:
+              type: string
+            target:
+              type: string
+  parameters:
+    apiVersion:
+      name: api-version
+      in: query
+      required: true
+      description: The API version to use for this operation.
+      schema:
+        type: string
+  securitySchemes:
+    OAuth2Auth:
+      type: oauth2
+      description: Azure Active Directory OAuth2 Flow
+      flows:
+        implicit:
+          authorizationUrl: https://login.microsoftonline.com/common/oauth2/authorize
+          scopes:
+            user_impersonation: Access Azure Load Balancer API
+externalDocs:
+  description: Azure Load Balancer REST API Documentation
+  url: https://learn.microsoft.com/en-us/rest/api/load-balancer/

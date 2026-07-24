@@ -1,0 +1,136 @@
+openapi: 3.1.0
+info:
+  title: Azure Networking Azure Load Balancer Backend Address Pools API
+  description: Distribute traffic across multiple virtual machines and services with Azure Load Balancer. This API provides operations for creating, configuring, and managing load balancers including frontend IP configurations, backend address pools, health probes, load balancing rules, inbound NAT rules, and outbound rules.
+  version: '2024-05-01'
+  contact:
+    name: Microsoft Azure Support
+    url: https://azure.microsoft.com/en-us/support/
+  license:
+    name: Microsoft API License
+    url: https://learn.microsoft.com/en-us/legal/microsoft-apis/terms-of-use
+servers:
+- url: https://management.azure.com
+  description: Azure Resource Manager
+security:
+- OAuth2Auth: []
+tags:
+- name: Backend Address Pools
+  description: Operations for managing backend address pools that define the group of resources to receive load-balanced traffic.
+paths:
+  ? /subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Network/loadBalancers/{loadBalancerName}/backendAddressPools
+  : get:
+      operationId: LoadBalancerBackendAddressPools_List
+      summary: Azure Networking List backend address pools
+      description: Gets all the backend address pools for the specified load balancer.
+      tags:
+      - Backend Address Pools
+      parameters:
+      - $ref: '#/components/parameters/SubscriptionIdParameter'
+      - $ref: '#/components/parameters/ResourceGroupNameParameter'
+      - $ref: '#/components/parameters/LoadBalancerNameParameter'
+      - $ref: '#/components/parameters/ApiVersionParameter'
+      responses:
+        '200':
+          description: Successfully retrieved the backend address pools.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/BackendAddressPoolListResult'
+        '401':
+          description: Unauthorized. Authentication credentials are missing or invalid.
+components:
+  parameters:
+    SubscriptionIdParameter:
+      name: subscriptionId
+      in: path
+      required: true
+      description: The subscription credentials which uniquely identify the Microsoft Azure subscription.
+      schema:
+        type: string
+    ApiVersionParameter:
+      name: api-version
+      in: query
+      required: true
+      description: Client API version.
+      schema:
+        type: string
+        default: '2024-05-01'
+    ResourceGroupNameParameter:
+      name: resourceGroupName
+      in: path
+      required: true
+      description: The name of the resource group.
+      schema:
+        type: string
+    LoadBalancerNameParameter:
+      name: loadBalancerName
+      in: path
+      required: true
+      description: The name of the load balancer.
+      schema:
+        type: string
+  schemas:
+    BackendAddressPool:
+      type: object
+      description: Pool of backend IP addresses.
+      properties:
+        id:
+          type: string
+          description: Resource ID.
+        name:
+          type: string
+          description: The name of the resource.
+        properties:
+          type: object
+          properties:
+            loadBalancerBackendAddresses:
+              type: array
+              items:
+                type: object
+                properties:
+                  name:
+                    type: string
+                    description: Name of the backend address.
+                  properties:
+                    type: object
+                    properties:
+                      virtualNetwork:
+                        type: object
+                        properties:
+                          id:
+                            type: string
+                        description: Reference to an existing virtual network.
+                      ipAddress:
+                        type: string
+                        description: IP address belonging to the referenced virtual network.
+              description: An array of backend addresses.
+            provisioningState:
+              type: string
+              readOnly: true
+              description: The provisioning state of the backend address pool resource.
+    BackendAddressPoolListResult:
+      type: object
+      description: Response for ListBackendAddressPools API service call.
+      properties:
+        value:
+          type: array
+          items:
+            $ref: '#/components/schemas/BackendAddressPool'
+          description: A list of backend address pools.
+        nextLink:
+          type: string
+          readOnly: true
+          description: The URL to get the next set of results.
+  securitySchemes:
+    OAuth2Auth:
+      type: oauth2
+      description: Azure Active Directory OAuth2 Flow
+      flows:
+        implicit:
+          authorizationUrl: https://login.microsoftonline.com/common/oauth2/authorize
+          scopes:
+            user_impersonation: Access Azure Load Balancer API
+externalDocs:
+  description: Azure Load Balancer REST API Documentation
+  url: https://learn.microsoft.com/en-us/rest/api/load-balancer/

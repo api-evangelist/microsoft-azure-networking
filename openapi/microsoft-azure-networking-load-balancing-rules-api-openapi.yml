@@ -1,0 +1,155 @@
+openapi: 3.1.0
+info:
+  title: Azure Networking Azure Load Balancer Backend Address Pools Load Balancing Rules API
+  description: Distribute traffic across multiple virtual machines and services with Azure Load Balancer. This API provides operations for creating, configuring, and managing load balancers including frontend IP configurations, backend address pools, health probes, load balancing rules, inbound NAT rules, and outbound rules.
+  version: '2024-05-01'
+  contact:
+    name: Microsoft Azure Support
+    url: https://azure.microsoft.com/en-us/support/
+  license:
+    name: Microsoft API License
+    url: https://learn.microsoft.com/en-us/legal/microsoft-apis/terms-of-use
+servers:
+- url: https://management.azure.com
+  description: Azure Resource Manager
+security:
+- OAuth2Auth: []
+tags:
+- name: Load Balancing Rules
+  description: Operations for managing load balancing rules that define how traffic is distributed to backend pool members.
+paths:
+  ? /subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Network/loadBalancers/{loadBalancerName}/loadBalancingRules
+  : get:
+      operationId: LoadBalancerLoadBalancingRules_List
+      summary: Azure Networking List load balancing rules
+      description: Gets all the load balancing rules for the specified load balancer.
+      tags:
+      - Load Balancing Rules
+      parameters:
+      - $ref: '#/components/parameters/SubscriptionIdParameter'
+      - $ref: '#/components/parameters/ResourceGroupNameParameter'
+      - $ref: '#/components/parameters/LoadBalancerNameParameter'
+      - $ref: '#/components/parameters/ApiVersionParameter'
+      responses:
+        '200':
+          description: Successfully retrieved the load balancing rules.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/LoadBalancerLoadBalancingRuleListResult'
+        '401':
+          description: Unauthorized. Authentication credentials are missing or invalid.
+components:
+  parameters:
+    SubscriptionIdParameter:
+      name: subscriptionId
+      in: path
+      required: true
+      description: The subscription credentials which uniquely identify the Microsoft Azure subscription.
+      schema:
+        type: string
+    ResourceGroupNameParameter:
+      name: resourceGroupName
+      in: path
+      required: true
+      description: The name of the resource group.
+      schema:
+        type: string
+    ApiVersionParameter:
+      name: api-version
+      in: query
+      required: true
+      description: Client API version.
+      schema:
+        type: string
+        default: '2024-05-01'
+    LoadBalancerNameParameter:
+      name: loadBalancerName
+      in: path
+      required: true
+      description: The name of the load balancer.
+      schema:
+        type: string
+  schemas:
+    LoadBalancingRule:
+      type: object
+      description: A load balancing rule for a load balancer.
+      properties:
+        id:
+          type: string
+          description: Resource ID.
+        name:
+          type: string
+          description: The name of the resource.
+        properties:
+          type: object
+          properties:
+            frontendIPConfiguration:
+              type: object
+              properties:
+                id:
+                  type: string
+              description: A reference to frontend IP addresses.
+            backendAddressPool:
+              type: object
+              properties:
+                id:
+                  type: string
+              description: A reference to a pool of DIPs.
+            probe:
+              type: object
+              properties:
+                id:
+                  type: string
+              description: The reference to the load balancer probe.
+            protocol:
+              type: string
+              enum:
+              - Udp
+              - Tcp
+              - All
+              description: The reference to the transport protocol.
+            frontendPort:
+              type: integer
+              description: The port for the external endpoint.
+            backendPort:
+              type: integer
+              description: The port used for internal connections on the endpoint.
+            idleTimeoutInMinutes:
+              type: integer
+              description: The timeout for the TCP idle connection.
+            enableFloatingIP:
+              type: boolean
+              description: Configures a virtual machine endpoint for the floating IP capability.
+            loadDistribution:
+              type: string
+              enum:
+              - Default
+              - SourceIP
+              - SourceIPProtocol
+              description: The load distribution policy for this rule.
+    LoadBalancerLoadBalancingRuleListResult:
+      type: object
+      description: Response for ListLoadBalancingRules API service call.
+      properties:
+        value:
+          type: array
+          items:
+            $ref: '#/components/schemas/LoadBalancingRule'
+          description: A list of load balancing rules.
+        nextLink:
+          type: string
+          readOnly: true
+          description: The URL to get the next set of results.
+  securitySchemes:
+    OAuth2Auth:
+      type: oauth2
+      description: Azure Active Directory OAuth2 Flow
+      flows:
+        implicit:
+          authorizationUrl: https://login.microsoftonline.com/common/oauth2/authorize
+          scopes:
+            user_impersonation: Access Azure Load Balancer API
+externalDocs:
+  description: Azure Load Balancer REST API Documentation
+  url: https://learn.microsoft.com/en-us/rest/api/load-balancer/

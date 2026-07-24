@@ -1,0 +1,130 @@
+openapi: 3.1.0
+info:
+  title: Azure Networking Azure Load Balancer Backend Address Pools Load Balancer Probes API
+  description: Distribute traffic across multiple virtual machines and services with Azure Load Balancer. This API provides operations for creating, configuring, and managing load balancers including frontend IP configurations, backend address pools, health probes, load balancing rules, inbound NAT rules, and outbound rules.
+  version: '2024-05-01'
+  contact:
+    name: Microsoft Azure Support
+    url: https://azure.microsoft.com/en-us/support/
+  license:
+    name: Microsoft API License
+    url: https://learn.microsoft.com/en-us/legal/microsoft-apis/terms-of-use
+servers:
+- url: https://management.azure.com
+  description: Azure Resource Manager
+security:
+- OAuth2Auth: []
+tags:
+- name: Load Balancer Probes
+  description: Operations for managing health probes that monitor the health status of backend resources.
+paths:
+  ? /subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Network/loadBalancers/{loadBalancerName}/probes
+  : get:
+      operationId: LoadBalancerProbes_List
+      summary: Azure Networking List health probes
+      description: Gets all the load balancer probes for the specified load balancer.
+      tags:
+      - Load Balancer Probes
+      parameters:
+      - $ref: '#/components/parameters/SubscriptionIdParameter'
+      - $ref: '#/components/parameters/ResourceGroupNameParameter'
+      - $ref: '#/components/parameters/LoadBalancerNameParameter'
+      - $ref: '#/components/parameters/ApiVersionParameter'
+      responses:
+        '200':
+          description: Successfully retrieved the health probes.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/LoadBalancerProbeListResult'
+        '401':
+          description: Unauthorized. Authentication credentials are missing or invalid.
+components:
+  schemas:
+    LoadBalancerProbeListResult:
+      type: object
+      description: Response for ListProbes API service call.
+      properties:
+        value:
+          type: array
+          items:
+            $ref: '#/components/schemas/Probe'
+          description: A list of probes.
+        nextLink:
+          type: string
+          readOnly: true
+          description: The URL to get the next set of results.
+    Probe:
+      type: object
+      description: A load balancer probe.
+      properties:
+        id:
+          type: string
+          description: Resource ID.
+        name:
+          type: string
+          description: The name of the resource.
+        properties:
+          type: object
+          properties:
+            protocol:
+              type: string
+              enum:
+              - Http
+              - Tcp
+              - Https
+              description: The protocol of the endpoint.
+            port:
+              type: integer
+              description: The port for communicating the probe.
+            intervalInSeconds:
+              type: integer
+              description: The interval between probes in seconds.
+            numberOfProbes:
+              type: integer
+              description: The number of probes where if no response the load balancer marks the status as down.
+            requestPath:
+              type: string
+              description: The URI used for requesting health status from the VM.
+  parameters:
+    SubscriptionIdParameter:
+      name: subscriptionId
+      in: path
+      required: true
+      description: The subscription credentials which uniquely identify the Microsoft Azure subscription.
+      schema:
+        type: string
+    ApiVersionParameter:
+      name: api-version
+      in: query
+      required: true
+      description: Client API version.
+      schema:
+        type: string
+        default: '2024-05-01'
+    ResourceGroupNameParameter:
+      name: resourceGroupName
+      in: path
+      required: true
+      description: The name of the resource group.
+      schema:
+        type: string
+    LoadBalancerNameParameter:
+      name: loadBalancerName
+      in: path
+      required: true
+      description: The name of the load balancer.
+      schema:
+        type: string
+  securitySchemes:
+    OAuth2Auth:
+      type: oauth2
+      description: Azure Active Directory OAuth2 Flow
+      flows:
+        implicit:
+          authorizationUrl: https://login.microsoftonline.com/common/oauth2/authorize
+          scopes:
+            user_impersonation: Access Azure Load Balancer API
+externalDocs:
+  description: Azure Load Balancer REST API Documentation
+  url: https://learn.microsoft.com/en-us/rest/api/load-balancer/
