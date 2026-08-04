@@ -1,0 +1,314 @@
+{
+  "info": {
+    "_postman_id": "b1aefb75-9a70-4cf6-a0a1-bce688e2dfa5",
+    "name": "Azure Networking Azure Load Balancer Backend Address Pools Load Balancer Probes API",
+    "description": "Distribute traffic across multiple virtual machines and services with Azure Load Balancer. This API provides operations for creating, configuring, and managing load balancers including frontend IP configurations, backend address pools, health probes, load balancing rules, inbound NAT rules, and outbound rules.\n\nContact Support:\n Name: Microsoft Azure Support",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "createdAt": "2026-07-28T02:10:00.000Z",
+    "updatedAt": "2026-07-28T02:10:00.000Z",
+    "lastUpdatedBy": "35240",
+    "uid": "35240-b1aefb75-9a70-4cf6-a0a1-bce688e2dfa5"
+  },
+  "item": [
+    {
+      "name": "subscriptions",
+      "item": [
+        {
+          "name": "{subscriptionId}",
+          "item": [
+            {
+              "name": "resourceGroups",
+              "item": [
+                {
+                  "name": "{resourceGroupName}",
+                  "item": [
+                    {
+                      "name": "providers",
+                      "item": [
+                        {
+                          "name": "Microsoft.Network",
+                          "item": [
+                            {
+                              "name": "loadBalancers",
+                              "item": [
+                                {
+                                  "name": "{loadBalancerName}",
+                                  "item": [
+                                    {
+                                      "name": "probes",
+                                      "item": [
+                                        {
+                                          "name": "Azure Networking List health probes",
+                                          "id": "ddf123d9-593a-408d-9adc-ed34bcee4e65",
+                                          "protocolProfileBehavior": {
+                                            "disableBodyPruning": true
+                                          },
+                                          "request": {
+                                            "method": "GET",
+                                            "header": [
+                                              {
+                                                "key": "Accept",
+                                                "value": "application/json"
+                                              }
+                                            ],
+                                            "url": {
+                                              "raw": "{{baseUrl}}/subscriptions/:subscriptionId/resourceGroups/:resourceGroupName/providers/Microsoft.Network/loadBalancers/:loadBalancerName/probes?api-version=2024-05-01",
+                                              "host": [
+                                                "{{baseUrl}}"
+                                              ],
+                                              "path": [
+                                                "subscriptions",
+                                                ":subscriptionId",
+                                                "resourceGroups",
+                                                ":resourceGroupName",
+                                                "providers",
+                                                "Microsoft.Network",
+                                                "loadBalancers",
+                                                ":loadBalancerName",
+                                                "probes"
+                                              ],
+                                              "query": [
+                                                {
+                                                  "description": "(Required) Client API version.",
+                                                  "key": "api-version",
+                                                  "value": "2024-05-01"
+                                                }
+                                              ],
+                                              "variable": [
+                                                {
+                                                  "id": "67c2ad8c-89f8-44c9-badf-60c1730fc897",
+                                                  "key": "subscriptionId",
+                                                  "value": "<string>",
+                                                  "description": "(Required) The subscription credentials which uniquely identify the Microsoft Azure subscription."
+                                                },
+                                                {
+                                                  "id": "71e12bbe-3935-4aca-9dfc-363c5d0822d5",
+                                                  "key": "resourceGroupName",
+                                                  "value": "<string>",
+                                                  "description": "(Required) The name of the resource group."
+                                                },
+                                                {
+                                                  "id": "7d9c2dd7-fdcd-4151-9d7b-719196b52a2e",
+                                                  "key": "loadBalancerName",
+                                                  "value": "<string>",
+                                                  "description": "(Required) The name of the load balancer."
+                                                }
+                                              ]
+                                            },
+                                            "description": "Gets all the load balancer probes for the specified load balancer."
+                                          },
+                                          "response": [
+                                            {
+                                              "id": "1cc9d35d-3507-4c01-98e5-4cfae8fd3395",
+                                              "name": "Successfully retrieved the health probes.",
+                                              "originalRequest": {
+                                                "method": "GET",
+                                                "header": [
+                                                  {
+                                                    "key": "Accept",
+                                                    "value": "application/json"
+                                                  },
+                                                  {
+                                                    "description": "Added as a part of security scheme: oauth2",
+                                                    "key": "Authorization",
+                                                    "value": "<token>"
+                                                  }
+                                                ],
+                                                "url": {
+                                                  "raw": "{{baseUrl}}/subscriptions/:subscriptionId/resourceGroups/:resourceGroupName/providers/Microsoft.Network/loadBalancers/:loadBalancerName/probes?api-version=2024-05-01",
+                                                  "host": [
+                                                    "{{baseUrl}}"
+                                                  ],
+                                                  "path": [
+                                                    "subscriptions",
+                                                    ":subscriptionId",
+                                                    "resourceGroups",
+                                                    ":resourceGroupName",
+                                                    "providers",
+                                                    "Microsoft.Network",
+                                                    "loadBalancers",
+                                                    ":loadBalancerName",
+                                                    "probes"
+                                                  ],
+                                                  "query": [
+                                                    {
+                                                      "description": "(Required) Client API version.",
+                                                      "key": "api-version",
+                                                      "value": "2024-05-01"
+                                                    }
+                                                  ],
+                                                  "variable": [
+                                                    {
+                                                      "key": "subscriptionId"
+                                                    },
+                                                    {
+                                                      "key": "resourceGroupName"
+                                                    },
+                                                    {
+                                                      "key": "loadBalancerName"
+                                                    }
+                                                  ]
+                                                }
+                                              },
+                                              "status": "OK",
+                                              "code": 200,
+                                              "_postman_previewlanguage": "json",
+                                              "header": [
+                                                {
+                                                  "key": "Content-Type",
+                                                  "value": "application/json"
+                                                }
+                                              ],
+                                              "cookie": [],
+                                              "responseTime": null,
+                                              "body": "{\n  \"value\": [\n    {\n      \"id\": \"<string>\",\n      \"name\": \"<string>\",\n      \"properties\": {\n        \"protocol\": \"Http\",\n        \"port\": \"<integer>\",\n        \"intervalInSeconds\": \"<integer>\",\n        \"numberOfProbes\": \"<integer>\",\n        \"requestPath\": \"<string>\"\n      }\n    },\n    {\n      \"id\": \"<string>\",\n      \"name\": \"<string>\",\n      \"properties\": {\n        \"protocol\": \"Http\",\n        \"port\": \"<integer>\",\n        \"intervalInSeconds\": \"<integer>\",\n        \"numberOfProbes\": \"<integer>\",\n        \"requestPath\": \"<string>\"\n      }\n    }\n  ],\n  \"nextLink\": \"<string>\"\n}",
+                                              "createdAt": "2026-07-28T02:10:00.000Z",
+                                              "updatedAt": "2026-07-28T02:10:00.000Z",
+                                              "uid": "35240-1cc9d35d-3507-4c01-98e5-4cfae8fd3395"
+                                            },
+                                            {
+                                              "id": "fd7f8202-eea5-404a-af52-fbbcdf75be10",
+                                              "name": "Unauthorized. Authentication credentials are missing or invalid.",
+                                              "originalRequest": {
+                                                "method": "GET",
+                                                "header": [
+                                                  {
+                                                    "description": "Added as a part of security scheme: oauth2",
+                                                    "key": "Authorization",
+                                                    "value": "<token>"
+                                                  }
+                                                ],
+                                                "url": {
+                                                  "raw": "{{baseUrl}}/subscriptions/:subscriptionId/resourceGroups/:resourceGroupName/providers/Microsoft.Network/loadBalancers/:loadBalancerName/probes?api-version=2024-05-01",
+                                                  "host": [
+                                                    "{{baseUrl}}"
+                                                  ],
+                                                  "path": [
+                                                    "subscriptions",
+                                                    ":subscriptionId",
+                                                    "resourceGroups",
+                                                    ":resourceGroupName",
+                                                    "providers",
+                                                    "Microsoft.Network",
+                                                    "loadBalancers",
+                                                    ":loadBalancerName",
+                                                    "probes"
+                                                  ],
+                                                  "query": [
+                                                    {
+                                                      "description": "(Required) Client API version.",
+                                                      "key": "api-version",
+                                                      "value": "2024-05-01"
+                                                    }
+                                                  ],
+                                                  "variable": [
+                                                    {
+                                                      "key": "subscriptionId"
+                                                    },
+                                                    {
+                                                      "key": "resourceGroupName"
+                                                    },
+                                                    {
+                                                      "key": "loadBalancerName"
+                                                    }
+                                                  ]
+                                                }
+                                              },
+                                              "status": "Unauthorized",
+                                              "code": 401,
+                                              "_postman_previewlanguage": "text",
+                                              "header": [],
+                                              "cookie": [],
+                                              "responseTime": null,
+                                              "body": null,
+                                              "createdAt": "2026-07-28T02:10:00.000Z",
+                                              "updatedAt": "2026-07-28T02:10:00.000Z",
+                                              "uid": "35240-fd7f8202-eea5-404a-af52-fbbcdf75be10"
+                                            }
+                                          ],
+                                          "createdAt": "2026-07-28T02:10:00.000Z",
+                                          "updatedAt": "2026-07-28T02:10:00.000Z",
+                                          "uid": "35240-ddf123d9-593a-408d-9adc-ed34bcee4e65"
+                                        }
+                                      ],
+                                      "id": "f5475beb-8273-4754-b79d-2f21a74d540d",
+                                      "createdAt": "2026-07-28T02:10:00.000Z",
+                                      "updatedAt": "2026-07-28T02:10:00.000Z",
+                                      "uid": "35240-f5475beb-8273-4754-b79d-2f21a74d540d"
+                                    }
+                                  ],
+                                  "id": "9f400e4b-f0a6-4881-8df1-3ad672225683",
+                                  "createdAt": "2026-07-28T02:10:00.000Z",
+                                  "updatedAt": "2026-07-28T02:10:00.000Z",
+                                  "uid": "35240-9f400e4b-f0a6-4881-8df1-3ad672225683"
+                                }
+                              ],
+                              "id": "67ec728e-70d2-478b-85da-0675866c1152",
+                              "createdAt": "2026-07-28T02:10:00.000Z",
+                              "updatedAt": "2026-07-28T02:10:00.000Z",
+                              "uid": "35240-67ec728e-70d2-478b-85da-0675866c1152"
+                            }
+                          ],
+                          "id": "e926ae81-e210-4757-8e23-2f454e0fec7d",
+                          "createdAt": "2026-07-28T02:10:00.000Z",
+                          "updatedAt": "2026-07-28T02:10:00.000Z",
+                          "uid": "35240-e926ae81-e210-4757-8e23-2f454e0fec7d"
+                        }
+                      ],
+                      "id": "239f7047-7f7a-443c-8d8b-2c08db5b54a7",
+                      "createdAt": "2026-07-28T02:10:00.000Z",
+                      "updatedAt": "2026-07-28T02:10:00.000Z",
+                      "uid": "35240-239f7047-7f7a-443c-8d8b-2c08db5b54a7"
+                    }
+                  ],
+                  "id": "3a63c8c4-3b9c-4af2-a8cf-178dcef349e5",
+                  "createdAt": "2026-07-28T02:10:00.000Z",
+                  "updatedAt": "2026-07-28T02:10:00.000Z",
+                  "uid": "35240-3a63c8c4-3b9c-4af2-a8cf-178dcef349e5"
+                }
+              ],
+              "id": "3b6ed0ff-f1f8-443e-bfd1-619859406e70",
+              "createdAt": "2026-07-28T02:10:00.000Z",
+              "updatedAt": "2026-07-28T02:10:00.000Z",
+              "uid": "35240-3b6ed0ff-f1f8-443e-bfd1-619859406e70"
+            }
+          ],
+          "id": "e73a8720-8385-476f-812e-ba430b81f76e",
+          "createdAt": "2026-07-28T02:10:00.000Z",
+          "updatedAt": "2026-07-28T02:10:00.000Z",
+          "uid": "35240-e73a8720-8385-476f-812e-ba430b81f76e"
+        }
+      ],
+      "id": "9b3e7403-84e2-4340-a8d5-270dd12155e2",
+      "createdAt": "2026-07-28T02:10:00.000Z",
+      "updatedAt": "2026-07-28T02:10:00.000Z",
+      "uid": "35240-9b3e7403-84e2-4340-a8d5-270dd12155e2"
+    }
+  ],
+  "auth": {
+    "type": "oauth2",
+    "oauth2": [
+      {
+        "key": "scope",
+        "value": "user_impersonation",
+        "type": "string"
+      },
+      {
+        "key": "authUrl",
+        "value": "https://login.microsoftonline.com/common/oauth2/authorize",
+        "type": "string"
+      },
+      {
+        "key": "grant_type",
+        "value": "implicit",
+        "type": "string"
+      }
+    ]
+  },
+  "variable": [
+    {
+      "key": "baseUrl",
+      "value": "https://management.azure.com"
+    }
+  ]
+}

@@ -1,0 +1,28 @@
+{
+  "provider": "microsoft-azure-networking",
+  "sources": [
+    "microsoft-azure-networking-backend-address-pools-api-openapi.yml",
+    "microsoft-azure-networking-load-balancer-probes-api-openapi.yml",
+    "microsoft-azure-networking-load-balancers-api-openapi.yml",
+    "microsoft-azure-networking-load-balancing-rules-api-openapi.yml",
+    "microsoft-azure-networking-operations-api-openapi.yml",
+    "microsoft-azure-networking-subnets-api-openapi.yml",
+    "microsoft-azure-networking-virtual-network-peerings-api-openapi.yml",
+    "microsoft-azure-networking-virtual-networks-api-openapi.yml"
+  ],
+  "outputs": [
+    "microsoft-azure-networking-backend-address-pools-api-openapi.yml",
+    "microsoft-azure-networking-load-balancer-probes-api-openapi.yml",
+    "microsoft-azure-networking-load-balancers-api-openapi.yml",
+    "microsoft-azure-networking-load-balancing-rules-api-openapi.yml",
+    "microsoft-azure-networking-operations-api-openapi.yml",
+    "microsoft-azure-networking-subnets-api-openapi.yml",
+    "microsoft-azure-networking-virtual-network-peerings-api-openapi.yml",
+    "microsoft-azure-networking-virtual-networks-api-openapi.yml"
+  ],
+  "archived": [],
+  "errors": [],
+  "warnings": [],
+  "notes": [],
+  "skipped": []
+}

@@ -1,0 +1,314 @@
+{
+  "info": {
+    "_postman_id": "e3a17653-03ed-48d2-be1f-02bb33fbbab2",
+    "name": "Azure Networking Azure Load Balancer Backend Address Pools API",
+    "description": "Distribute traffic across multiple virtual machines and services with Azure Load Balancer. This API provides operations for creating, configuring, and managing load balancers including frontend IP configurations, backend address pools, health probes, load balancing rules, inbound NAT rules, and outbound rules.\n\nContact Support:\n Name: Microsoft Azure Support",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "createdAt": "2026-07-28T02:09:59.000Z",
+    "updatedAt": "2026-07-28T02:09:59.000Z",
+    "lastUpdatedBy": "35240",
+    "uid": "35240-e3a17653-03ed-48d2-be1f-02bb33fbbab2"
+  },
+  "item": [
+    {
+      "name": "subscriptions",
+      "item": [
+        {
+          "name": "{subscriptionId}",
+          "item": [
+            {
+              "name": "resourceGroups",
+              "item": [
+                {
+                  "name": "{resourceGroupName}",
+                  "item": [
+                    {
+                      "name": "providers",
+                      "item": [
+                        {
+                          "name": "Microsoft.Network",
+                          "item": [
+                            {
+                              "name": "loadBalancers",
+                              "item": [
+                                {
+                                  "name": "{loadBalancerName}",
+                                  "item": [
+                                    {
+                                      "name": "backendAddressPools",
+                                      "item": [
+                                        {
+                                          "name": "Azure Networking List backend address pools",
+                                          "id": "b7a6c526-3b77-4824-b715-122b91c6ee0a",
+                                          "protocolProfileBehavior": {
+                                            "disableBodyPruning": true
+                                          },
+                                          "request": {
+                                            "method": "GET",
+                                            "header": [
+                                              {
+                                                "key": "Accept",
+                                                "value": "application/json"
+                                              }
+                                            ],
+                                            "url": {
+                                              "raw": "{{baseUrl}}/subscriptions/:subscriptionId/resourceGroups/:resourceGroupName/providers/Microsoft.Network/loadBalancers/:loadBalancerName/backendAddressPools?api-version=2024-05-01",
+                                              "host": [
+                                                "{{baseUrl}}"
+                                              ],
+                                              "path": [
+                                                "subscriptions",
+                                                ":subscriptionId",
+                                                "resourceGroups",
+                                                ":resourceGroupName",
+                                                "providers",
+                                                "Microsoft.Network",
+                                                "loadBalancers",
+                                                ":loadBalancerName",
+                                                "backendAddressPools"
+                                              ],
+                                              "query": [
+                                                {
+                                                  "description": "(Required) Client API version.",
+                                                  "key": "api-version",
+                                                  "value": "2024-05-01"
+                                                }
+                                              ],
+                                              "variable": [
+                                                {
+                                                  "id": "8cdbd4cb-cb12-4ece-8a73-c4be05f74b21",
+                                                  "key": "subscriptionId",
+                                                  "value": "<string>",
+                                                  "description": "(Required) The subscription credentials which uniquely identify the Microsoft Azure subscription."
+                                                },
+                                                {
+                                                  "id": "ff3a580d-cea8-4256-ae40-8e0b30af6bd7",
+                                                  "key": "resourceGroupName",
+                                                  "value": "<string>",
+                                                  "description": "(Required) The name of the resource group."
+                                                },
+                                                {
+                                                  "id": "230748d5-4520-426a-854b-07a19058934f",
+                                                  "key": "loadBalancerName",
+                                                  "value": "<string>",
+                                                  "description": "(Required) The name of the load balancer."
+                                                }
+                                              ]
+                                            },
+                                            "description": "Gets all the backend address pools for the specified load balancer."
+                                          },
+                                          "response": [
+                                            {
+                                              "id": "57d6c312-c9ab-4f82-84e1-05e556eb67f2",
+                                              "name": "Successfully retrieved the backend address pools.",
+                                              "originalRequest": {
+                                                "method": "GET",
+                                                "header": [
+                                                  {
+                                                    "key": "Accept",
+                                                    "value": "application/json"
+                                                  },
+                                                  {
+                                                    "description": "Added as a part of security scheme: oauth2",
+                                                    "key": "Authorization",
+                                                    "value": "<token>"
+                                                  }
+                                                ],
+                                                "url": {
+                                                  "raw": "{{baseUrl}}/subscriptions/:subscriptionId/resourceGroups/:resourceGroupName/providers/Microsoft.Network/loadBalancers/:loadBalancerName/backendAddressPools?api-version=2024-05-01",
+                                                  "host": [
+                                                    "{{baseUrl}}"
+                                                  ],
+                                                  "path": [
+                                                    "subscriptions",
+                                                    ":subscriptionId",
+                                                    "resourceGroups",
+                                                    ":resourceGroupName",
+                                                    "providers",
+                                                    "Microsoft.Network",
+                                                    "loadBalancers",
+                                                    ":loadBalancerName",
+                                                    "backendAddressPools"
+                                                  ],
+                                                  "query": [
+                                                    {
+                                                      "description": "(Required) Client API version.",
+                                                      "key": "api-version",
+                                                      "value": "2024-05-01"
+                                                    }
+                                                  ],
+                                                  "variable": [
+                                                    {
+                                                      "key": "subscriptionId"
+                                                    },
+                                                    {
+                                                      "key": "resourceGroupName"
+                                                    },
+                                                    {
+                                                      "key": "loadBalancerName"
+                                                    }
+                                                  ]
+                                                }
+                                              },
+                                              "status": "OK",
+                                              "code": 200,
+                                              "_postman_previewlanguage": "json",
+                                              "header": [
+                                                {
+                                                  "key": "Content-Type",
+                                                  "value": "application/json"
+                                                }
+                                              ],
+                                              "cookie": [],
+                                              "responseTime": null,
+                                              "body": "{\n  \"value\": [\n    {\n      \"id\": \"<string>\",\n      \"name\": \"<string>\",\n      \"properties\": {\n        \"loadBalancerBackendAddresses\": [\n          {\n            \"name\": \"<string>\",\n            \"properties\": {\n              \"virtualNetwork\": {\n                \"id\": \"<string>\"\n              },\n              \"ipAddress\": \"<string>\"\n            }\n          },\n          {\n            \"name\": \"<string>\",\n            \"properties\": {\n              \"virtualNetwork\": {\n                \"id\": \"<string>\"\n              },\n              \"ipAddress\": \"<string>\"\n            }\n          }\n        ],\n        \"provisioningState\": \"<string>\"\n      }\n    },\n    {\n      \"id\": \"<string>\",\n      \"name\": \"<string>\",\n      \"properties\": {\n        \"loadBalancerBackendAddresses\": [\n          {\n            \"name\": \"<string>\",\n            \"properties\": {\n              \"virtualNetwork\": {\n                \"id\": \"<string>\"\n              },\n              \"ipAddress\": \"<string>\"\n            }\n          },\n          {\n            \"name\": \"<string>\",\n            \"properties\": {\n              \"virtualNetwork\": {\n                \"id\": \"<string>\"\n              },\n              \"ipAddress\": \"<string>\"\n            }\n          }\n        ],\n        \"provisioningState\": \"<string>\"\n      }\n    }\n  ],\n  \"nextLink\": \"<string>\"\n}",
+                                              "createdAt": "2026-07-28T02:09:59.000Z",
+                                              "updatedAt": "2026-07-28T02:09:59.000Z",
+                                              "uid": "35240-57d6c312-c9ab-4f82-84e1-05e556eb67f2"
+                                            },
+                                            {
+                                              "id": "a3d26978-bacd-4356-8db6-c2f57858c9bf",
+                                              "name": "Unauthorized. Authentication credentials are missing or invalid.",
+                                              "originalRequest": {
+                                                "method": "GET",
+                                                "header": [
+                                                  {
+                                                    "description": "Added as a part of security scheme: oauth2",
+                                                    "key": "Authorization",
+                                                    "value": "<token>"
+                                                  }
+                                                ],
+                                                "url": {
+                                                  "raw": "{{baseUrl}}/subscriptions/:subscriptionId/resourceGroups/:resourceGroupName/providers/Microsoft.Network/loadBalancers/:loadBalancerName/backendAddressPools?api-version=2024-05-01",
+                                                  "host": [
+                                                    "{{baseUrl}}"
+                                                  ],
+                                                  "path": [
+                                                    "subscriptions",
+                                                    ":subscriptionId",
+                                                    "resourceGroups",
+                                                    ":resourceGroupName",
+                                                    "providers",
+                                                    "Microsoft.Network",
+                                                    "loadBalancers",
+                                                    ":loadBalancerName",
+                                                    "backendAddressPools"
+                                                  ],
+                                                  "query": [
+                                                    {
+                                                      "description": "(Required) Client API version.",
+                                                      "key": "api-version",
+                                                      "value": "2024-05-01"
+                                                    }
+                                                  ],
+                                                  "variable": [
+                                                    {
+                                                      "key": "subscriptionId"
+                                                    },
+                                                    {
+                                                      "key": "resourceGroupName"
+                                                    },
+                                                    {
+                                                      "key": "loadBalancerName"
+                                                    }
+                                                  ]
+                                                }
+                                              },
+                                              "status": "Unauthorized",
+                                              "code": 401,
+                                              "_postman_previewlanguage": "text",
+                                              "header": [],
+                                              "cookie": [],
+                                              "responseTime": null,
+                                              "body": null,
+                                              "createdAt": "2026-07-28T02:09:59.000Z",
+                                              "updatedAt": "2026-07-28T02:09:59.000Z",
+                                              "uid": "35240-a3d26978-bacd-4356-8db6-c2f57858c9bf"
+                                            }
+                                          ],
+                                          "createdAt": "2026-07-28T02:09:59.000Z",
+                                          "updatedAt": "2026-07-28T02:09:59.000Z",
+                                          "uid": "35240-b7a6c526-3b77-4824-b715-122b91c6ee0a"
+                                        }
+                                      ],
+                                      "id": "8dbf7ec0-2d84-4f6a-b872-01b4157a7b7b",
+                                      "createdAt": "2026-07-28T02:09:59.000Z",
+                                      "updatedAt": "2026-07-28T02:09:59.000Z",
+                                      "uid": "35240-8dbf7ec0-2d84-4f6a-b872-01b4157a7b7b"
+                                    }
+                                  ],
+                                  "id": "929d0cdb-0cdb-4c88-b782-c837794d06b2",
+                                  "createdAt": "2026-07-28T02:09:59.000Z",
+                                  "updatedAt": "2026-07-28T02:09:59.000Z",
+                                  "uid": "35240-929d0cdb-0cdb-4c88-b782-c837794d06b2"
+                                }
+                              ],
+                              "id": "45121577-7588-44fa-8328-12d7c8fc0872",
+                              "createdAt": "2026-07-28T02:09:59.000Z",
+                              "updatedAt": "2026-07-28T02:09:59.000Z",
+                              "uid": "35240-45121577-7588-44fa-8328-12d7c8fc0872"
+                            }
+                          ],
+                          "id": "e3efa1c4-322a-49a1-8815-a0851aa1b6fe",
+                          "createdAt": "2026-07-28T02:09:59.000Z",
+                          "updatedAt": "2026-07-28T02:09:59.000Z",
+                          "uid": "35240-e3efa1c4-322a-49a1-8815-a0851aa1b6fe"
+                        }
+                      ],
+                      "id": "a18e8fad-4002-42da-b84f-0bc36b84e64d",
+                      "createdAt": "2026-07-28T02:09:59.000Z",
+                      "updatedAt": "2026-07-28T02:09:59.000Z",
+                      "uid": "35240-a18e8fad-4002-42da-b84f-0bc36b84e64d"
+                    }
+                  ],
+                  "id": "45518005-fc34-4600-bced-15664c3e18da",
+                  "createdAt": "2026-07-28T02:09:59.000Z",
+                  "updatedAt": "2026-07-28T02:09:59.000Z",
+                  "uid": "35240-45518005-fc34-4600-bced-15664c3e18da"
+                }
+              ],
+              "id": "1733402f-00c6-4dbb-8fe7-f877dcfb4b78",
+              "createdAt": "2026-07-28T02:09:59.000Z",
+              "updatedAt": "2026-07-28T02:09:59.000Z",
+              "uid": "35240-1733402f-00c6-4dbb-8fe7-f877dcfb4b78"
+            }
+          ],
+          "id": "2144994e-8dde-4423-9b8c-7ea7043f0bad",
+          "createdAt": "2026-07-28T02:09:59.000Z",
+          "updatedAt": "2026-07-28T02:09:59.000Z",
+          "uid": "35240-2144994e-8dde-4423-9b8c-7ea7043f0bad"
+        }
+      ],
+      "id": "fa33d46f-619d-4456-ba00-e8607a052c11",
+      "createdAt": "2026-07-28T02:09:59.000Z",
+      "updatedAt": "2026-07-28T02:09:59.000Z",
+      "uid": "35240-fa33d46f-619d-4456-ba00-e8607a052c11"
+    }
+  ],
+  "auth": {
+    "type": "oauth2",
+    "oauth2": [
+      {
+        "key": "scope",
+        "value": "user_impersonation",
+        "type": "string"
+      },
+      {
+        "key": "authUrl",
+        "value": "https://login.microsoftonline.com/common/oauth2/authorize",
+        "type": "string"
+      },
+      {
+        "key": "grant_type",
+        "value": "implicit",
+        "type": "string"
+      }
+    ]
+  },
+  "variable": [
+    {
+      "key": "baseUrl",
+      "value": "https://management.azure.com"
+    }
+  ]
+}

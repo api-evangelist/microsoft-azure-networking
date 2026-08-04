@@ -1,0 +1,209 @@
+{
+  "info": {
+    "_postman_id": "ad89a02d-1c62-434e-a6d7-435479fdd92e",
+    "name": "Azure Networking Azure Load Balancer Backend Address Pools Operations API",
+    "description": "Distribute traffic across multiple virtual machines and services with Azure Load Balancer. This API provides operations for creating, configuring, and managing load balancers including frontend IP configurations, backend address pools, health probes, load balancing rules, inbound NAT rules, and outbound rules.\n\nContact Support:\n Name: Microsoft Azure Support",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "createdAt": "2026-07-28T02:10:19.000Z",
+    "updatedAt": "2026-07-28T02:10:19.000Z",
+    "lastUpdatedBy": "35240",
+    "uid": "35240-ad89a02d-1c62-434e-a6d7-435479fdd92e"
+  },
+  "item": [
+    {
+      "name": "providers",
+      "item": [
+        {
+          "name": "Microsoft.Network",
+          "item": [
+            {
+              "name": "operations",
+              "item": [
+                {
+                  "name": "Azure Virtual Network REST API List operations",
+                  "id": "8852e187-5d40-47bd-830b-017a339f3754",
+                  "protocolProfileBehavior": {
+                    "disableBodyPruning": true
+                  },
+                  "request": {
+                    "method": "GET",
+                    "header": [
+                      {
+                        "key": "Accept",
+                        "value": "application/json"
+                      }
+                    ],
+                    "url": {
+                      "raw": "{{baseUrl}}/providers/Microsoft.Network/operations?api-version=<string>",
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "path": [
+                        "providers",
+                        "Microsoft.Network",
+                        "operations"
+                      ],
+                      "query": [
+                        {
+                          "description": "(Required) The API version to use for this operation.",
+                          "key": "api-version",
+                          "value": "<string>"
+                        }
+                      ]
+                    },
+                    "description": "Lists all available REST API operations for Microsoft.Network."
+                  },
+                  "response": [
+                    {
+                      "id": "5b1ec102-1b6c-4b8e-8e79-391b68a7049b",
+                      "name": "Operations list",
+                      "originalRequest": {
+                        "method": "GET",
+                        "header": [
+                          {
+                            "key": "Accept",
+                            "value": "application/json"
+                          },
+                          {
+                            "description": "Added as a part of security scheme: oauth2",
+                            "key": "Authorization",
+                            "value": "<token>"
+                          }
+                        ],
+                        "url": {
+                          "raw": "{{baseUrl}}/providers/Microsoft.Network/operations?api-version=<string>",
+                          "host": [
+                            "{{baseUrl}}"
+                          ],
+                          "path": [
+                            "providers",
+                            "Microsoft.Network",
+                            "operations"
+                          ],
+                          "query": [
+                            {
+                              "description": "(Required) The API version to use for this operation.",
+                              "key": "api-version",
+                              "value": "<string>"
+                            }
+                          ]
+                        }
+                      },
+                      "status": "OK",
+                      "code": 200,
+                      "_postman_previewlanguage": "json",
+                      "header": [
+                        {
+                          "key": "Content-Type",
+                          "value": "application/json"
+                        }
+                      ],
+                      "cookie": [],
+                      "responseTime": null,
+                      "body": "{\n  \"value\": [\n    {\n      \"name\": \"<string>\",\n      \"display\": {\n        \"provider\": \"<string>\",\n        \"resource\": \"<string>\",\n        \"operation\": \"<string>\",\n        \"description\": \"<string>\"\n      },\n      \"isDataAction\": \"<boolean>\"\n    },\n    {\n      \"name\": \"<string>\",\n      \"display\": {\n        \"provider\": \"<string>\",\n        \"resource\": \"<string>\",\n        \"operation\": \"<string>\",\n        \"description\": \"<string>\"\n      },\n      \"isDataAction\": \"<boolean>\"\n    }\n  ],\n  \"nextLink\": \"<string>\"\n}",
+                      "createdAt": "2026-07-28T02:10:20.000Z",
+                      "updatedAt": "2026-07-28T02:10:20.000Z",
+                      "uid": "35240-5b1ec102-1b6c-4b8e-8e79-391b68a7049b"
+                    },
+                    {
+                      "id": "b75f6663-a0f0-41a1-941c-69958f3340cf",
+                      "name": "Error",
+                      "originalRequest": {
+                        "method": "GET",
+                        "header": [
+                          {
+                            "key": "Accept",
+                            "value": "application/json"
+                          },
+                          {
+                            "description": "Added as a part of security scheme: oauth2",
+                            "key": "Authorization",
+                            "value": "<token>"
+                          }
+                        ],
+                        "url": {
+                          "raw": "{{baseUrl}}/providers/Microsoft.Network/operations?api-version=<string>",
+                          "host": [
+                            "{{baseUrl}}"
+                          ],
+                          "path": [
+                            "providers",
+                            "Microsoft.Network",
+                            "operations"
+                          ],
+                          "query": [
+                            {
+                              "description": "(Required) The API version to use for this operation.",
+                              "key": "api-version",
+                              "value": "<string>"
+                            }
+                          ]
+                        }
+                      },
+                      "status": "Internal Server Error",
+                      "code": 500,
+                      "_postman_previewlanguage": "json",
+                      "header": [
+                        {
+                          "key": "Content-Type",
+                          "value": "application/json"
+                        }
+                      ],
+                      "cookie": [],
+                      "responseTime": null,
+                      "body": "{\n  \"error\": {\n    \"code\": \"<string>\",\n    \"message\": \"<string>\",\n    \"target\": \"<string>\"\n  }\n}",
+                      "createdAt": "2026-07-28T02:10:20.000Z",
+                      "updatedAt": "2026-07-28T02:10:20.000Z",
+                      "uid": "35240-b75f6663-a0f0-41a1-941c-69958f3340cf"
+                    }
+                  ],
+                  "createdAt": "2026-07-28T02:10:20.000Z",
+                  "updatedAt": "2026-07-28T02:10:20.000Z",
+                  "uid": "35240-8852e187-5d40-47bd-830b-017a339f3754"
+                }
+              ],
+              "id": "e00b7560-e4f0-4ead-a96e-cf7111c4b0b3",
+              "createdAt": "2026-07-28T02:10:19.000Z",
+              "updatedAt": "2026-07-28T02:10:19.000Z",
+              "uid": "35240-e00b7560-e4f0-4ead-a96e-cf7111c4b0b3"
+            }
+          ],
+          "id": "4af0778e-c21e-44c1-a2d1-eca2061c82da",
+          "createdAt": "2026-07-28T02:10:19.000Z",
+          "updatedAt": "2026-07-28T02:10:19.000Z",
+          "uid": "35240-4af0778e-c21e-44c1-a2d1-eca2061c82da"
+        }
+      ],
+      "id": "cdb50066-828f-4f57-86ef-cc6cac3c32e7",
+      "createdAt": "2026-07-28T02:10:19.000Z",
+      "updatedAt": "2026-07-28T02:10:19.000Z",
+      "uid": "35240-cdb50066-828f-4f57-86ef-cc6cac3c32e7"
+    }
+  ],
+  "auth": {
+    "type": "oauth2",
+    "oauth2": [
+      {
+        "key": "scope",
+        "value": "user_impersonation",
+        "type": "string"
+      },
+      {
+        "key": "authUrl",
+        "value": "https://login.microsoftonline.com/common/oauth2/authorize",
+        "type": "string"
+      },
+      {
+        "key": "grant_type",
+        "value": "implicit",
+        "type": "string"
+      }
+    ]
+  },
+  "variable": [
+    {
+      "key": "baseUrl",
+      "value": "https://management.azure.com"
+    }
+  ]
+}
