@@ -1,0 +1,2806 @@
+{
+  "item": [
+    {
+      "id": "59651941-9926-4b85-becb-48be7d25d118",
+      "name": "Virtual Networks",
+      "description": {
+        "content": "Operations for creating, updating, deleting, and listing Azure Virtual Networks within subscriptions and resource groups.",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "2ca70941-98b1-40af-bacb-4e1e08e49a61",
+          "name": "Azure Networking List virtual networks",
+          "request": {
+            "name": "Azure Networking List virtual networks",
+            "description": {
+              "content": "Gets all virtual networks in a resource group. Returns a paginated list of virtual network resources with their properties and configuration details.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "subscriptions",
+                ":subscriptionId",
+                "resourceGroups",
+                ":resourceGroupName",
+                "providers",
+                "Microsoft.Network",
+                "virtualNetworks"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "api-version",
+                  "value": "2024-05-01",
+                  "description": "(Required) Client API version."
+                }
+              ],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "subscriptionId",
+                  "description": "(Required) The subscription credentials which uniquely identify the Microsoft Azure subscription."
+                },
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "resourceGroupName",
+                  "description": "(Required) The name of the resource group."
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "a7e76819-d821-462e-8c69-1a56984d9abb",
+              "name": "Successfully retrieved the list of virtual networks.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "subscriptions",
+                    ":subscriptionId",
+                    "resourceGroups",
+                    ":resourceGroupName",
+                    "providers",
+                    "Microsoft.Network",
+                    "virtualNetworks"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "api-version",
+                      "value": "2024-05-01"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "subscriptionId",
+                      "description": "(Required) The subscription credentials which uniquely identify the Microsoft Azure subscription."
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "resourceGroupName",
+                      "description": "(Required) The name of the resource group."
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: oauth2",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"value\": [\n    {\n      \"id\": \"string\",\n      \"name\": \"string\",\n      \"type\": \"string\",\n      \"location\": \"string\",\n      \"tags\": {\n        \"key_0\": \"string\",\n        \"key_1\": \"string\",\n        \"key_2\": \"string\"\n      },\n      \"properties\": {\n        \"addressSpace\": {\n          \"addressPrefixes\": [\n            \"string\",\n            \"string\"\n          ]\n        },\n        \"dhcpOptions\": {\n          \"dnsServers\": [\n            \"string\",\n            \"string\"\n          ]\n        },\n        \"subnets\": [\n          {\n            \"id\": \"string\",\n            \"name\": \"string\",\n            \"properties\": {\n              \"addressPrefix\": \"string\",\n              \"addressPrefixes\": [\n                {\n                  \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                },\n                {\n                  \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                }\n              ],\n              \"networkSecurityGroup\": {\n                \"id\": {\n                  \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                }\n              },\n              \"routeTable\": {\n                \"id\": {\n                  \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                }\n              },\n              \"natGateway\": {\n                \"id\": {\n                  \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                }\n              },\n              \"serviceEndpoints\": [\n                {\n                  \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                },\n                {\n                  \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                }\n              ],\n              \"delegations\": [\n                {\n                  \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                },\n                {\n                  \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                }\n              ],\n              \"privateEndpointNetworkPolicies\": \"Enabled\",\n              \"privateLinkServiceNetworkPolicies\": \"Enabled\",\n              \"provisioningState\": \"string\"\n            }\n          },\n          {\n            \"id\": \"string\",\n            \"name\": \"string\",\n            \"properties\": {\n              \"addressPrefix\": \"string\",\n              \"addressPrefixes\": [\n                {\n                  \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                },\n                {\n                  \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                }\n              ],\n              \"networkSecurityGroup\": {\n                \"id\": {\n                  \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                }\n              },\n              \"routeTable\": {\n                \"id\": {\n                  \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                }\n              },\n              \"natGateway\": {\n                \"id\": {\n                  \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                }\n              },\n              \"serviceEndpoints\": [\n                {\n                  \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                },\n                {\n                  \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                }\n              ],\n              \"delegations\": [\n                {\n                  \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                },\n                {\n                  \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                }\n              ],\n              \"privateEndpointNetworkPolicies\": \"Enabled\",\n              \"privateLinkServiceNetworkPolicies\": \"Disabled\",\n              \"provisioningState\": \"string\"\n            }\n          }\n        ],\n        \"virtualNetworkPeerings\": [\n          {\n            \"id\": \"string\",\n            \"name\": \"string\",\n            \"properties\": {\n              \"allowVirtualNetworkAccess\": false,\n              \"allowForwardedTraffic\": false,\n              \"allowGatewayTransit\": false,\n              \"useRemoteGateways\": false,\n              \"remoteVirtualNetwork\": {\n                \"id\": {\n                  \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                }\n              },\n              \"peeringState\": \"Disconnected\",\n              \"provisioningState\": \"string\"\n            }\n          },\n          {\n            \"id\": \"string\",\n            \"name\": \"string\",\n            \"properties\": {\n              \"allowVirtualNetworkAccess\": true,\n              \"allowForwardedTraffic\": false,\n              \"allowGatewayTransit\": true,\n              \"useRemoteGateways\": true,\n              \"remoteVirtualNetwork\": {\n                \"id\": {\n                  \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                }\n              },\n              \"peeringState\": \"Disconnected\",\n              \"provisioningState\": \"string\"\n            }\n          }\n        ],\n        \"provisioningState\": \"Updating\",\n        \"enableDdosProtection\": true,\n        \"enableVmProtection\": true\n      }\n    },\n    {\n      \"id\": \"string\",\n      \"name\": \"string\",\n      \"type\": \"string\",\n      \"location\": \"string\",\n      \"tags\": {\n        \"key_0\": \"string\",\n        \"key_1\": \"string\",\n        \"key_2\": \"string\",\n        \"key_3\": \"string\"\n      },\n      \"properties\": {\n        \"addressSpace\": {\n          \"addressPrefixes\": [\n            \"string\",\n            \"string\"\n          ]\n        },\n        \"dhcpOptions\": {\n          \"dnsServers\": [\n            \"string\",\n            \"string\"\n          ]\n        },\n        \"subnets\": [\n          {\n            \"id\": \"string\",\n            \"name\": \"string\",\n            \"properties\": {\n              \"addressPrefix\": \"string\",\n              \"addressPrefixes\": [\n                {\n                  \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                },\n                {\n                  \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                }\n              ],\n              \"networkSecurityGroup\": {\n                \"id\": {\n                  \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                }\n              },\n              \"routeTable\": {\n                \"id\": {\n                  \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                }\n              },\n              \"natGateway\": {\n                \"id\": {\n                  \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                }\n              },\n              \"serviceEndpoints\": [\n                {\n                  \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                },\n                {\n                  \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                }\n              ],\n              \"delegations\": [\n                {\n                  \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                },\n                {\n                  \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                }\n              ],\n              \"privateEndpointNetworkPolicies\": \"Enabled\",\n              \"privateLinkServiceNetworkPolicies\": \"Enabled\",\n              \"provisioningState\": \"string\"\n            }\n          },\n          {\n            \"id\": \"string\",\n            \"name\": \"string\",\n            \"properties\": {\n              \"addressPrefix\": \"string\",\n              \"addressPrefixes\": [\n                {\n                  \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                },\n                {\n                  \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                }\n              ],\n              \"networkSecurityGroup\": {\n                \"id\": {\n                  \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                }\n              },\n              \"routeTable\": {\n                \"id\": {\n                  \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                }\n              },\n              \"natGateway\": {\n                \"id\": {\n                  \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                }\n              },\n              \"serviceEndpoints\": [\n                {\n                  \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                },\n                {\n                  \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                }\n              ],\n              \"delegations\": [\n                {\n                  \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                },\n                {\n                  \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                }\n              ],\n              \"privateEndpointNetworkPolicies\": \"Enabled\",\n              \"privateLinkServiceNetworkPolicies\": \"Enabled\",\n              \"provisioningState\": \"string\"\n            }\n          }\n        ],\n        \"virtualNetworkPeerings\": [\n          {\n            \"id\": \"string\",\n            \"name\": \"string\",\n            \"properties\": {\n              \"allowVirtualNetworkAccess\": true,\n              \"allowForwardedTraffic\": false,\n              \"allowGatewayTransit\": true,\n              \"useRemoteGateways\": true,\n              \"remoteVirtualNetwork\": {\n                \"id\": {\n                  \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                }\n              },\n              \"peeringState\": \"Initiated\",\n              \"provisioningState\": \"string\"\n            }\n          },\n          {\n            \"id\": \"string\",\n            \"name\": \"string\",\n            \"properties\": {\n              \"allowVirtualNetworkAccess\": true,\n              \"allowForwardedTraffic\": false,\n              \"allowGatewayTransit\": false,\n              \"useRemoteGateways\": false,\n              \"remoteVirtualNetwork\": {\n                \"id\": {\n                  \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                }\n              },\n              \"peeringState\": \"Connected\",\n              \"provisioningState\": \"string\"\n            }\n          }\n        ],\n        \"provisioningState\": \"Failed\",\n        \"enableDdosProtection\": false,\n        \"enableVmProtection\": true\n      }\n    }\n  ],\n  \"nextLink\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "e923106a-169f-4609-8519-ae76223c9ac9",
+              "name": "Unauthorized. Authentication credentials are missing or invalid.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "subscriptions",
+                    ":subscriptionId",
+                    "resourceGroups",
+                    ":resourceGroupName",
+                    "providers",
+                    "Microsoft.Network",
+                    "virtualNetworks"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "api-version",
+                      "value": "2024-05-01"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "subscriptionId",
+                      "description": "(Required) The subscription credentials which uniquely identify the Microsoft Azure subscription."
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "resourceGroupName",
+                      "description": "(Required) The name of the resource group."
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: oauth2",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<token>"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Unauthorized",
+              "code": 401,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "268473aa-2ce8-43fe-85f8-84e531200999",
+              "name": "Resource group not found.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "subscriptions",
+                    ":subscriptionId",
+                    "resourceGroups",
+                    ":resourceGroupName",
+                    "providers",
+                    "Microsoft.Network",
+                    "virtualNetworks"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "api-version",
+                      "value": "2024-05-01"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "subscriptionId",
+                      "description": "(Required) The subscription credentials which uniquely identify the Microsoft Azure subscription."
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "resourceGroupName",
+                      "description": "(Required) The name of the resource group."
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: oauth2",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<token>"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Not Found",
+              "code": 404,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "3f0ff9f0-5abe-46b1-adc4-a41a834adba6",
+          "name": "Azure Networking Get virtual network",
+          "request": {
+            "name": "Azure Networking Get virtual network",
+            "description": {
+              "content": "Gets the specified virtual network by resource group and name. Returns the full resource representation including address space, subnets, peerings, and provisioning state.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "subscriptions",
+                ":subscriptionId",
+                "resourceGroups",
+                ":resourceGroupName",
+                "providers",
+                "Microsoft.Network",
+                "virtualNetworks",
+                ":virtualNetworkName"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "api-version",
+                  "value": "2024-05-01",
+                  "description": "(Required) Client API version."
+                }
+              ],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "subscriptionId",
+                  "description": "(Required) The subscription credentials which uniquely identify the Microsoft Azure subscription."
+                },
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "resourceGroupName",
+                  "description": "(Required) The name of the resource group."
+                },
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "virtualNetworkName",
+                  "description": "(Required) The name of the virtual network."
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "7f9fd559-a1ac-4eed-af90-c4fd5e9db12f",
+              "name": "Successfully retrieved the virtual network.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "subscriptions",
+                    ":subscriptionId",
+                    "resourceGroups",
+                    ":resourceGroupName",
+                    "providers",
+                    "Microsoft.Network",
+                    "virtualNetworks",
+                    ":virtualNetworkName"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "api-version",
+                      "value": "2024-05-01"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "subscriptionId",
+                      "description": "(Required) The subscription credentials which uniquely identify the Microsoft Azure subscription."
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "resourceGroupName",
+                      "description": "(Required) The name of the resource group."
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "virtualNetworkName",
+                      "description": "(Required) The name of the virtual network."
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: oauth2",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"id\": \"string\",\n  \"name\": \"string\",\n  \"type\": \"string\",\n  \"location\": \"string\",\n  \"tags\": {\n    \"key_0\": \"string\",\n    \"key_1\": \"string\",\n    \"key_2\": \"string\"\n  },\n  \"properties\": {\n    \"addressSpace\": {\n      \"addressPrefixes\": [\n        \"string\",\n        \"string\"\n      ]\n    },\n    \"dhcpOptions\": {\n      \"dnsServers\": [\n        \"string\",\n        \"string\"\n      ]\n    },\n    \"subnets\": [\n      {\n        \"id\": \"string\",\n        \"name\": \"string\",\n        \"properties\": {\n          \"addressPrefix\": \"string\",\n          \"addressPrefixes\": [\n            \"string\",\n            \"string\"\n          ],\n          \"networkSecurityGroup\": {\n            \"id\": \"string\"\n          },\n          \"routeTable\": {\n            \"id\": \"string\"\n          },\n          \"natGateway\": {\n            \"id\": \"string\"\n          },\n          \"serviceEndpoints\": [\n            {\n              \"service\": \"string\",\n              \"locations\": [\n                \"string\",\n                \"string\"\n              ],\n              \"provisioningState\": \"string\"\n            },\n            {\n              \"service\": \"string\",\n              \"locations\": [\n                \"string\",\n                \"string\"\n              ],\n              \"provisioningState\": \"string\"\n            }\n          ],\n          \"delegations\": [\n            {\n              \"id\": \"string\",\n              \"name\": \"string\",\n              \"properties\": {\n                \"serviceName\": \"string\"\n              }\n            },\n            {\n              \"id\": \"string\",\n              \"name\": \"string\",\n              \"properties\": {\n                \"serviceName\": \"string\"\n              }\n            }\n          ],\n          \"privateEndpointNetworkPolicies\": \"Enabled\",\n          \"privateLinkServiceNetworkPolicies\": \"Enabled\",\n          \"provisioningState\": \"string\"\n        }\n      },\n      {\n        \"id\": \"string\",\n        \"name\": \"string\",\n        \"properties\": {\n          \"addressPrefix\": \"string\",\n          \"addressPrefixes\": [\n            \"string\",\n            \"string\"\n          ],\n          \"networkSecurityGroup\": {\n            \"id\": \"string\"\n          },\n          \"routeTable\": {\n            \"id\": \"string\"\n          },\n          \"natGateway\": {\n            \"id\": \"string\"\n          },\n          \"serviceEndpoints\": [\n            {\n              \"service\": \"string\",\n              \"locations\": [\n                \"string\",\n                \"string\"\n              ],\n              \"provisioningState\": \"string\"\n            },\n            {\n              \"service\": \"string\",\n              \"locations\": [\n                \"string\",\n                \"string\"\n              ],\n              \"provisioningState\": \"string\"\n            }\n          ],\n          \"delegations\": [\n            {\n              \"id\": \"string\",\n              \"name\": \"string\",\n              \"properties\": {\n                \"serviceName\": \"string\"\n              }\n            },\n            {\n              \"id\": \"string\",\n              \"name\": \"string\",\n              \"properties\": {\n                \"serviceName\": \"string\"\n              }\n            }\n          ],\n          \"privateEndpointNetworkPolicies\": \"Disabled\",\n          \"privateLinkServiceNetworkPolicies\": \"Disabled\",\n          \"provisioningState\": \"string\"\n        }\n      }\n    ],\n    \"virtualNetworkPeerings\": [\n      {\n        \"id\": \"string\",\n        \"name\": \"string\",\n        \"properties\": {\n          \"allowVirtualNetworkAccess\": true,\n          \"allowForwardedTraffic\": true,\n          \"allowGatewayTransit\": true,\n          \"useRemoteGateways\": false,\n          \"remoteVirtualNetwork\": {\n            \"id\": \"string\"\n          },\n          \"peeringState\": \"Disconnected\",\n          \"provisioningState\": \"string\"\n        }\n      },\n      {\n        \"id\": \"string\",\n        \"name\": \"string\",\n        \"properties\": {\n          \"allowVirtualNetworkAccess\": false,\n          \"allowForwardedTraffic\": false,\n          \"allowGatewayTransit\": true,\n          \"useRemoteGateways\": false,\n          \"remoteVirtualNetwork\": {\n            \"id\": \"string\"\n          },\n          \"peeringState\": \"Disconnected\",\n          \"provisioningState\": \"string\"\n        }\n      }\n    ],\n    \"provisioningState\": \"Succeeded\",\n    \"enableDdosProtection\": true,\n    \"enableVmProtection\": true\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "69868502-4c7b-434b-b677-367bef2e5424",
+              "name": "Unauthorized. Authentication credentials are missing or invalid.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "subscriptions",
+                    ":subscriptionId",
+                    "resourceGroups",
+                    ":resourceGroupName",
+                    "providers",
+                    "Microsoft.Network",
+                    "virtualNetworks",
+                    ":virtualNetworkName"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "api-version",
+                      "value": "2024-05-01"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "subscriptionId",
+                      "description": "(Required) The subscription credentials which uniquely identify the Microsoft Azure subscription."
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "resourceGroupName",
+                      "description": "(Required) The name of the resource group."
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "virtualNetworkName",
+                      "description": "(Required) The name of the virtual network."
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: oauth2",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<token>"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Unauthorized",
+              "code": 401,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "7d5a1575-f41a-418f-9a28-1842a3e02bb5",
+              "name": "Virtual network not found.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "subscriptions",
+                    ":subscriptionId",
+                    "resourceGroups",
+                    ":resourceGroupName",
+                    "providers",
+                    "Microsoft.Network",
+                    "virtualNetworks",
+                    ":virtualNetworkName"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "api-version",
+                      "value": "2024-05-01"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "subscriptionId",
+                      "description": "(Required) The subscription credentials which uniquely identify the Microsoft Azure subscription."
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "resourceGroupName",
+                      "description": "(Required) The name of the resource group."
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "virtualNetworkName",
+                      "description": "(Required) The name of the virtual network."
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: oauth2",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<token>"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Not Found",
+              "code": 404,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "1177da8d-d5eb-4ce1-9d40-222a925e2965",
+          "name": "Azure Networking Create or update virtual network",
+          "request": {
+            "name": "Azure Networking Create or update virtual network",
+            "description": {
+              "content": "Creates a new virtual network or updates an existing virtual network in the specified resource group. The request body must include the location and address space configuration.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "subscriptions",
+                ":subscriptionId",
+                "resourceGroups",
+                ":resourceGroupName",
+                "providers",
+                "Microsoft.Network",
+                "virtualNetworks",
+                ":virtualNetworkName"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "api-version",
+                  "value": "2024-05-01",
+                  "description": "(Required) Client API version."
+                }
+              ],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "subscriptionId",
+                  "description": "(Required) The subscription credentials which uniquely identify the Microsoft Azure subscription."
+                },
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "resourceGroupName",
+                  "description": "(Required) The name of the resource group."
+                },
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "virtualNetworkName",
+                  "description": "(Required) The name of the virtual network."
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "PUT",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"location\": \"<string>\",\n  \"tags\": {\n    \"key_0\": \"<string>\",\n    \"key_1\": \"<string>\"\n  },\n  \"properties\": {\n    \"addressSpace\": {\n      \"addressPrefixes\": [\n        \"<string>\",\n        \"<string>\"\n      ]\n    },\n    \"dhcpOptions\": {\n      \"dnsServers\": [\n        \"<string>\",\n        \"<string>\"\n      ]\n    },\n    \"subnets\": [\n      {\n        \"name\": \"<string>\",\n        \"properties\": {\n          \"addressPrefix\": \"<string>\",\n          \"addressPrefixes\": [\n            \"<string>\",\n            \"<string>\"\n          ],\n          \"networkSecurityGroup\": {\n            \"id\": \"<string>\"\n          },\n          \"routeTable\": {\n            \"id\": \"<string>\"\n          },\n          \"natGateway\": {\n            \"id\": \"<string>\"\n          },\n          \"serviceEndpoints\": [\n            {\n              \"service\": \"<string>\",\n              \"locations\": [\n                \"<string>\",\n                \"<string>\"\n              ]\n            },\n            {\n              \"service\": \"<string>\",\n              \"locations\": [\n                \"<string>\",\n                \"<string>\"\n              ]\n            }\n          ],\n          \"delegations\": [\n            {\n              \"id\": \"<string>\",\n              \"name\": \"<string>\",\n              \"properties\": {\n                \"serviceName\": \"<string>\"\n              }\n            },\n            {\n              \"id\": \"<string>\",\n              \"name\": \"<string>\",\n              \"properties\": {\n                \"serviceName\": \"<string>\"\n              }\n            }\n          ],\n          \"privateEndpointNetworkPolicies\": \"<string>\",\n          \"privateLinkServiceNetworkPolicies\": \"<string>\"\n        }\n      },\n      {\n        \"name\": \"<string>\",\n        \"properties\": {\n          \"addressPrefix\": \"<string>\",\n          \"addressPrefixes\": [\n            \"<string>\",\n            \"<string>\"\n          ],\n          \"networkSecurityGroup\": {\n            \"id\": \"<string>\"\n          },\n          \"routeTable\": {\n            \"id\": \"<string>\"\n          },\n          \"natGateway\": {\n            \"id\": \"<string>\"\n          },\n          \"serviceEndpoints\": [\n            {\n              \"service\": \"<string>\",\n              \"locations\": [\n                \"<string>\",\n                \"<string>\"\n              ]\n            },\n            {\n              \"service\": \"<string>\",\n              \"locations\": [\n                \"<string>\",\n                \"<string>\"\n              ]\n            }\n          ],\n          \"delegations\": [\n            {\n              \"id\": \"<string>\",\n              \"name\": \"<string>\",\n              \"properties\": {\n                \"serviceName\": \"<string>\"\n              }\n            },\n            {\n              \"id\": \"<string>\",\n              \"name\": \"<string>\",\n              \"properties\": {\n                \"serviceName\": \"<string>\"\n              }\n            }\n          ],\n          \"privateEndpointNetworkPolicies\": \"<string>\",\n          \"privateLinkServiceNetworkPolicies\": \"<string>\"\n        }\n      }\n    ],\n    \"virtualNetworkPeerings\": [\n      {\n        \"name\": \"<string>\",\n        \"properties\": {\n          \"allowVirtualNetworkAccess\": \"<boolean>\",\n          \"allowForwardedTraffic\": \"<boolean>\",\n          \"allowGatewayTransit\": \"<boolean>\",\n          \"useRemoteGateways\": \"<boolean>\",\n          \"remoteVirtualNetwork\": {\n            \"id\": \"<string>\"\n          }\n        }\n      },\n      {\n        \"name\": \"<string>\",\n        \"properties\": {\n          \"allowVirtualNetworkAccess\": \"<boolean>\",\n          \"allowForwardedTraffic\": \"<boolean>\",\n          \"allowGatewayTransit\": \"<boolean>\",\n          \"useRemoteGateways\": \"<boolean>\",\n          \"remoteVirtualNetwork\": {\n            \"id\": \"<string>\"\n          }\n        }\n      }\n    ],\n    \"enableDdosProtection\": \"<boolean>\",\n    \"enableVmProtection\": \"<boolean>\"\n  }\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "b4daa00a-3d06-48e9-99d8-6a9908ae5d56",
+              "name": "Successfully updated the virtual network.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "subscriptions",
+                    ":subscriptionId",
+                    "resourceGroups",
+                    ":resourceGroupName",
+                    "providers",
+                    "Microsoft.Network",
+                    "virtualNetworks",
+                    ":virtualNetworkName"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "api-version",
+                      "value": "2024-05-01"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "subscriptionId",
+                      "description": "(Required) The subscription credentials which uniquely identify the Microsoft Azure subscription."
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "resourceGroupName",
+                      "description": "(Required) The name of the resource group."
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "virtualNetworkName",
+                      "description": "(Required) The name of the virtual network."
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: oauth2",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "PUT",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"location\": \"<string>\",\n  \"tags\": {\n    \"key_0\": \"<string>\",\n    \"key_1\": \"<string>\"\n  },\n  \"properties\": {\n    \"addressSpace\": {\n      \"addressPrefixes\": [\n        \"string\",\n        \"string\"\n      ]\n    },\n    \"dhcpOptions\": {\n      \"dnsServers\": [\n        \"string\",\n        \"string\"\n      ]\n    },\n    \"subnets\": [\n      {\n        \"name\": \"string\",\n        \"properties\": {\n          \"addressPrefix\": \"string\",\n          \"addressPrefixes\": [\n            \"string\",\n            \"string\"\n          ],\n          \"networkSecurityGroup\": {\n            \"id\": \"string\"\n          },\n          \"routeTable\": {\n            \"id\": \"string\"\n          },\n          \"natGateway\": {\n            \"id\": \"string\"\n          },\n          \"serviceEndpoints\": [\n            {\n              \"service\": \"string\",\n              \"locations\": [\n                \"string\",\n                \"string\"\n              ]\n            },\n            {\n              \"service\": \"string\",\n              \"locations\": [\n                \"string\",\n                \"string\"\n              ]\n            }\n          ],\n          \"delegations\": [\n            {\n              \"id\": \"string\",\n              \"name\": \"string\",\n              \"properties\": {\n                \"serviceName\": \"string\"\n              }\n            },\n            {\n              \"id\": \"string\",\n              \"name\": \"string\",\n              \"properties\": {\n                \"serviceName\": \"string\"\n              }\n            }\n          ],\n          \"privateEndpointNetworkPolicies\": \"Enabled\",\n          \"privateLinkServiceNetworkPolicies\": \"Disabled\"\n        }\n      },\n      {\n        \"name\": \"string\",\n        \"properties\": {\n          \"addressPrefix\": \"string\",\n          \"addressPrefixes\": [\n            \"string\",\n            \"string\"\n          ],\n          \"networkSecurityGroup\": {\n            \"id\": \"string\"\n          },\n          \"routeTable\": {\n            \"id\": \"string\"\n          },\n          \"natGateway\": {\n            \"id\": \"string\"\n          },\n          \"serviceEndpoints\": [\n            {\n              \"service\": \"string\",\n              \"locations\": [\n                \"string\",\n                \"string\"\n              ]\n            },\n            {\n              \"service\": \"string\",\n              \"locations\": [\n                \"string\",\n                \"string\"\n              ]\n            }\n          ],\n          \"delegations\": [\n            {\n              \"id\": \"string\",\n              \"name\": \"string\",\n              \"properties\": {\n                \"serviceName\": \"string\"\n              }\n            },\n            {\n              \"id\": \"string\",\n              \"name\": \"string\",\n              \"properties\": {\n                \"serviceName\": \"string\"\n              }\n            }\n          ],\n          \"privateEndpointNetworkPolicies\": \"Disabled\",\n          \"privateLinkServiceNetworkPolicies\": \"Enabled\"\n        }\n      }\n    ],\n    \"virtualNetworkPeerings\": [\n      {\n        \"name\": \"string\",\n        \"properties\": {\n          \"allowVirtualNetworkAccess\": false,\n          \"allowForwardedTraffic\": true,\n          \"allowGatewayTransit\": true,\n          \"useRemoteGateways\": false,\n          \"remoteVirtualNetwork\": {\n            \"id\": \"string\"\n          }\n        }\n      },\n      {\n        \"name\": \"string\",\n        \"properties\": {\n          \"allowVirtualNetworkAccess\": false,\n          \"allowForwardedTraffic\": false,\n          \"allowGatewayTransit\": false,\n          \"useRemoteGateways\": false,\n          \"remoteVirtualNetwork\": {\n            \"id\": \"string\"\n          }\n        }\n      }\n    ],\n    \"enableDdosProtection\": \"<boolean>\",\n    \"enableVmProtection\": \"<boolean>\"\n  }\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"id\": \"string\",\n  \"name\": \"string\",\n  \"type\": \"string\",\n  \"location\": \"string\",\n  \"tags\": {\n    \"key_0\": \"string\",\n    \"key_1\": \"string\",\n    \"key_2\": \"string\"\n  },\n  \"properties\": {\n    \"addressSpace\": {\n      \"addressPrefixes\": [\n        \"string\",\n        \"string\"\n      ]\n    },\n    \"dhcpOptions\": {\n      \"dnsServers\": [\n        \"string\",\n        \"string\"\n      ]\n    },\n    \"subnets\": [\n      {\n        \"id\": \"string\",\n        \"name\": \"string\",\n        \"properties\": {\n          \"addressPrefix\": \"string\",\n          \"addressPrefixes\": [\n            \"string\",\n            \"string\"\n          ],\n          \"networkSecurityGroup\": {\n            \"id\": \"string\"\n          },\n          \"routeTable\": {\n            \"id\": \"string\"\n          },\n          \"natGateway\": {\n            \"id\": \"string\"\n          },\n          \"serviceEndpoints\": [\n            {\n              \"service\": \"string\",\n              \"locations\": [\n                \"string\",\n                \"string\"\n              ],\n              \"provisioningState\": \"string\"\n            },\n            {\n              \"service\": \"string\",\n              \"locations\": [\n                \"string\",\n                \"string\"\n              ],\n              \"provisioningState\": \"string\"\n            }\n          ],\n          \"delegations\": [\n            {\n              \"id\": \"string\",\n              \"name\": \"string\",\n              \"properties\": {\n                \"serviceName\": \"string\"\n              }\n            },\n            {\n              \"id\": \"string\",\n              \"name\": \"string\",\n              \"properties\": {\n                \"serviceName\": \"string\"\n              }\n            }\n          ],\n          \"privateEndpointNetworkPolicies\": \"Enabled\",\n          \"privateLinkServiceNetworkPolicies\": \"Enabled\",\n          \"provisioningState\": \"string\"\n        }\n      },\n      {\n        \"id\": \"string\",\n        \"name\": \"string\",\n        \"properties\": {\n          \"addressPrefix\": \"string\",\n          \"addressPrefixes\": [\n            \"string\",\n            \"string\"\n          ],\n          \"networkSecurityGroup\": {\n            \"id\": \"string\"\n          },\n          \"routeTable\": {\n            \"id\": \"string\"\n          },\n          \"natGateway\": {\n            \"id\": \"string\"\n          },\n          \"serviceEndpoints\": [\n            {\n              \"service\": \"string\",\n              \"locations\": [\n                \"string\",\n                \"string\"\n              ],\n              \"provisioningState\": \"string\"\n            },\n            {\n              \"service\": \"string\",\n              \"locations\": [\n                \"string\",\n                \"string\"\n              ],\n              \"provisioningState\": \"string\"\n            }\n          ],\n          \"delegations\": [\n            {\n              \"id\": \"string\",\n              \"name\": \"string\",\n              \"properties\": {\n                \"serviceName\": \"string\"\n              }\n            },\n            {\n              \"id\": \"string\",\n              \"name\": \"string\",\n              \"properties\": {\n                \"serviceName\": \"string\"\n              }\n            }\n          ],\n          \"privateEndpointNetworkPolicies\": \"Disabled\",\n          \"privateLinkServiceNetworkPolicies\": \"Disabled\",\n          \"provisioningState\": \"string\"\n        }\n      }\n    ],\n    \"virtualNetworkPeerings\": [\n      {\n        \"id\": \"string\",\n        \"name\": \"string\",\n        \"properties\": {\n          \"allowVirtualNetworkAccess\": true,\n          \"allowForwardedTraffic\": true,\n          \"allowGatewayTransit\": true,\n          \"useRemoteGateways\": false,\n          \"remoteVirtualNetwork\": {\n            \"id\": \"string\"\n          },\n          \"peeringState\": \"Disconnected\",\n          \"provisioningState\": \"string\"\n        }\n      },\n      {\n        \"id\": \"string\",\n        \"name\": \"string\",\n        \"properties\": {\n          \"allowVirtualNetworkAccess\": false,\n          \"allowForwardedTraffic\": false,\n          \"allowGatewayTransit\": true,\n          \"useRemoteGateways\": false,\n          \"remoteVirtualNetwork\": {\n            \"id\": \"string\"\n          },\n          \"peeringState\": \"Disconnected\",\n          \"provisioningState\": \"string\"\n        }\n      }\n    ],\n    \"provisioningState\": \"Succeeded\",\n    \"enableDdosProtection\": true,\n    \"enableVmProtection\": true\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "0bfefeb5-94b1-4bef-8f19-906ad29b1aa7",
+              "name": "Successfully created the virtual network.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "subscriptions",
+                    ":subscriptionId",
+                    "resourceGroups",
+                    ":resourceGroupName",
+                    "providers",
+                    "Microsoft.Network",
+                    "virtualNetworks",
+                    ":virtualNetworkName"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "api-version",
+                      "value": "2024-05-01"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "subscriptionId",
+                      "description": "(Required) The subscription credentials which uniquely identify the Microsoft Azure subscription."
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "resourceGroupName",
+                      "description": "(Required) The name of the resource group."
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "virtualNetworkName",
+                      "description": "(Required) The name of the virtual network."
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: oauth2",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "PUT",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"location\": \"<string>\",\n  \"tags\": {\n    \"key_0\": \"<string>\",\n    \"key_1\": \"<string>\"\n  },\n  \"properties\": {\n    \"addressSpace\": {\n      \"addressPrefixes\": [\n        \"string\",\n        \"string\"\n      ]\n    },\n    \"dhcpOptions\": {\n      \"dnsServers\": [\n        \"string\",\n        \"string\"\n      ]\n    },\n    \"subnets\": [\n      {\n        \"name\": \"string\",\n        \"properties\": {\n          \"addressPrefix\": \"string\",\n          \"addressPrefixes\": [\n            \"string\",\n            \"string\"\n          ],\n          \"networkSecurityGroup\": {\n            \"id\": \"string\"\n          },\n          \"routeTable\": {\n            \"id\": \"string\"\n          },\n          \"natGateway\": {\n            \"id\": \"string\"\n          },\n          \"serviceEndpoints\": [\n            {\n              \"service\": \"string\",\n              \"locations\": [\n                \"string\",\n                \"string\"\n              ]\n            },\n            {\n              \"service\": \"string\",\n              \"locations\": [\n                \"string\",\n                \"string\"\n              ]\n            }\n          ],\n          \"delegations\": [\n            {\n              \"id\": \"string\",\n              \"name\": \"string\",\n              \"properties\": {\n                \"serviceName\": \"string\"\n              }\n            },\n            {\n              \"id\": \"string\",\n              \"name\": \"string\",\n              \"properties\": {\n                \"serviceName\": \"string\"\n              }\n            }\n          ],\n          \"privateEndpointNetworkPolicies\": \"Enabled\",\n          \"privateLinkServiceNetworkPolicies\": \"Disabled\"\n        }\n      },\n      {\n        \"name\": \"string\",\n        \"properties\": {\n          \"addressPrefix\": \"string\",\n          \"addressPrefixes\": [\n            \"string\",\n            \"string\"\n          ],\n          \"networkSecurityGroup\": {\n            \"id\": \"string\"\n          },\n          \"routeTable\": {\n            \"id\": \"string\"\n          },\n          \"natGateway\": {\n            \"id\": \"string\"\n          },\n          \"serviceEndpoints\": [\n            {\n              \"service\": \"string\",\n              \"locations\": [\n                \"string\",\n                \"string\"\n              ]\n            },\n            {\n              \"service\": \"string\",\n              \"locations\": [\n                \"string\",\n                \"string\"\n              ]\n            }\n          ],\n          \"delegations\": [\n            {\n              \"id\": \"string\",\n              \"name\": \"string\",\n              \"properties\": {\n                \"serviceName\": \"string\"\n              }\n            },\n            {\n              \"id\": \"string\",\n              \"name\": \"string\",\n              \"properties\": {\n                \"serviceName\": \"string\"\n              }\n            }\n          ],\n          \"privateEndpointNetworkPolicies\": \"Disabled\",\n          \"privateLinkServiceNetworkPolicies\": \"Enabled\"\n        }\n      }\n    ],\n    \"virtualNetworkPeerings\": [\n      {\n        \"name\": \"string\",\n        \"properties\": {\n          \"allowVirtualNetworkAccess\": false,\n          \"allowForwardedTraffic\": true,\n          \"allowGatewayTransit\": true,\n          \"useRemoteGateways\": false,\n          \"remoteVirtualNetwork\": {\n            \"id\": \"string\"\n          }\n        }\n      },\n      {\n        \"name\": \"string\",\n        \"properties\": {\n          \"allowVirtualNetworkAccess\": false,\n          \"allowForwardedTraffic\": false,\n          \"allowGatewayTransit\": false,\n          \"useRemoteGateways\": false,\n          \"remoteVirtualNetwork\": {\n            \"id\": \"string\"\n          }\n        }\n      }\n    ],\n    \"enableDdosProtection\": \"<boolean>\",\n    \"enableVmProtection\": \"<boolean>\"\n  }\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Created",
+              "code": 201,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"id\": \"string\",\n  \"name\": \"string\",\n  \"type\": \"string\",\n  \"location\": \"string\",\n  \"tags\": {\n    \"key_0\": \"string\",\n    \"key_1\": \"string\",\n    \"key_2\": \"string\"\n  },\n  \"properties\": {\n    \"addressSpace\": {\n      \"addressPrefixes\": [\n        \"string\",\n        \"string\"\n      ]\n    },\n    \"dhcpOptions\": {\n      \"dnsServers\": [\n        \"string\",\n        \"string\"\n      ]\n    },\n    \"subnets\": [\n      {\n        \"id\": \"string\",\n        \"name\": \"string\",\n        \"properties\": {\n          \"addressPrefix\": \"string\",\n          \"addressPrefixes\": [\n            \"string\",\n            \"string\"\n          ],\n          \"networkSecurityGroup\": {\n            \"id\": \"string\"\n          },\n          \"routeTable\": {\n            \"id\": \"string\"\n          },\n          \"natGateway\": {\n            \"id\": \"string\"\n          },\n          \"serviceEndpoints\": [\n            {\n              \"service\": \"string\",\n              \"locations\": [\n                \"string\",\n                \"string\"\n              ],\n              \"provisioningState\": \"string\"\n            },\n            {\n              \"service\": \"string\",\n              \"locations\": [\n                \"string\",\n                \"string\"\n              ],\n              \"provisioningState\": \"string\"\n            }\n          ],\n          \"delegations\": [\n            {\n              \"id\": \"string\",\n              \"name\": \"string\",\n              \"properties\": {\n                \"serviceName\": \"string\"\n              }\n            },\n            {\n              \"id\": \"string\",\n              \"name\": \"string\",\n              \"properties\": {\n                \"serviceName\": \"string\"\n              }\n            }\n          ],\n          \"privateEndpointNetworkPolicies\": \"Enabled\",\n          \"privateLinkServiceNetworkPolicies\": \"Enabled\",\n          \"provisioningState\": \"string\"\n        }\n      },\n      {\n        \"id\": \"string\",\n        \"name\": \"string\",\n        \"properties\": {\n          \"addressPrefix\": \"string\",\n          \"addressPrefixes\": [\n            \"string\",\n            \"string\"\n          ],\n          \"networkSecurityGroup\": {\n            \"id\": \"string\"\n          },\n          \"routeTable\": {\n            \"id\": \"string\"\n          },\n          \"natGateway\": {\n            \"id\": \"string\"\n          },\n          \"serviceEndpoints\": [\n            {\n              \"service\": \"string\",\n              \"locations\": [\n                \"string\",\n                \"string\"\n              ],\n              \"provisioningState\": \"string\"\n            },\n            {\n              \"service\": \"string\",\n              \"locations\": [\n                \"string\",\n                \"string\"\n              ],\n              \"provisioningState\": \"string\"\n            }\n          ],\n          \"delegations\": [\n            {\n              \"id\": \"string\",\n              \"name\": \"string\",\n              \"properties\": {\n                \"serviceName\": \"string\"\n              }\n            },\n            {\n              \"id\": \"string\",\n              \"name\": \"string\",\n              \"properties\": {\n                \"serviceName\": \"string\"\n              }\n            }\n          ],\n          \"privateEndpointNetworkPolicies\": \"Disabled\",\n          \"privateLinkServiceNetworkPolicies\": \"Disabled\",\n          \"provisioningState\": \"string\"\n        }\n      }\n    ],\n    \"virtualNetworkPeerings\": [\n      {\n        \"id\": \"string\",\n        \"name\": \"string\",\n        \"properties\": {\n          \"allowVirtualNetworkAccess\": true,\n          \"allowForwardedTraffic\": true,\n          \"allowGatewayTransit\": true,\n          \"useRemoteGateways\": false,\n          \"remoteVirtualNetwork\": {\n            \"id\": \"string\"\n          },\n          \"peeringState\": \"Disconnected\",\n          \"provisioningState\": \"string\"\n        }\n      },\n      {\n        \"id\": \"string\",\n        \"name\": \"string\",\n        \"properties\": {\n          \"allowVirtualNetworkAccess\": false,\n          \"allowForwardedTraffic\": false,\n          \"allowGatewayTransit\": true,\n          \"useRemoteGateways\": false,\n          \"remoteVirtualNetwork\": {\n            \"id\": \"string\"\n          },\n          \"peeringState\": \"Disconnected\",\n          \"provisioningState\": \"string\"\n        }\n      }\n    ],\n    \"provisioningState\": \"Succeeded\",\n    \"enableDdosProtection\": true,\n    \"enableVmProtection\": true\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "b30c4712-73a0-475b-b3b3-97f671449db4",
+              "name": "Bad request. The request body is invalid.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "subscriptions",
+                    ":subscriptionId",
+                    "resourceGroups",
+                    ":resourceGroupName",
+                    "providers",
+                    "Microsoft.Network",
+                    "virtualNetworks",
+                    ":virtualNetworkName"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "api-version",
+                      "value": "2024-05-01"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "subscriptionId",
+                      "description": "(Required) The subscription credentials which uniquely identify the Microsoft Azure subscription."
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "resourceGroupName",
+                      "description": "(Required) The name of the resource group."
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "virtualNetworkName",
+                      "description": "(Required) The name of the virtual network."
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: oauth2",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<token>"
+                  }
+                ],
+                "method": "PUT",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"location\": \"<string>\",\n  \"tags\": {\n    \"key_0\": \"<string>\",\n    \"key_1\": \"<string>\"\n  },\n  \"properties\": {\n    \"addressSpace\": {\n      \"addressPrefixes\": [\n        \"string\",\n        \"string\"\n      ]\n    },\n    \"dhcpOptions\": {\n      \"dnsServers\": [\n        \"string\",\n        \"string\"\n      ]\n    },\n    \"subnets\": [\n      {\n        \"name\": \"string\",\n        \"properties\": {\n          \"addressPrefix\": \"string\",\n          \"addressPrefixes\": [\n            \"string\",\n            \"string\"\n          ],\n          \"networkSecurityGroup\": {\n            \"id\": \"string\"\n          },\n          \"routeTable\": {\n            \"id\": \"string\"\n          },\n          \"natGateway\": {\n            \"id\": \"string\"\n          },\n          \"serviceEndpoints\": [\n            {\n              \"service\": \"string\",\n              \"locations\": [\n                \"string\",\n                \"string\"\n              ]\n            },\n            {\n              \"service\": \"string\",\n              \"locations\": [\n                \"string\",\n                \"string\"\n              ]\n            }\n          ],\n          \"delegations\": [\n            {\n              \"id\": \"string\",\n              \"name\": \"string\",\n              \"properties\": {\n                \"serviceName\": \"string\"\n              }\n            },\n            {\n              \"id\": \"string\",\n              \"name\": \"string\",\n              \"properties\": {\n                \"serviceName\": \"string\"\n              }\n            }\n          ],\n          \"privateEndpointNetworkPolicies\": \"Enabled\",\n          \"privateLinkServiceNetworkPolicies\": \"Disabled\"\n        }\n      },\n      {\n        \"name\": \"string\",\n        \"properties\": {\n          \"addressPrefix\": \"string\",\n          \"addressPrefixes\": [\n            \"string\",\n            \"string\"\n          ],\n          \"networkSecurityGroup\": {\n            \"id\": \"string\"\n          },\n          \"routeTable\": {\n            \"id\": \"string\"\n          },\n          \"natGateway\": {\n            \"id\": \"string\"\n          },\n          \"serviceEndpoints\": [\n            {\n              \"service\": \"string\",\n              \"locations\": [\n                \"string\",\n                \"string\"\n              ]\n            },\n            {\n              \"service\": \"string\",\n              \"locations\": [\n                \"string\",\n                \"string\"\n              ]\n            }\n          ],\n          \"delegations\": [\n            {\n              \"id\": \"string\",\n              \"name\": \"string\",\n              \"properties\": {\n                \"serviceName\": \"string\"\n              }\n            },\n            {\n              \"id\": \"string\",\n              \"name\": \"string\",\n              \"properties\": {\n                \"serviceName\": \"string\"\n              }\n            }\n          ],\n          \"privateEndpointNetworkPolicies\": \"Disabled\",\n          \"privateLinkServiceNetworkPolicies\": \"Enabled\"\n        }\n      }\n    ],\n    \"virtualNetworkPeerings\": [\n      {\n        \"name\": \"string\",\n        \"properties\": {\n          \"allowVirtualNetworkAccess\": false,\n          \"allowForwardedTraffic\": true,\n          \"allowGatewayTransit\": true,\n          \"useRemoteGateways\": false,\n          \"remoteVirtualNetwork\": {\n            \"id\": \"string\"\n          }\n        }\n      },\n      {\n        \"name\": \"string\",\n        \"properties\": {\n          \"allowVirtualNetworkAccess\": false,\n          \"allowForwardedTraffic\": false,\n          \"allowGatewayTransit\": false,\n          \"useRemoteGateways\": false,\n          \"remoteVirtualNetwork\": {\n            \"id\": \"string\"\n          }\n        }\n      }\n    ],\n    \"enableDdosProtection\": \"<boolean>\",\n    \"enableVmProtection\": \"<boolean>\"\n  }\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Bad Request",
+              "code": 400,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "0420f43c-d341-4dd4-b356-d5e6497d5feb",
+              "name": "Unauthorized. Authentication credentials are missing or invalid.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "subscriptions",
+                    ":subscriptionId",
+                    "resourceGroups",
+                    ":resourceGroupName",
+                    "providers",
+                    "Microsoft.Network",
+                    "virtualNetworks",
+                    ":virtualNetworkName"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "api-version",
+                      "value": "2024-05-01"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "subscriptionId",
+                      "description": "(Required) The subscription credentials which uniquely identify the Microsoft Azure subscription."
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "resourceGroupName",
+                      "description": "(Required) The name of the resource group."
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "virtualNetworkName",
+                      "description": "(Required) The name of the virtual network."
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: oauth2",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<token>"
+                  }
+                ],
+                "method": "PUT",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"location\": \"<string>\",\n  \"tags\": {\n    \"key_0\": \"<string>\",\n    \"key_1\": \"<string>\"\n  },\n  \"properties\": {\n    \"addressSpace\": {\n      \"addressPrefixes\": [\n        \"string\",\n        \"string\"\n      ]\n    },\n    \"dhcpOptions\": {\n      \"dnsServers\": [\n        \"string\",\n        \"string\"\n      ]\n    },\n    \"subnets\": [\n      {\n        \"name\": \"string\",\n        \"properties\": {\n          \"addressPrefix\": \"string\",\n          \"addressPrefixes\": [\n            \"string\",\n            \"string\"\n          ],\n          \"networkSecurityGroup\": {\n            \"id\": \"string\"\n          },\n          \"routeTable\": {\n            \"id\": \"string\"\n          },\n          \"natGateway\": {\n            \"id\": \"string\"\n          },\n          \"serviceEndpoints\": [\n            {\n              \"service\": \"string\",\n              \"locations\": [\n                \"string\",\n                \"string\"\n              ]\n            },\n            {\n              \"service\": \"string\",\n              \"locations\": [\n                \"string\",\n                \"string\"\n              ]\n            }\n          ],\n          \"delegations\": [\n            {\n              \"id\": \"string\",\n              \"name\": \"string\",\n              \"properties\": {\n                \"serviceName\": \"string\"\n              }\n            },\n            {\n              \"id\": \"string\",\n              \"name\": \"string\",\n              \"properties\": {\n                \"serviceName\": \"string\"\n              }\n            }\n          ],\n          \"privateEndpointNetworkPolicies\": \"Enabled\",\n          \"privateLinkServiceNetworkPolicies\": \"Disabled\"\n        }\n      },\n      {\n        \"name\": \"string\",\n        \"properties\": {\n          \"addressPrefix\": \"string\",\n          \"addressPrefixes\": [\n            \"string\",\n            \"string\"\n          ],\n          \"networkSecurityGroup\": {\n            \"id\": \"string\"\n          },\n          \"routeTable\": {\n            \"id\": \"string\"\n          },\n          \"natGateway\": {\n            \"id\": \"string\"\n          },\n          \"serviceEndpoints\": [\n            {\n              \"service\": \"string\",\n              \"locations\": [\n                \"string\",\n                \"string\"\n              ]\n            },\n            {\n              \"service\": \"string\",\n              \"locations\": [\n                \"string\",\n                \"string\"\n              ]\n            }\n          ],\n          \"delegations\": [\n            {\n              \"id\": \"string\",\n              \"name\": \"string\",\n              \"properties\": {\n                \"serviceName\": \"string\"\n              }\n            },\n            {\n              \"id\": \"string\",\n              \"name\": \"string\",\n              \"properties\": {\n                \"serviceName\": \"string\"\n              }\n            }\n          ],\n          \"privateEndpointNetworkPolicies\": \"Disabled\",\n          \"privateLinkServiceNetworkPolicies\": \"Enabled\"\n        }\n      }\n    ],\n    \"virtualNetworkPeerings\": [\n      {\n        \"name\": \"string\",\n        \"properties\": {\n          \"allowVirtualNetworkAccess\": false,\n          \"allowForwardedTraffic\": true,\n          \"allowGatewayTransit\": true,\n          \"useRemoteGateways\": false,\n          \"remoteVirtualNetwork\": {\n            \"id\": \"string\"\n          }\n        }\n      },\n      {\n        \"name\": \"string\",\n        \"properties\": {\n          \"allowVirtualNetworkAccess\": false,\n          \"allowForwardedTraffic\": false,\n          \"allowGatewayTransit\": false,\n          \"useRemoteGateways\": false,\n          \"remoteVirtualNetwork\": {\n            \"id\": \"string\"\n          }\n        }\n      }\n    ],\n    \"enableDdosProtection\": \"<boolean>\",\n    \"enableVmProtection\": \"<boolean>\"\n  }\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Unauthorized",
+              "code": 401,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "f2914702-d0a5-43ed-a66a-4f1b6cecb70d",
+          "name": "Azure Networking Delete virtual network",
+          "request": {
+            "name": "Azure Networking Delete virtual network",
+            "description": {
+              "content": "Deletes the specified virtual network. This operation is asynchronous and returns a 202 Accepted status while the deletion is in progress.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "subscriptions",
+                ":subscriptionId",
+                "resourceGroups",
+                ":resourceGroupName",
+                "providers",
+                "Microsoft.Network",
+                "virtualNetworks",
+                ":virtualNetworkName"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "api-version",
+                  "value": "2024-05-01",
+                  "description": "(Required) Client API version."
+                }
+              ],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "subscriptionId",
+                  "description": "(Required) The subscription credentials which uniquely identify the Microsoft Azure subscription."
+                },
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "resourceGroupName",
+                  "description": "(Required) The name of the resource group."
+                },
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "virtualNetworkName",
+                  "description": "(Required) The name of the virtual network."
+                }
+              ]
+            },
+            "method": "DELETE",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "79c47278-65e4-405b-936a-96887b518dbd",
+              "name": "Successfully deleted the virtual network.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "subscriptions",
+                    ":subscriptionId",
+                    "resourceGroups",
+                    ":resourceGroupName",
+                    "providers",
+                    "Microsoft.Network",
+                    "virtualNetworks",
+                    ":virtualNetworkName"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "api-version",
+                      "value": "2024-05-01"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "subscriptionId",
+                      "description": "(Required) The subscription credentials which uniquely identify the Microsoft Azure subscription."
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "resourceGroupName",
+                      "description": "(Required) The name of the resource group."
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "virtualNetworkName",
+                      "description": "(Required) The name of the virtual network."
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: oauth2",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<token>"
+                  }
+                ],
+                "method": "DELETE",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "7536dfd6-da34-4e0d-9c30-080cd7613169",
+              "name": "Accepted. The delete operation is in progress.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "subscriptions",
+                    ":subscriptionId",
+                    "resourceGroups",
+                    ":resourceGroupName",
+                    "providers",
+                    "Microsoft.Network",
+                    "virtualNetworks",
+                    ":virtualNetworkName"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "api-version",
+                      "value": "2024-05-01"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "subscriptionId",
+                      "description": "(Required) The subscription credentials which uniquely identify the Microsoft Azure subscription."
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "resourceGroupName",
+                      "description": "(Required) The name of the resource group."
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "virtualNetworkName",
+                      "description": "(Required) The name of the virtual network."
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: oauth2",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<token>"
+                  }
+                ],
+                "method": "DELETE",
+                "body": {}
+              },
+              "status": "Accepted",
+              "code": 202,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "debeb5c6-e75c-4794-bf2f-46a2ff20310d",
+              "name": "No content. The virtual network does not exist.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "subscriptions",
+                    ":subscriptionId",
+                    "resourceGroups",
+                    ":resourceGroupName",
+                    "providers",
+                    "Microsoft.Network",
+                    "virtualNetworks",
+                    ":virtualNetworkName"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "api-version",
+                      "value": "2024-05-01"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "subscriptionId",
+                      "description": "(Required) The subscription credentials which uniquely identify the Microsoft Azure subscription."
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "resourceGroupName",
+                      "description": "(Required) The name of the resource group."
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "virtualNetworkName",
+                      "description": "(Required) The name of the virtual network."
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: oauth2",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<token>"
+                  }
+                ],
+                "method": "DELETE",
+                "body": {}
+              },
+              "status": "No Content",
+              "code": 204,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "31247c5c-a904-4328-87b4-031389e37204",
+              "name": "Unauthorized. Authentication credentials are missing or invalid.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "subscriptions",
+                    ":subscriptionId",
+                    "resourceGroups",
+                    ":resourceGroupName",
+                    "providers",
+                    "Microsoft.Network",
+                    "virtualNetworks",
+                    ":virtualNetworkName"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "api-version",
+                      "value": "2024-05-01"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "subscriptionId",
+                      "description": "(Required) The subscription credentials which uniquely identify the Microsoft Azure subscription."
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "resourceGroupName",
+                      "description": "(Required) The name of the resource group."
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "virtualNetworkName",
+                      "description": "(Required) The name of the virtual network."
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: oauth2",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<token>"
+                  }
+                ],
+                "method": "DELETE",
+                "body": {}
+              },
+              "status": "Unauthorized",
+              "code": 401,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "e41a1f83-037d-4e81-a803-032998542d1d",
+          "name": "Azure Networking List all virtual networks",
+          "request": {
+            "name": "Azure Networking List all virtual networks",
+            "description": {
+              "content": "Gets all virtual networks in a subscription. Returns a paginated list of all virtual network resources across all resource groups.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "subscriptions",
+                ":subscriptionId",
+                "providers",
+                "Microsoft.Network",
+                "virtualNetworks"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "api-version",
+                  "value": "2024-05-01",
+                  "description": "(Required) Client API version."
+                }
+              ],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "subscriptionId",
+                  "description": "(Required) The subscription credentials which uniquely identify the Microsoft Azure subscription."
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "790fb218-bb3a-4dfc-aef9-fcf413bb544f",
+              "name": "Successfully retrieved all virtual networks in the subscription.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "subscriptions",
+                    ":subscriptionId",
+                    "providers",
+                    "Microsoft.Network",
+                    "virtualNetworks"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "api-version",
+                      "value": "2024-05-01"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "subscriptionId",
+                      "description": "(Required) The subscription credentials which uniquely identify the Microsoft Azure subscription."
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: oauth2",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"value\": [\n    {\n      \"id\": \"string\",\n      \"name\": \"string\",\n      \"type\": \"string\",\n      \"location\": \"string\",\n      \"tags\": {\n        \"key_0\": \"string\",\n        \"key_1\": \"string\",\n        \"key_2\": \"string\"\n      },\n      \"properties\": {\n        \"addressSpace\": {\n          \"addressPrefixes\": [\n            \"string\",\n            \"string\"\n          ]\n        },\n        \"dhcpOptions\": {\n          \"dnsServers\": [\n            \"string\",\n            \"string\"\n          ]\n        },\n        \"subnets\": [\n          {\n            \"id\": \"string\",\n            \"name\": \"string\",\n            \"properties\": {\n              \"addressPrefix\": \"string\",\n              \"addressPrefixes\": [\n                {\n                  \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                },\n                {\n                  \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                }\n              ],\n              \"networkSecurityGroup\": {\n                \"id\": {\n                  \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                }\n              },\n              \"routeTable\": {\n                \"id\": {\n                  \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                }\n              },\n              \"natGateway\": {\n                \"id\": {\n                  \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                }\n              },\n              \"serviceEndpoints\": [\n                {\n                  \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                },\n                {\n                  \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                }\n              ],\n              \"delegations\": [\n                {\n                  \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                },\n                {\n                  \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                }\n              ],\n              \"privateEndpointNetworkPolicies\": \"Enabled\",\n              \"privateLinkServiceNetworkPolicies\": \"Enabled\",\n              \"provisioningState\": \"string\"\n            }\n          },\n          {\n            \"id\": \"string\",\n            \"name\": \"string\",\n            \"properties\": {\n              \"addressPrefix\": \"string\",\n              \"addressPrefixes\": [\n                {\n                  \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                },\n                {\n                  \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                }\n              ],\n              \"networkSecurityGroup\": {\n                \"id\": {\n                  \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                }\n              },\n              \"routeTable\": {\n                \"id\": {\n                  \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                }\n              },\n              \"natGateway\": {\n                \"id\": {\n                  \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                }\n              },\n              \"serviceEndpoints\": [\n                {\n                  \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                },\n                {\n                  \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                }\n              ],\n              \"delegations\": [\n                {\n                  \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                },\n                {\n                  \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                }\n              ],\n              \"privateEndpointNetworkPolicies\": \"Enabled\",\n              \"privateLinkServiceNetworkPolicies\": \"Disabled\",\n              \"provisioningState\": \"string\"\n            }\n          }\n        ],\n        \"virtualNetworkPeerings\": [\n          {\n            \"id\": \"string\",\n            \"name\": \"string\",\n            \"properties\": {\n              \"allowVirtualNetworkAccess\": false,\n              \"allowForwardedTraffic\": false,\n              \"allowGatewayTransit\": false,\n              \"useRemoteGateways\": false,\n              \"remoteVirtualNetwork\": {\n                \"id\": {\n                  \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                }\n              },\n              \"peeringState\": \"Disconnected\",\n              \"provisioningState\": \"string\"\n            }\n          },\n          {\n            \"id\": \"string\",\n            \"name\": \"string\",\n            \"properties\": {\n              \"allowVirtualNetworkAccess\": true,\n              \"allowForwardedTraffic\": false,\n              \"allowGatewayTransit\": true,\n              \"useRemoteGateways\": true,\n              \"remoteVirtualNetwork\": {\n                \"id\": {\n                  \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                }\n              },\n              \"peeringState\": \"Disconnected\",\n              \"provisioningState\": \"string\"\n            }\n          }\n        ],\n        \"provisioningState\": \"Updating\",\n        \"enableDdosProtection\": true,\n        \"enableVmProtection\": true\n      }\n    },\n    {\n      \"id\": \"string\",\n      \"name\": \"string\",\n      \"type\": \"string\",\n      \"location\": \"string\",\n      \"tags\": {\n        \"key_0\": \"string\",\n        \"key_1\": \"string\",\n        \"key_2\": \"string\",\n        \"key_3\": \"string\"\n      },\n      \"properties\": {\n        \"addressSpace\": {\n          \"addressPrefixes\": [\n            \"string\",\n            \"string\"\n          ]\n        },\n        \"dhcpOptions\": {\n          \"dnsServers\": [\n            \"string\",\n            \"string\"\n          ]\n        },\n        \"subnets\": [\n          {\n            \"id\": \"string\",\n            \"name\": \"string\",\n            \"properties\": {\n              \"addressPrefix\": \"string\",\n              \"addressPrefixes\": [\n                {\n                  \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                },\n                {\n                  \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                }\n              ],\n              \"networkSecurityGroup\": {\n                \"id\": {\n                  \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                }\n              },\n              \"routeTable\": {\n                \"id\": {\n                  \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                }\n              },\n              \"natGateway\": {\n                \"id\": {\n                  \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                }\n              },\n              \"serviceEndpoints\": [\n                {\n                  \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                },\n                {\n                  \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                }\n              ],\n              \"delegations\": [\n                {\n                  \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                },\n                {\n                  \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                }\n              ],\n              \"privateEndpointNetworkPolicies\": \"Enabled\",\n              \"privateLinkServiceNetworkPolicies\": \"Enabled\",\n              \"provisioningState\": \"string\"\n            }\n          },\n          {\n            \"id\": \"string\",\n            \"name\": \"string\",\n            \"properties\": {\n              \"addressPrefix\": \"string\",\n              \"addressPrefixes\": [\n                {\n                  \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                },\n                {\n                  \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                }\n              ],\n              \"networkSecurityGroup\": {\n                \"id\": {\n                  \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                }\n              },\n              \"routeTable\": {\n                \"id\": {\n                  \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                }\n              },\n              \"natGateway\": {\n                \"id\": {\n                  \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                }\n              },\n              \"serviceEndpoints\": [\n                {\n                  \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                },\n                {\n                  \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                }\n              ],\n              \"delegations\": [\n                {\n                  \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                },\n                {\n                  \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                }\n              ],\n              \"privateEndpointNetworkPolicies\": \"Enabled\",\n              \"privateLinkServiceNetworkPolicies\": \"Enabled\",\n              \"provisioningState\": \"string\"\n            }\n          }\n        ],\n        \"virtualNetworkPeerings\": [\n          {\n            \"id\": \"string\",\n            \"name\": \"string\",\n            \"properties\": {\n              \"allowVirtualNetworkAccess\": true,\n              \"allowForwardedTraffic\": false,\n              \"allowGatewayTransit\": true,\n              \"useRemoteGateways\": true,\n              \"remoteVirtualNetwork\": {\n                \"id\": {\n                  \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                }\n              },\n              \"peeringState\": \"Initiated\",\n              \"provisioningState\": \"string\"\n            }\n          },\n          {\n            \"id\": \"string\",\n            \"name\": \"string\",\n            \"properties\": {\n              \"allowVirtualNetworkAccess\": true,\n              \"allowForwardedTraffic\": false,\n              \"allowGatewayTransit\": false,\n              \"useRemoteGateways\": false,\n              \"remoteVirtualNetwork\": {\n                \"id\": {\n                  \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                }\n              },\n              \"peeringState\": \"Connected\",\n              \"provisioningState\": \"string\"\n            }\n          }\n        ],\n        \"provisioningState\": \"Failed\",\n        \"enableDdosProtection\": false,\n        \"enableVmProtection\": true\n      }\n    }\n  ],\n  \"nextLink\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "129c384e-8b64-4025-a245-3b4182e22c60",
+              "name": "Unauthorized. Authentication credentials are missing or invalid.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "subscriptions",
+                    ":subscriptionId",
+                    "providers",
+                    "Microsoft.Network",
+                    "virtualNetworks"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "api-version",
+                      "value": "2024-05-01"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "subscriptionId",
+                      "description": "(Required) The subscription credentials which uniquely identify the Microsoft Azure subscription."
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: oauth2",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<token>"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Unauthorized",
+              "code": 401,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "23ff5e21-d4f3-4a51-9a38-9dc31a27f2e4",
+          "name": "Azure Virtual Network REST API Get resource",
+          "request": {
+            "name": "Azure Virtual Network REST API Get resource",
+            "description": {
+              "content": "Gets a specific virtualNetworks resource.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "subscriptions",
+                ":subscriptionId",
+                "resourceGroups",
+                ":resourceGroupName",
+                "providers",
+                "Microsoft.Network",
+                "virtualNetworks",
+                ":name"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "api-version",
+                  "value": "<string>",
+                  "description": "(Required) The API version to use for this operation."
+                }
+              ],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "subscriptionId",
+                  "description": "(Required) The ID of the target subscription."
+                },
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "resourceGroupName",
+                  "description": "(Required) The name of the resource group."
+                },
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "name",
+                  "description": "(Required) Name of the resource."
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "ef9b7b71-aa84-445e-b9f4-811ba6552cb5",
+              "name": "Resource",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "subscriptions",
+                    ":subscriptionId",
+                    "resourceGroups",
+                    ":resourceGroupName",
+                    "providers",
+                    "Microsoft.Network",
+                    "virtualNetworks",
+                    ":name"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "api-version",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "subscriptionId",
+                      "description": "(Required) The ID of the target subscription."
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "resourceGroupName",
+                      "description": "(Required) The name of the resource group."
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "name",
+                      "description": "(Required) Name of the resource."
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: oauth2",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"id\": \"string\",\n  \"name\": \"string\",\n  \"type\": \"string\",\n  \"location\": \"string\",\n  \"tags\": {\n    \"key_0\": \"string\",\n    \"key_1\": \"string\"\n  },\n  \"properties\": {}\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "27bd9930-9f3b-48b1-8208-a0eca324a5d6",
+              "name": "Not found",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "subscriptions",
+                    ":subscriptionId",
+                    "resourceGroups",
+                    ":resourceGroupName",
+                    "providers",
+                    "Microsoft.Network",
+                    "virtualNetworks",
+                    ":name"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "api-version",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "subscriptionId",
+                      "description": "(Required) The ID of the target subscription."
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "resourceGroupName",
+                      "description": "(Required) The name of the resource group."
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "name",
+                      "description": "(Required) Name of the resource."
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: oauth2",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<token>"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Not Found",
+              "code": 404,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "2826761e-2bc7-4200-a1ac-2130c73110e0",
+              "name": "Error",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "subscriptions",
+                    ":subscriptionId",
+                    "resourceGroups",
+                    ":resourceGroupName",
+                    "providers",
+                    "Microsoft.Network",
+                    "virtualNetworks",
+                    ":name"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "api-version",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "subscriptionId",
+                      "description": "(Required) The ID of the target subscription."
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "resourceGroupName",
+                      "description": "(Required) The name of the resource group."
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "name",
+                      "description": "(Required) Name of the resource."
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: oauth2",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"error\": {\n    \"code\": \"string\",\n    \"message\": \"string\",\n    \"target\": \"string\"\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "eda285d7-cb69-490f-aebb-6c2cc76826a1",
+          "name": "Azure Virtual Network REST API Create or update resource",
+          "request": {
+            "name": "Azure Virtual Network REST API Create or update resource",
+            "description": {
+              "content": "Creates or updates a virtualNetworks resource.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "subscriptions",
+                ":subscriptionId",
+                "resourceGroups",
+                ":resourceGroupName",
+                "providers",
+                "Microsoft.Network",
+                "virtualNetworks",
+                ":name"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "api-version",
+                  "value": "<string>",
+                  "description": "(Required) The API version to use for this operation."
+                }
+              ],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "subscriptionId",
+                  "description": "(Required) The ID of the target subscription."
+                },
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "resourceGroupName",
+                  "description": "(Required) The name of the resource group."
+                },
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "name",
+                  "description": "(Required) Name of the resource."
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "PUT",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"id\": \"<string>\",\n  \"name\": \"<string>\",\n  \"type\": \"<string>\",\n  \"location\": \"<string>\",\n  \"tags\": {\n    \"key_0\": \"<string>\"\n  },\n  \"properties\": \"<object>\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "11202c8a-0574-49ca-a1a8-7ecd25184512",
+              "name": "Resource updated",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "subscriptions",
+                    ":subscriptionId",
+                    "resourceGroups",
+                    ":resourceGroupName",
+                    "providers",
+                    "Microsoft.Network",
+                    "virtualNetworks",
+                    ":name"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "api-version",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "subscriptionId",
+                      "description": "(Required) The ID of the target subscription."
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "resourceGroupName",
+                      "description": "(Required) The name of the resource group."
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "name",
+                      "description": "(Required) Name of the resource."
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: oauth2",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "PUT",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"id\": \"<string>\",\n  \"name\": \"<string>\",\n  \"type\": \"<string>\",\n  \"location\": \"<string>\",\n  \"tags\": {\n    \"key_0\": \"<string>\",\n    \"key_1\": \"<string>\"\n  },\n  \"properties\": \"<object>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"id\": \"string\",\n  \"name\": \"string\",\n  \"type\": \"string\",\n  \"location\": \"string\",\n  \"tags\": {\n    \"key_0\": \"string\",\n    \"key_1\": \"string\"\n  },\n  \"properties\": {}\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "d98a0667-4424-4fe1-bc9e-48c6d50a3a4b",
+              "name": "Resource created",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "subscriptions",
+                    ":subscriptionId",
+                    "resourceGroups",
+                    ":resourceGroupName",
+                    "providers",
+                    "Microsoft.Network",
+                    "virtualNetworks",
+                    ":name"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "api-version",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "subscriptionId",
+                      "description": "(Required) The ID of the target subscription."
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "resourceGroupName",
+                      "description": "(Required) The name of the resource group."
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "name",
+                      "description": "(Required) Name of the resource."
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: oauth2",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "PUT",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"id\": \"<string>\",\n  \"name\": \"<string>\",\n  \"type\": \"<string>\",\n  \"location\": \"<string>\",\n  \"tags\": {\n    \"key_0\": \"<string>\",\n    \"key_1\": \"<string>\"\n  },\n  \"properties\": \"<object>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Created",
+              "code": 201,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"id\": \"string\",\n  \"name\": \"string\",\n  \"type\": \"string\",\n  \"location\": \"string\",\n  \"tags\": {\n    \"key_0\": \"string\",\n    \"key_1\": \"string\"\n  },\n  \"properties\": {}\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "63780bb8-2429-4b9a-b1be-4e23788576a2",
+              "name": "Error",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "subscriptions",
+                    ":subscriptionId",
+                    "resourceGroups",
+                    ":resourceGroupName",
+                    "providers",
+                    "Microsoft.Network",
+                    "virtualNetworks",
+                    ":name"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "api-version",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "subscriptionId",
+                      "description": "(Required) The ID of the target subscription."
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "resourceGroupName",
+                      "description": "(Required) The name of the resource group."
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "name",
+                      "description": "(Required) Name of the resource."
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: oauth2",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "PUT",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"id\": \"<string>\",\n  \"name\": \"<string>\",\n  \"type\": \"<string>\",\n  \"location\": \"<string>\",\n  \"tags\": {\n    \"key_0\": \"<string>\",\n    \"key_1\": \"<string>\"\n  },\n  \"properties\": \"<object>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"error\": {\n    \"code\": \"string\",\n    \"message\": \"string\",\n    \"target\": \"string\"\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "e1b6d4c6-3601-484e-8d03-89cd2c2baec5",
+          "name": "Azure Virtual Network REST API Update resource",
+          "request": {
+            "name": "Azure Virtual Network REST API Update resource",
+            "description": {
+              "content": "Updates a virtualNetworks resource.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "subscriptions",
+                ":subscriptionId",
+                "resourceGroups",
+                ":resourceGroupName",
+                "providers",
+                "Microsoft.Network",
+                "virtualNetworks",
+                ":name"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "api-version",
+                  "value": "<string>",
+                  "description": "(Required) The API version to use for this operation."
+                }
+              ],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "subscriptionId",
+                  "description": "(Required) The ID of the target subscription."
+                },
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "resourceGroupName",
+                  "description": "(Required) The name of the resource group."
+                },
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "name",
+                  "description": "(Required) Name of the resource."
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "PATCH",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"key_0\": 5240.317057928043\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "6074f425-bbd2-41d8-9031-27da0ff34d1d",
+              "name": "Resource updated",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "subscriptions",
+                    ":subscriptionId",
+                    "resourceGroups",
+                    ":resourceGroupName",
+                    "providers",
+                    "Microsoft.Network",
+                    "virtualNetworks",
+                    ":name"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "api-version",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "subscriptionId",
+                      "description": "(Required) The ID of the target subscription."
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "resourceGroupName",
+                      "description": "(Required) The name of the resource group."
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "name",
+                      "description": "(Required) Name of the resource."
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: oauth2",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "PATCH",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"key_0\": 4236\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"id\": \"string\",\n  \"name\": \"string\",\n  \"type\": \"string\",\n  \"location\": \"string\",\n  \"tags\": {\n    \"key_0\": \"string\",\n    \"key_1\": \"string\"\n  },\n  \"properties\": {}\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "7096a068-88e7-47f9-83e6-32d994373ad5",
+              "name": "Error",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "subscriptions",
+                    ":subscriptionId",
+                    "resourceGroups",
+                    ":resourceGroupName",
+                    "providers",
+                    "Microsoft.Network",
+                    "virtualNetworks",
+                    ":name"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "api-version",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "subscriptionId",
+                      "description": "(Required) The ID of the target subscription."
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "resourceGroupName",
+                      "description": "(Required) The name of the resource group."
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "name",
+                      "description": "(Required) Name of the resource."
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: oauth2",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "PATCH",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"key_0\": 4236\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"error\": {\n    \"code\": \"string\",\n    \"message\": \"string\",\n    \"target\": \"string\"\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "79dcd214-fce2-410b-a68b-3ad2c7c69b87",
+          "name": "Azure Virtual Network REST API Delete resource",
+          "request": {
+            "name": "Azure Virtual Network REST API Delete resource",
+            "description": {
+              "content": "Deletes a virtualNetworks resource.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "subscriptions",
+                ":subscriptionId",
+                "resourceGroups",
+                ":resourceGroupName",
+                "providers",
+                "Microsoft.Network",
+                "virtualNetworks",
+                ":name"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "api-version",
+                  "value": "<string>",
+                  "description": "(Required) The API version to use for this operation."
+                }
+              ],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "subscriptionId",
+                  "description": "(Required) The ID of the target subscription."
+                },
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "resourceGroupName",
+                  "description": "(Required) The name of the resource group."
+                },
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "name",
+                  "description": "(Required) Name of the resource."
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "DELETE",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "91cdd1f1-ccfe-4b93-9b7f-317b0b764582",
+              "name": "Resource deleted",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "subscriptions",
+                    ":subscriptionId",
+                    "resourceGroups",
+                    ":resourceGroupName",
+                    "providers",
+                    "Microsoft.Network",
+                    "virtualNetworks",
+                    ":name"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "api-version",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "subscriptionId",
+                      "description": "(Required) The ID of the target subscription."
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "resourceGroupName",
+                      "description": "(Required) The name of the resource group."
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "name",
+                      "description": "(Required) Name of the resource."
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: oauth2",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<token>"
+                  }
+                ],
+                "method": "DELETE",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "1a754dd0-af06-4412-b718-063e395fc9a0",
+              "name": "Deletion accepted",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "subscriptions",
+                    ":subscriptionId",
+                    "resourceGroups",
+                    ":resourceGroupName",
+                    "providers",
+                    "Microsoft.Network",
+                    "virtualNetworks",
+                    ":name"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "api-version",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "subscriptionId",
+                      "description": "(Required) The ID of the target subscription."
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "resourceGroupName",
+                      "description": "(Required) The name of the resource group."
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "name",
+                      "description": "(Required) Name of the resource."
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: oauth2",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<token>"
+                  }
+                ],
+                "method": "DELETE",
+                "body": {}
+              },
+              "status": "Accepted",
+              "code": 202,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "7835419f-a64b-467f-8b34-c3814fde19f4",
+              "name": "Resource not found or already deleted",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "subscriptions",
+                    ":subscriptionId",
+                    "resourceGroups",
+                    ":resourceGroupName",
+                    "providers",
+                    "Microsoft.Network",
+                    "virtualNetworks",
+                    ":name"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "api-version",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "subscriptionId",
+                      "description": "(Required) The ID of the target subscription."
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "resourceGroupName",
+                      "description": "(Required) The name of the resource group."
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "name",
+                      "description": "(Required) Name of the resource."
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: oauth2",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<token>"
+                  }
+                ],
+                "method": "DELETE",
+                "body": {}
+              },
+              "status": "No Content",
+              "code": 204,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "1d03b0e7-f017-4117-b90b-4281aee2020d",
+              "name": "Error",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "subscriptions",
+                    ":subscriptionId",
+                    "resourceGroups",
+                    ":resourceGroupName",
+                    "providers",
+                    "Microsoft.Network",
+                    "virtualNetworks",
+                    ":name"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "api-version",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "subscriptionId",
+                      "description": "(Required) The ID of the target subscription."
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "resourceGroupName",
+                      "description": "(Required) The name of the resource group."
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "name",
+                      "description": "(Required) Name of the resource."
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: oauth2",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "DELETE",
+                "body": {}
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"error\": {\n    \"code\": \"string\",\n    \"message\": \"string\",\n    \"target\": \"string\"\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "https://management.azure.com",
+      "key": "baseUrl"
+    }
+  ],
+  "auth": {
+    "type": "oauth2",
+    "oauth2": [
+      {
+        "key": "scope",
+        "value": "user_impersonation"
+      },
+      {
+        "key": "authUrl",
+        "value": "https://login.microsoftonline.com/common/oauth2/authorize"
+      },
+      {
+        "key": "grant_type",
+        "value": "implicit"
+      }
+    ]
+  },
+  "info": {
+    "_postman_id": "e9a56dac-650d-414d-86af-99db216a8854",
+    "name": "Azure Networking Azure Load Balancer Backend Address Pools Virtual Networks API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "Distribute traffic across multiple virtual machines and services with Azure Load Balancer. This API provides operations for creating, configuring, and managing load balancers including frontend IP configurations, backend address pools, health probes, load balancing rules, inbound NAT rules, and outbound rules.\n\nContact Support:\n Name: Microsoft Azure Support",
+      "type": "text/plain"
+    }
+  }
+}

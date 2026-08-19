@@ -1,0 +1,198 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Azure Networking Azure Load Balancer Backend Address Pools Virtual Network Peerings API",
+    "version": "2024-05-01"
+  },
+  "request": {
+    "auth": {
+      "type": "oauth2",
+      "flow": "implicit",
+      "authorizationUrl": "https://login.microsoftonline.com/common/oauth2/authorize",
+      "credentials": {
+        "clientId": "{{clientId}}"
+      }
+    }
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Virtual Network Peerings",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Azure Networking List virtual network peerings",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://management.azure.com/subscriptions/:subscriptionId/resourceGroups/:resourceGroupName/providers/Microsoft.Network/virtualNetworks/:virtualNetworkName/virtualNetworkPeerings",
+            "params": [
+              {
+                "name": "subscriptionId",
+                "value": "",
+                "type": "path",
+                "description": "The subscription credentials which uniquely identify the Microsoft Azure subscription."
+              },
+              {
+                "name": "resourceGroupName",
+                "value": "",
+                "type": "path",
+                "description": "The name of the resource group."
+              },
+              {
+                "name": "virtualNetworkName",
+                "value": "",
+                "type": "path",
+                "description": "The name of the virtual network."
+              },
+              {
+                "name": "api-version",
+                "value": "",
+                "type": "query",
+                "description": "Client API version."
+              }
+            ]
+          },
+          "docs": "Gets all peerings in a virtual network. Returns a paginated list of peering resources for the specified virtual network."
+        },
+        {
+          "info": {
+            "name": "Azure Networking Get virtual network peering",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://management.azure.com/subscriptions/:subscriptionId/resourceGroups/:resourceGroupName/providers/Microsoft.Network/virtualNetworks/:virtualNetworkName/virtualNetworkPeerings/:virtualNetworkPeeringName",
+            "params": [
+              {
+                "name": "subscriptionId",
+                "value": "",
+                "type": "path",
+                "description": "The subscription credentials which uniquely identify the Microsoft Azure subscription."
+              },
+              {
+                "name": "resourceGroupName",
+                "value": "",
+                "type": "path",
+                "description": "The name of the resource group."
+              },
+              {
+                "name": "virtualNetworkName",
+                "value": "",
+                "type": "path",
+                "description": "The name of the virtual network."
+              },
+              {
+                "name": "virtualNetworkPeeringName",
+                "value": "",
+                "type": "path",
+                "description": "The name of the virtual network peering."
+              },
+              {
+                "name": "api-version",
+                "value": "",
+                "type": "query",
+                "description": "Client API version."
+              }
+            ]
+          },
+          "docs": "Gets the specified peering for a virtual network."
+        },
+        {
+          "info": {
+            "name": "Azure Networking Create or update virtual network peering",
+            "type": "http"
+          },
+          "http": {
+            "method": "PUT",
+            "url": "https://management.azure.com/subscriptions/:subscriptionId/resourceGroups/:resourceGroupName/providers/Microsoft.Network/virtualNetworks/:virtualNetworkName/virtualNetworkPeerings/:virtualNetworkPeeringName",
+            "params": [
+              {
+                "name": "subscriptionId",
+                "value": "",
+                "type": "path",
+                "description": "The subscription credentials which uniquely identify the Microsoft Azure subscription."
+              },
+              {
+                "name": "resourceGroupName",
+                "value": "",
+                "type": "path",
+                "description": "The name of the resource group."
+              },
+              {
+                "name": "virtualNetworkName",
+                "value": "",
+                "type": "path",
+                "description": "The name of the virtual network."
+              },
+              {
+                "name": "virtualNetworkPeeringName",
+                "value": "",
+                "type": "path",
+                "description": "The name of the virtual network peering."
+              },
+              {
+                "name": "api-version",
+                "value": "",
+                "type": "query",
+                "description": "Client API version."
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Creates or updates a peering in the specified virtual network. Peering enables connectivity between two virtual networks."
+        },
+        {
+          "info": {
+            "name": "Azure Networking Delete virtual network peering",
+            "type": "http"
+          },
+          "http": {
+            "method": "DELETE",
+            "url": "https://management.azure.com/subscriptions/:subscriptionId/resourceGroups/:resourceGroupName/providers/Microsoft.Network/virtualNetworks/:virtualNetworkName/virtualNetworkPeerings/:virtualNetworkPeeringName",
+            "params": [
+              {
+                "name": "subscriptionId",
+                "value": "",
+                "type": "path",
+                "description": "The subscription credentials which uniquely identify the Microsoft Azure subscription."
+              },
+              {
+                "name": "resourceGroupName",
+                "value": "",
+                "type": "path",
+                "description": "The name of the resource group."
+              },
+              {
+                "name": "virtualNetworkName",
+                "value": "",
+                "type": "path",
+                "description": "The name of the virtual network."
+              },
+              {
+                "name": "virtualNetworkPeeringName",
+                "value": "",
+                "type": "path",
+                "description": "The name of the virtual network peering."
+              },
+              {
+                "name": "api-version",
+                "value": "",
+                "type": "query",
+                "description": "Client API version."
+              }
+            ]
+          },
+          "docs": "Deletes the specified peering from a virtual network."
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

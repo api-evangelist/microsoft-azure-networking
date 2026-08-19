@@ -1,0 +1,1483 @@
+{
+  "item": [
+    {
+      "id": "72ccb5ce-34f7-4ec6-b673-a3942d50feef",
+      "name": "Load Balancers",
+      "description": {
+        "content": "Operations for creating, updating, deleting, and listing Azure Load Balancer resources.",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "20fa325d-ddec-4310-b04e-375e32eccbdb",
+          "name": "Azure Networking List load balancers",
+          "request": {
+            "name": "Azure Networking List load balancers",
+            "description": {
+              "content": "Gets all the load balancers in a resource group. Returns a paginated list of load balancer resources with their configurations.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "subscriptions",
+                ":subscriptionId",
+                "resourceGroups",
+                ":resourceGroupName",
+                "providers",
+                "Microsoft.Network",
+                "loadBalancers"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "api-version",
+                  "value": "2024-05-01",
+                  "description": "(Required) Client API version."
+                }
+              ],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "subscriptionId",
+                  "description": "(Required) The subscription credentials which uniquely identify the Microsoft Azure subscription."
+                },
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "resourceGroupName",
+                  "description": "(Required) The name of the resource group."
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "1d70b3cb-839e-483b-937f-03797386f365",
+              "name": "Successfully retrieved the list of load balancers.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "subscriptions",
+                    ":subscriptionId",
+                    "resourceGroups",
+                    ":resourceGroupName",
+                    "providers",
+                    "Microsoft.Network",
+                    "loadBalancers"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "api-version",
+                      "value": "2024-05-01"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "subscriptionId",
+                      "description": "(Required) The subscription credentials which uniquely identify the Microsoft Azure subscription."
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "resourceGroupName",
+                      "description": "(Required) The name of the resource group."
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: oauth2",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"value\": [\n    {\n      \"id\": \"string\",\n      \"name\": \"string\",\n      \"type\": \"string\",\n      \"location\": \"string\",\n      \"tags\": {\n        \"key_0\": \"string\"\n      },\n      \"sku\": {\n        \"name\": \"Standard\",\n        \"tier\": \"Global\"\n      },\n      \"properties\": {\n        \"frontendIPConfigurations\": [\n          {\n            \"id\": \"string\",\n            \"name\": \"string\",\n            \"properties\": {\n              \"privateIPAddress\": \"string\",\n              \"privateIPAllocationMethod\": \"Static\",\n              \"publicIPAddress\": {\n                \"id\": {\n                  \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                }\n              },\n              \"subnet\": {\n                \"id\": {\n                  \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                }\n              }\n            }\n          },\n          {\n            \"id\": \"string\",\n            \"name\": \"string\",\n            \"properties\": {\n              \"privateIPAddress\": \"string\",\n              \"privateIPAllocationMethod\": \"Static\",\n              \"publicIPAddress\": {\n                \"id\": {\n                  \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                }\n              },\n              \"subnet\": {\n                \"id\": {\n                  \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                }\n              }\n            }\n          }\n        ],\n        \"backendAddressPools\": [\n          {\n            \"id\": \"string\",\n            \"name\": \"string\",\n            \"properties\": {\n              \"loadBalancerBackendAddresses\": [\n                {\n                  \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                },\n                {\n                  \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                }\n              ],\n              \"provisioningState\": \"string\"\n            }\n          },\n          {\n            \"id\": \"string\",\n            \"name\": \"string\",\n            \"properties\": {\n              \"loadBalancerBackendAddresses\": [\n                {\n                  \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                },\n                {\n                  \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                }\n              ],\n              \"provisioningState\": \"string\"\n            }\n          }\n        ],\n        \"loadBalancingRules\": [\n          {\n            \"id\": \"string\",\n            \"name\": \"string\",\n            \"properties\": {\n              \"frontendIPConfiguration\": {\n                \"id\": {\n                  \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                }\n              },\n              \"backendAddressPool\": {\n                \"id\": {\n                  \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                }\n              },\n              \"probe\": {\n                \"id\": {\n                  \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                }\n              },\n              \"protocol\": \"All\",\n              \"frontendPort\": 2814,\n              \"backendPort\": 7897,\n              \"idleTimeoutInMinutes\": 6701,\n              \"enableFloatingIP\": false,\n              \"loadDistribution\": \"Default\"\n            }\n          },\n          {\n            \"id\": \"string\",\n            \"name\": \"string\",\n            \"properties\": {\n              \"frontendIPConfiguration\": {\n                \"id\": {\n                  \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                }\n              },\n              \"backendAddressPool\": {\n                \"id\": {\n                  \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                }\n              },\n              \"probe\": {\n                \"id\": {\n                  \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                }\n              },\n              \"protocol\": \"All\",\n              \"frontendPort\": 8688,\n              \"backendPort\": 8301,\n              \"idleTimeoutInMinutes\": 8975,\n              \"enableFloatingIP\": true,\n              \"loadDistribution\": \"SourceIPProtocol\"\n            }\n          }\n        ],\n        \"probes\": [\n          {\n            \"id\": \"string\",\n            \"name\": \"string\",\n            \"properties\": {\n              \"protocol\": \"Https\",\n              \"port\": 9253,\n              \"intervalInSeconds\": 4995,\n              \"numberOfProbes\": 9206,\n              \"requestPath\": \"string\"\n            }\n          },\n          {\n            \"id\": \"string\",\n            \"name\": \"string\",\n            \"properties\": {\n              \"protocol\": \"Http\",\n              \"port\": 4323,\n              \"intervalInSeconds\": 2804,\n              \"numberOfProbes\": 9761,\n              \"requestPath\": \"string\"\n            }\n          }\n        ],\n        \"inboundNatRules\": [\n          {\n            \"id\": \"string\",\n            \"name\": \"string\",\n            \"properties\": {\n              \"frontendIPConfiguration\": {\n                \"id\": {\n                  \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                }\n              },\n              \"protocol\": \"All\",\n              \"frontendPort\": 2961,\n              \"backendPort\": 8406,\n              \"idleTimeoutInMinutes\": 8366,\n              \"enableFloatingIP\": true\n            }\n          },\n          {\n            \"id\": \"string\",\n            \"name\": \"string\",\n            \"properties\": {\n              \"frontendIPConfiguration\": {\n                \"id\": {\n                  \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                }\n              },\n              \"protocol\": \"Udp\",\n              \"frontendPort\": 2956,\n              \"backendPort\": 3303,\n              \"idleTimeoutInMinutes\": 197,\n              \"enableFloatingIP\": true\n            }\n          }\n        ],\n        \"outboundRules\": [\n          {\n            \"id\": \"string\",\n            \"name\": \"string\",\n            \"properties\": {\n              \"allocatedOutboundPorts\": 1162,\n              \"frontendIPConfigurations\": [\n                {\n                  \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                },\n                {\n                  \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                }\n              ],\n              \"backendAddressPool\": {\n                \"id\": {\n                  \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                }\n              },\n              \"protocol\": \"Tcp\",\n              \"idleTimeoutInMinutes\": 5774\n            }\n          },\n          {\n            \"id\": \"string\",\n            \"name\": \"string\",\n            \"properties\": {\n              \"allocatedOutboundPorts\": 2308,\n              \"frontendIPConfigurations\": [\n                {\n                  \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                },\n                {\n                  \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                }\n              ],\n              \"backendAddressPool\": {\n                \"id\": {\n                  \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                }\n              },\n              \"protocol\": \"Udp\",\n              \"idleTimeoutInMinutes\": 1230\n            }\n          }\n        ],\n        \"provisioningState\": \"Succeeded\"\n      }\n    },\n    {\n      \"id\": \"string\",\n      \"name\": \"string\",\n      \"type\": \"string\",\n      \"location\": \"string\",\n      \"tags\": {\n        \"key_0\": \"string\",\n        \"key_1\": \"string\"\n      },\n      \"sku\": {\n        \"name\": \"Basic\",\n        \"tier\": \"Global\"\n      },\n      \"properties\": {\n        \"frontendIPConfigurations\": [\n          {\n            \"id\": \"string\",\n            \"name\": \"string\",\n            \"properties\": {\n              \"privateIPAddress\": \"string\",\n              \"privateIPAllocationMethod\": \"Dynamic\",\n              \"publicIPAddress\": {\n                \"id\": {\n                  \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                }\n              },\n              \"subnet\": {\n                \"id\": {\n                  \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                }\n              }\n            }\n          },\n          {\n            \"id\": \"string\",\n            \"name\": \"string\",\n            \"properties\": {\n              \"privateIPAddress\": \"string\",\n              \"privateIPAllocationMethod\": \"Static\",\n              \"publicIPAddress\": {\n                \"id\": {\n                  \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                }\n              },\n              \"subnet\": {\n                \"id\": {\n                  \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                }\n              }\n            }\n          }\n        ],\n        \"backendAddressPools\": [\n          {\n            \"id\": \"string\",\n            \"name\": \"string\",\n            \"properties\": {\n              \"loadBalancerBackendAddresses\": [\n                {\n                  \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                },\n                {\n                  \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                }\n              ],\n              \"provisioningState\": \"string\"\n            }\n          },\n          {\n            \"id\": \"string\",\n            \"name\": \"string\",\n            \"properties\": {\n              \"loadBalancerBackendAddresses\": [\n                {\n                  \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                },\n                {\n                  \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                }\n              ],\n              \"provisioningState\": \"string\"\n            }\n          }\n        ],\n        \"loadBalancingRules\": [\n          {\n            \"id\": \"string\",\n            \"name\": \"string\",\n            \"properties\": {\n              \"frontendIPConfiguration\": {\n                \"id\": {\n                  \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                }\n              },\n              \"backendAddressPool\": {\n                \"id\": {\n                  \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                }\n              },\n              \"probe\": {\n                \"id\": {\n                  \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                }\n              },\n              \"protocol\": \"All\",\n              \"frontendPort\": 7158,\n              \"backendPort\": 1570,\n              \"idleTimeoutInMinutes\": 4060,\n              \"enableFloatingIP\": false,\n              \"loadDistribution\": \"Default\"\n            }\n          },\n          {\n            \"id\": \"string\",\n            \"name\": \"string\",\n            \"properties\": {\n              \"frontendIPConfiguration\": {\n                \"id\": {\n                  \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                }\n              },\n              \"backendAddressPool\": {\n                \"id\": {\n                  \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                }\n              },\n              \"probe\": {\n                \"id\": {\n                  \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                }\n              },\n              \"protocol\": \"Udp\",\n              \"frontendPort\": 4201,\n              \"backendPort\": 8138,\n              \"idleTimeoutInMinutes\": 2187,\n              \"enableFloatingIP\": true,\n              \"loadDistribution\": \"SourceIP\"\n            }\n          }\n        ],\n        \"probes\": [\n          {\n            \"id\": \"string\",\n            \"name\": \"string\",\n            \"properties\": {\n              \"protocol\": \"Https\",\n              \"port\": 7579,\n              \"intervalInSeconds\": 3495,\n              \"numberOfProbes\": 1197,\n              \"requestPath\": \"string\"\n            }\n          },\n          {\n            \"id\": \"string\",\n            \"name\": \"string\",\n            \"properties\": {\n              \"protocol\": \"Https\",\n              \"port\": 9338,\n              \"intervalInSeconds\": 1810,\n              \"numberOfProbes\": 3983,\n              \"requestPath\": \"string\"\n            }\n          }\n        ],\n        \"inboundNatRules\": [\n          {\n            \"id\": \"string\",\n            \"name\": \"string\",\n            \"properties\": {\n              \"frontendIPConfiguration\": {\n                \"id\": {\n                  \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                }\n              },\n              \"protocol\": \"Tcp\",\n              \"frontendPort\": 5189,\n              \"backendPort\": 5734,\n              \"idleTimeoutInMinutes\": 4845,\n              \"enableFloatingIP\": true\n            }\n          },\n          {\n            \"id\": \"string\",\n            \"name\": \"string\",\n            \"properties\": {\n              \"frontendIPConfiguration\": {\n                \"id\": {\n                  \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                }\n              },\n              \"protocol\": \"Tcp\",\n              \"frontendPort\": 5995,\n              \"backendPort\": 3156,\n              \"idleTimeoutInMinutes\": 8158,\n              \"enableFloatingIP\": true\n            }\n          }\n        ],\n        \"outboundRules\": [\n          {\n            \"id\": \"string\",\n            \"name\": \"string\",\n            \"properties\": {\n              \"allocatedOutboundPorts\": 1597,\n              \"frontendIPConfigurations\": [\n                {\n                  \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                },\n                {\n                  \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                }\n              ],\n              \"backendAddressPool\": {\n                \"id\": {\n                  \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                }\n              },\n              \"protocol\": \"All\",\n              \"idleTimeoutInMinutes\": 6544\n            }\n          },\n          {\n            \"id\": \"string\",\n            \"name\": \"string\",\n            \"properties\": {\n              \"allocatedOutboundPorts\": 8149,\n              \"frontendIPConfigurations\": [\n                {\n                  \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                },\n                {\n                  \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                }\n              ],\n              \"backendAddressPool\": {\n                \"id\": {\n                  \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                }\n              },\n              \"protocol\": \"Tcp\",\n              \"idleTimeoutInMinutes\": 3828\n            }\n          }\n        ],\n        \"provisioningState\": \"Succeeded\"\n      }\n    }\n  ],\n  \"nextLink\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "779f0cd6-3fe0-407e-85e2-981e9247ef4a",
+              "name": "Unauthorized. Authentication credentials are missing or invalid.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "subscriptions",
+                    ":subscriptionId",
+                    "resourceGroups",
+                    ":resourceGroupName",
+                    "providers",
+                    "Microsoft.Network",
+                    "loadBalancers"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "api-version",
+                      "value": "2024-05-01"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "subscriptionId",
+                      "description": "(Required) The subscription credentials which uniquely identify the Microsoft Azure subscription."
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "resourceGroupName",
+                      "description": "(Required) The name of the resource group."
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: oauth2",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<token>"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Unauthorized",
+              "code": 401,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "289f3d38-5cd5-470d-94f3-f6c258f0b67d",
+          "name": "Azure Networking Get load balancer",
+          "request": {
+            "name": "Azure Networking Get load balancer",
+            "description": {
+              "content": "Gets the specified load balancer. Returns the full resource representation including frontend IP configurations, backend pools, probes, and rules.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "subscriptions",
+                ":subscriptionId",
+                "resourceGroups",
+                ":resourceGroupName",
+                "providers",
+                "Microsoft.Network",
+                "loadBalancers",
+                ":loadBalancerName"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "api-version",
+                  "value": "2024-05-01",
+                  "description": "(Required) Client API version."
+                }
+              ],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "subscriptionId",
+                  "description": "(Required) The subscription credentials which uniquely identify the Microsoft Azure subscription."
+                },
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "resourceGroupName",
+                  "description": "(Required) The name of the resource group."
+                },
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "loadBalancerName",
+                  "description": "(Required) The name of the load balancer."
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "506faf79-ce54-4c7e-aa38-e537a725b28c",
+              "name": "Successfully retrieved the load balancer.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "subscriptions",
+                    ":subscriptionId",
+                    "resourceGroups",
+                    ":resourceGroupName",
+                    "providers",
+                    "Microsoft.Network",
+                    "loadBalancers",
+                    ":loadBalancerName"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "api-version",
+                      "value": "2024-05-01"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "subscriptionId",
+                      "description": "(Required) The subscription credentials which uniquely identify the Microsoft Azure subscription."
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "resourceGroupName",
+                      "description": "(Required) The name of the resource group."
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "loadBalancerName",
+                      "description": "(Required) The name of the load balancer."
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: oauth2",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"id\": \"string\",\n  \"name\": \"string\",\n  \"type\": \"string\",\n  \"location\": \"string\",\n  \"tags\": {\n    \"key_0\": \"string\",\n    \"key_1\": \"string\",\n    \"key_2\": \"string\"\n  },\n  \"sku\": {\n    \"name\": \"Basic\",\n    \"tier\": \"Global\"\n  },\n  \"properties\": {\n    \"frontendIPConfigurations\": [\n      {\n        \"id\": \"string\",\n        \"name\": \"string\",\n        \"properties\": {\n          \"privateIPAddress\": \"string\",\n          \"privateIPAllocationMethod\": \"Dynamic\",\n          \"publicIPAddress\": {\n            \"id\": \"string\"\n          },\n          \"subnet\": {\n            \"id\": \"string\"\n          }\n        }\n      },\n      {\n        \"id\": \"string\",\n        \"name\": \"string\",\n        \"properties\": {\n          \"privateIPAddress\": \"string\",\n          \"privateIPAllocationMethod\": \"Dynamic\",\n          \"publicIPAddress\": {\n            \"id\": \"string\"\n          },\n          \"subnet\": {\n            \"id\": \"string\"\n          }\n        }\n      }\n    ],\n    \"backendAddressPools\": [\n      {\n        \"id\": \"string\",\n        \"name\": \"string\",\n        \"properties\": {\n          \"loadBalancerBackendAddresses\": [\n            {\n              \"name\": \"string\",\n              \"properties\": {\n                \"virtualNetwork\": {\n                  \"id\": {\n                    \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                  }\n                },\n                \"ipAddress\": \"string\"\n              }\n            },\n            {\n              \"name\": \"string\",\n              \"properties\": {\n                \"virtualNetwork\": {\n                  \"id\": {\n                    \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                  }\n                },\n                \"ipAddress\": \"string\"\n              }\n            }\n          ],\n          \"provisioningState\": \"string\"\n        }\n      },\n      {\n        \"id\": \"string\",\n        \"name\": \"string\",\n        \"properties\": {\n          \"loadBalancerBackendAddresses\": [\n            {\n              \"name\": \"string\",\n              \"properties\": {\n                \"virtualNetwork\": {\n                  \"id\": {\n                    \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                  }\n                },\n                \"ipAddress\": \"string\"\n              }\n            },\n            {\n              \"name\": \"string\",\n              \"properties\": {\n                \"virtualNetwork\": {\n                  \"id\": {\n                    \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                  }\n                },\n                \"ipAddress\": \"string\"\n              }\n            }\n          ],\n          \"provisioningState\": \"string\"\n        }\n      }\n    ],\n    \"loadBalancingRules\": [\n      {\n        \"id\": \"string\",\n        \"name\": \"string\",\n        \"properties\": {\n          \"frontendIPConfiguration\": {\n            \"id\": \"string\"\n          },\n          \"backendAddressPool\": {\n            \"id\": \"string\"\n          },\n          \"probe\": {\n            \"id\": \"string\"\n          },\n          \"protocol\": \"Tcp\",\n          \"frontendPort\": 4586,\n          \"backendPort\": 5754,\n          \"idleTimeoutInMinutes\": 763,\n          \"enableFloatingIP\": true,\n          \"loadDistribution\": \"Default\"\n        }\n      },\n      {\n        \"id\": \"string\",\n        \"name\": \"string\",\n        \"properties\": {\n          \"frontendIPConfiguration\": {\n            \"id\": \"string\"\n          },\n          \"backendAddressPool\": {\n            \"id\": \"string\"\n          },\n          \"probe\": {\n            \"id\": \"string\"\n          },\n          \"protocol\": \"Udp\",\n          \"frontendPort\": 5821,\n          \"backendPort\": 984,\n          \"idleTimeoutInMinutes\": 431,\n          \"enableFloatingIP\": true,\n          \"loadDistribution\": \"Default\"\n        }\n      }\n    ],\n    \"probes\": [\n      {\n        \"id\": \"string\",\n        \"name\": \"string\",\n        \"properties\": {\n          \"protocol\": \"Https\",\n          \"port\": 6588,\n          \"intervalInSeconds\": 4062,\n          \"numberOfProbes\": 1873,\n          \"requestPath\": \"string\"\n        }\n      },\n      {\n        \"id\": \"string\",\n        \"name\": \"string\",\n        \"properties\": {\n          \"protocol\": \"Https\",\n          \"port\": 2400,\n          \"intervalInSeconds\": 1822,\n          \"numberOfProbes\": 7949,\n          \"requestPath\": \"string\"\n        }\n      }\n    ],\n    \"inboundNatRules\": [\n      {\n        \"id\": \"string\",\n        \"name\": \"string\",\n        \"properties\": {\n          \"frontendIPConfiguration\": {\n            \"id\": \"string\"\n          },\n          \"protocol\": \"Udp\",\n          \"frontendPort\": 4574,\n          \"backendPort\": 4344,\n          \"idleTimeoutInMinutes\": 987,\n          \"enableFloatingIP\": true\n        }\n      },\n      {\n        \"id\": \"string\",\n        \"name\": \"string\",\n        \"properties\": {\n          \"frontendIPConfiguration\": {\n            \"id\": \"string\"\n          },\n          \"protocol\": \"All\",\n          \"frontendPort\": 2117,\n          \"backendPort\": 2930,\n          \"idleTimeoutInMinutes\": 493,\n          \"enableFloatingIP\": true\n        }\n      }\n    ],\n    \"outboundRules\": [\n      {\n        \"id\": \"string\",\n        \"name\": \"string\",\n        \"properties\": {\n          \"allocatedOutboundPorts\": 890,\n          \"frontendIPConfigurations\": [\n            {\n              \"id\": \"string\"\n            },\n            {\n              \"id\": \"string\"\n            }\n          ],\n          \"backendAddressPool\": {\n            \"id\": \"string\"\n          },\n          \"protocol\": \"Udp\",\n          \"idleTimeoutInMinutes\": 6833\n        }\n      },\n      {\n        \"id\": \"string\",\n        \"name\": \"string\",\n        \"properties\": {\n          \"allocatedOutboundPorts\": 8074,\n          \"frontendIPConfigurations\": [\n            {\n              \"id\": \"string\"\n            },\n            {\n              \"id\": \"string\"\n            }\n          ],\n          \"backendAddressPool\": {\n            \"id\": \"string\"\n          },\n          \"protocol\": \"Udp\",\n          \"idleTimeoutInMinutes\": 7724\n        }\n      }\n    ],\n    \"provisioningState\": \"Deleting\"\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "0b2826a2-6be2-43a8-8a29-693f4fdfa704",
+              "name": "Unauthorized. Authentication credentials are missing or invalid.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "subscriptions",
+                    ":subscriptionId",
+                    "resourceGroups",
+                    ":resourceGroupName",
+                    "providers",
+                    "Microsoft.Network",
+                    "loadBalancers",
+                    ":loadBalancerName"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "api-version",
+                      "value": "2024-05-01"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "subscriptionId",
+                      "description": "(Required) The subscription credentials which uniquely identify the Microsoft Azure subscription."
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "resourceGroupName",
+                      "description": "(Required) The name of the resource group."
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "loadBalancerName",
+                      "description": "(Required) The name of the load balancer."
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: oauth2",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<token>"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Unauthorized",
+              "code": 401,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "aca5114f-11a3-4c56-8037-f9f90f679e63",
+              "name": "Load balancer not found.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "subscriptions",
+                    ":subscriptionId",
+                    "resourceGroups",
+                    ":resourceGroupName",
+                    "providers",
+                    "Microsoft.Network",
+                    "loadBalancers",
+                    ":loadBalancerName"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "api-version",
+                      "value": "2024-05-01"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "subscriptionId",
+                      "description": "(Required) The subscription credentials which uniquely identify the Microsoft Azure subscription."
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "resourceGroupName",
+                      "description": "(Required) The name of the resource group."
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "loadBalancerName",
+                      "description": "(Required) The name of the load balancer."
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: oauth2",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<token>"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Not Found",
+              "code": 404,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "896dc93a-39be-40a6-9498-ad4364780ab8",
+          "name": "Azure Networking Create or update load balancer",
+          "request": {
+            "name": "Azure Networking Create or update load balancer",
+            "description": {
+              "content": "Creates or updates a load balancer. The request body must include the location and at least a frontend IP configuration to create a functional load balancer.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "subscriptions",
+                ":subscriptionId",
+                "resourceGroups",
+                ":resourceGroupName",
+                "providers",
+                "Microsoft.Network",
+                "loadBalancers",
+                ":loadBalancerName"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "api-version",
+                  "value": "2024-05-01",
+                  "description": "(Required) Client API version."
+                }
+              ],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "subscriptionId",
+                  "description": "(Required) The subscription credentials which uniquely identify the Microsoft Azure subscription."
+                },
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "resourceGroupName",
+                  "description": "(Required) The name of the resource group."
+                },
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "loadBalancerName",
+                  "description": "(Required) The name of the load balancer."
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "PUT",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"location\": \"<string>\",\n  \"tags\": {\n    \"key_0\": \"<string>\"\n  },\n  \"sku\": {\n    \"name\": \"<string>\",\n    \"tier\": \"<string>\"\n  },\n  \"properties\": {\n    \"frontendIPConfigurations\": [\n      {\n        \"id\": \"<string>\",\n        \"name\": \"<string>\",\n        \"properties\": {\n          \"privateIPAddress\": \"<string>\",\n          \"privateIPAllocationMethod\": \"<string>\",\n          \"publicIPAddress\": {\n            \"id\": \"<string>\"\n          },\n          \"subnet\": {\n            \"id\": \"<string>\"\n          }\n        }\n      },\n      {\n        \"id\": \"<string>\",\n        \"name\": \"<string>\",\n        \"properties\": {\n          \"privateIPAddress\": \"<string>\",\n          \"privateIPAllocationMethod\": \"<string>\",\n          \"publicIPAddress\": {\n            \"id\": \"<string>\"\n          },\n          \"subnet\": {\n            \"id\": \"<string>\"\n          }\n        }\n      }\n    ],\n    \"backendAddressPools\": [\n      {\n        \"id\": \"<string>\",\n        \"name\": \"<string>\",\n        \"properties\": {\n          \"loadBalancerBackendAddresses\": [\n            {\n              \"name\": \"<string>\",\n              \"properties\": {\n                \"virtualNetwork\": {\n                  \"id\": {\n                    \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                  }\n                },\n                \"ipAddress\": \"<string>\"\n              }\n            },\n            {\n              \"name\": \"<string>\",\n              \"properties\": {\n                \"virtualNetwork\": {\n                  \"id\": {\n                    \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                  }\n                },\n                \"ipAddress\": \"<string>\"\n              }\n            }\n          ]\n        }\n      },\n      {\n        \"id\": \"<string>\",\n        \"name\": \"<string>\",\n        \"properties\": {\n          \"loadBalancerBackendAddresses\": [\n            {\n              \"name\": \"<string>\",\n              \"properties\": {\n                \"virtualNetwork\": {\n                  \"id\": {\n                    \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                  }\n                },\n                \"ipAddress\": \"<string>\"\n              }\n            },\n            {\n              \"name\": \"<string>\",\n              \"properties\": {\n                \"virtualNetwork\": {\n                  \"id\": {\n                    \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                  }\n                },\n                \"ipAddress\": \"<string>\"\n              }\n            }\n          ]\n        }\n      }\n    ],\n    \"loadBalancingRules\": [\n      {\n        \"id\": \"<string>\",\n        \"name\": \"<string>\",\n        \"properties\": {\n          \"frontendIPConfiguration\": {\n            \"id\": \"<string>\"\n          },\n          \"backendAddressPool\": {\n            \"id\": \"<string>\"\n          },\n          \"probe\": {\n            \"id\": \"<string>\"\n          },\n          \"protocol\": \"<string>\",\n          \"frontendPort\": \"<integer>\",\n          \"backendPort\": \"<integer>\",\n          \"idleTimeoutInMinutes\": \"<integer>\",\n          \"enableFloatingIP\": \"<boolean>\",\n          \"loadDistribution\": \"<string>\"\n        }\n      },\n      {\n        \"id\": \"<string>\",\n        \"name\": \"<string>\",\n        \"properties\": {\n          \"frontendIPConfiguration\": {\n            \"id\": \"<string>\"\n          },\n          \"backendAddressPool\": {\n            \"id\": \"<string>\"\n          },\n          \"probe\": {\n            \"id\": \"<string>\"\n          },\n          \"protocol\": \"<string>\",\n          \"frontendPort\": \"<integer>\",\n          \"backendPort\": \"<integer>\",\n          \"idleTimeoutInMinutes\": \"<integer>\",\n          \"enableFloatingIP\": \"<boolean>\",\n          \"loadDistribution\": \"<string>\"\n        }\n      }\n    ],\n    \"probes\": [\n      {\n        \"id\": \"<string>\",\n        \"name\": \"<string>\",\n        \"properties\": {\n          \"protocol\": \"<string>\",\n          \"port\": \"<integer>\",\n          \"intervalInSeconds\": \"<integer>\",\n          \"numberOfProbes\": \"<integer>\",\n          \"requestPath\": \"<string>\"\n        }\n      },\n      {\n        \"id\": \"<string>\",\n        \"name\": \"<string>\",\n        \"properties\": {\n          \"protocol\": \"<string>\",\n          \"port\": \"<integer>\",\n          \"intervalInSeconds\": \"<integer>\",\n          \"numberOfProbes\": \"<integer>\",\n          \"requestPath\": \"<string>\"\n        }\n      }\n    ],\n    \"inboundNatRules\": [\n      {\n        \"id\": \"<string>\",\n        \"name\": \"<string>\",\n        \"properties\": {\n          \"frontendIPConfiguration\": {\n            \"id\": \"<string>\"\n          },\n          \"protocol\": \"<string>\",\n          \"frontendPort\": \"<integer>\",\n          \"backendPort\": \"<integer>\",\n          \"idleTimeoutInMinutes\": \"<integer>\",\n          \"enableFloatingIP\": \"<boolean>\"\n        }\n      },\n      {\n        \"id\": \"<string>\",\n        \"name\": \"<string>\",\n        \"properties\": {\n          \"frontendIPConfiguration\": {\n            \"id\": \"<string>\"\n          },\n          \"protocol\": \"<string>\",\n          \"frontendPort\": \"<integer>\",\n          \"backendPort\": \"<integer>\",\n          \"idleTimeoutInMinutes\": \"<integer>\",\n          \"enableFloatingIP\": \"<boolean>\"\n        }\n      }\n    ],\n    \"outboundRules\": [\n      {\n        \"id\": \"<string>\",\n        \"name\": \"<string>\",\n        \"properties\": {\n          \"allocatedOutboundPorts\": \"<integer>\",\n          \"frontendIPConfigurations\": [\n            {\n              \"id\": \"<string>\"\n            },\n            {\n              \"id\": \"<string>\"\n            }\n          ],\n          \"backendAddressPool\": {\n            \"id\": \"<string>\"\n          },\n          \"protocol\": \"<string>\",\n          \"idleTimeoutInMinutes\": \"<integer>\"\n        }\n      },\n      {\n        \"id\": \"<string>\",\n        \"name\": \"<string>\",\n        \"properties\": {\n          \"allocatedOutboundPorts\": \"<integer>\",\n          \"frontendIPConfigurations\": [\n            {\n              \"id\": \"<string>\"\n            },\n            {\n              \"id\": \"<string>\"\n            }\n          ],\n          \"backendAddressPool\": {\n            \"id\": \"<string>\"\n          },\n          \"protocol\": \"<string>\",\n          \"idleTimeoutInMinutes\": \"<integer>\"\n        }\n      }\n    ]\n  }\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "57782326-8c9e-4c65-95aa-e2da68376623",
+              "name": "Successfully updated the load balancer.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "subscriptions",
+                    ":subscriptionId",
+                    "resourceGroups",
+                    ":resourceGroupName",
+                    "providers",
+                    "Microsoft.Network",
+                    "loadBalancers",
+                    ":loadBalancerName"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "api-version",
+                      "value": "2024-05-01"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "subscriptionId",
+                      "description": "(Required) The subscription credentials which uniquely identify the Microsoft Azure subscription."
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "resourceGroupName",
+                      "description": "(Required) The name of the resource group."
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "loadBalancerName",
+                      "description": "(Required) The name of the load balancer."
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: oauth2",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "PUT",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"location\": \"<string>\",\n  \"tags\": {\n    \"key_0\": \"<string>\",\n    \"key_1\": \"<string>\",\n    \"key_2\": \"<string>\"\n  },\n  \"sku\": {\n    \"name\": \"<string>\",\n    \"tier\": \"<string>\"\n  },\n  \"properties\": {\n    \"frontendIPConfigurations\": [\n      {\n        \"id\": \"string\",\n        \"name\": \"string\",\n        \"properties\": {\n          \"privateIPAddress\": \"string\",\n          \"privateIPAllocationMethod\": \"Dynamic\",\n          \"publicIPAddress\": {\n            \"id\": \"string\"\n          },\n          \"subnet\": {\n            \"id\": \"string\"\n          }\n        }\n      },\n      {\n        \"id\": \"string\",\n        \"name\": \"string\",\n        \"properties\": {\n          \"privateIPAddress\": \"string\",\n          \"privateIPAllocationMethod\": \"Static\",\n          \"publicIPAddress\": {\n            \"id\": \"string\"\n          },\n          \"subnet\": {\n            \"id\": \"string\"\n          }\n        }\n      }\n    ],\n    \"backendAddressPools\": [\n      {\n        \"id\": \"string\",\n        \"name\": \"string\",\n        \"properties\": {\n          \"loadBalancerBackendAddresses\": [\n            {\n              \"name\": \"string\",\n              \"properties\": {\n                \"virtualNetwork\": {\n                  \"id\": {\n                    \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                  }\n                },\n                \"ipAddress\": \"string\"\n              }\n            },\n            {\n              \"name\": \"string\",\n              \"properties\": {\n                \"virtualNetwork\": {\n                  \"id\": {\n                    \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                  }\n                },\n                \"ipAddress\": \"string\"\n              }\n            }\n          ]\n        }\n      },\n      {\n        \"id\": \"string\",\n        \"name\": \"string\",\n        \"properties\": {\n          \"loadBalancerBackendAddresses\": [\n            {\n              \"name\": \"string\",\n              \"properties\": {\n                \"virtualNetwork\": {\n                  \"id\": {\n                    \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                  }\n                },\n                \"ipAddress\": \"string\"\n              }\n            },\n            {\n              \"name\": \"string\",\n              \"properties\": {\n                \"virtualNetwork\": {\n                  \"id\": {\n                    \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                  }\n                },\n                \"ipAddress\": \"string\"\n              }\n            }\n          ]\n        }\n      }\n    ],\n    \"loadBalancingRules\": [\n      {\n        \"id\": \"string\",\n        \"name\": \"string\",\n        \"properties\": {\n          \"frontendIPConfiguration\": {\n            \"id\": \"string\"\n          },\n          \"backendAddressPool\": {\n            \"id\": \"string\"\n          },\n          \"probe\": {\n            \"id\": \"string\"\n          },\n          \"protocol\": \"Udp\",\n          \"frontendPort\": 2504,\n          \"backendPort\": 1333,\n          \"idleTimeoutInMinutes\": 1766,\n          \"enableFloatingIP\": false,\n          \"loadDistribution\": \"SourceIP\"\n        }\n      },\n      {\n        \"id\": \"string\",\n        \"name\": \"string\",\n        \"properties\": {\n          \"frontendIPConfiguration\": {\n            \"id\": \"string\"\n          },\n          \"backendAddressPool\": {\n            \"id\": \"string\"\n          },\n          \"probe\": {\n            \"id\": \"string\"\n          },\n          \"protocol\": \"Udp\",\n          \"frontendPort\": 6168,\n          \"backendPort\": 4048,\n          \"idleTimeoutInMinutes\": 399,\n          \"enableFloatingIP\": true,\n          \"loadDistribution\": \"Default\"\n        }\n      }\n    ],\n    \"probes\": [\n      {\n        \"id\": \"string\",\n        \"name\": \"string\",\n        \"properties\": {\n          \"protocol\": \"Http\",\n          \"port\": 5067,\n          \"intervalInSeconds\": 3360,\n          \"numberOfProbes\": 7666,\n          \"requestPath\": \"string\"\n        }\n      },\n      {\n        \"id\": \"string\",\n        \"name\": \"string\",\n        \"properties\": {\n          \"protocol\": \"Http\",\n          \"port\": 6974,\n          \"intervalInSeconds\": 7264,\n          \"numberOfProbes\": 3729,\n          \"requestPath\": \"string\"\n        }\n      }\n    ],\n    \"inboundNatRules\": [\n      {\n        \"id\": \"string\",\n        \"name\": \"string\",\n        \"properties\": {\n          \"frontendIPConfiguration\": {\n            \"id\": \"string\"\n          },\n          \"protocol\": \"Udp\",\n          \"frontendPort\": 1951,\n          \"backendPort\": 934,\n          \"idleTimeoutInMinutes\": 9498,\n          \"enableFloatingIP\": true\n        }\n      },\n      {\n        \"id\": \"string\",\n        \"name\": \"string\",\n        \"properties\": {\n          \"frontendIPConfiguration\": {\n            \"id\": \"string\"\n          },\n          \"protocol\": \"All\",\n          \"frontendPort\": 6126,\n          \"backendPort\": 8498,\n          \"idleTimeoutInMinutes\": 9496,\n          \"enableFloatingIP\": false\n        }\n      }\n    ],\n    \"outboundRules\": [\n      {\n        \"id\": \"string\",\n        \"name\": \"string\",\n        \"properties\": {\n          \"allocatedOutboundPorts\": 994,\n          \"frontendIPConfigurations\": [\n            {\n              \"id\": \"string\"\n            },\n            {\n              \"id\": \"string\"\n            }\n          ],\n          \"backendAddressPool\": {\n            \"id\": \"string\"\n          },\n          \"protocol\": \"Udp\",\n          \"idleTimeoutInMinutes\": 4144\n        }\n      },\n      {\n        \"id\": \"string\",\n        \"name\": \"string\",\n        \"properties\": {\n          \"allocatedOutboundPorts\": 3223,\n          \"frontendIPConfigurations\": [\n            {\n              \"id\": \"string\"\n            },\n            {\n              \"id\": \"string\"\n            }\n          ],\n          \"backendAddressPool\": {\n            \"id\": \"string\"\n          },\n          \"protocol\": \"All\",\n          \"idleTimeoutInMinutes\": 8384\n        }\n      }\n    ]\n  }\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"id\": \"string\",\n  \"name\": \"string\",\n  \"type\": \"string\",\n  \"location\": \"string\",\n  \"tags\": {\n    \"key_0\": \"string\",\n    \"key_1\": \"string\",\n    \"key_2\": \"string\"\n  },\n  \"sku\": {\n    \"name\": \"Basic\",\n    \"tier\": \"Global\"\n  },\n  \"properties\": {\n    \"frontendIPConfigurations\": [\n      {\n        \"id\": \"string\",\n        \"name\": \"string\",\n        \"properties\": {\n          \"privateIPAddress\": \"string\",\n          \"privateIPAllocationMethod\": \"Dynamic\",\n          \"publicIPAddress\": {\n            \"id\": \"string\"\n          },\n          \"subnet\": {\n            \"id\": \"string\"\n          }\n        }\n      },\n      {\n        \"id\": \"string\",\n        \"name\": \"string\",\n        \"properties\": {\n          \"privateIPAddress\": \"string\",\n          \"privateIPAllocationMethod\": \"Dynamic\",\n          \"publicIPAddress\": {\n            \"id\": \"string\"\n          },\n          \"subnet\": {\n            \"id\": \"string\"\n          }\n        }\n      }\n    ],\n    \"backendAddressPools\": [\n      {\n        \"id\": \"string\",\n        \"name\": \"string\",\n        \"properties\": {\n          \"loadBalancerBackendAddresses\": [\n            {\n              \"name\": \"string\",\n              \"properties\": {\n                \"virtualNetwork\": {\n                  \"id\": {\n                    \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                  }\n                },\n                \"ipAddress\": \"string\"\n              }\n            },\n            {\n              \"name\": \"string\",\n              \"properties\": {\n                \"virtualNetwork\": {\n                  \"id\": {\n                    \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                  }\n                },\n                \"ipAddress\": \"string\"\n              }\n            }\n          ],\n          \"provisioningState\": \"string\"\n        }\n      },\n      {\n        \"id\": \"string\",\n        \"name\": \"string\",\n        \"properties\": {\n          \"loadBalancerBackendAddresses\": [\n            {\n              \"name\": \"string\",\n              \"properties\": {\n                \"virtualNetwork\": {\n                  \"id\": {\n                    \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                  }\n                },\n                \"ipAddress\": \"string\"\n              }\n            },\n            {\n              \"name\": \"string\",\n              \"properties\": {\n                \"virtualNetwork\": {\n                  \"id\": {\n                    \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                  }\n                },\n                \"ipAddress\": \"string\"\n              }\n            }\n          ],\n          \"provisioningState\": \"string\"\n        }\n      }\n    ],\n    \"loadBalancingRules\": [\n      {\n        \"id\": \"string\",\n        \"name\": \"string\",\n        \"properties\": {\n          \"frontendIPConfiguration\": {\n            \"id\": \"string\"\n          },\n          \"backendAddressPool\": {\n            \"id\": \"string\"\n          },\n          \"probe\": {\n            \"id\": \"string\"\n          },\n          \"protocol\": \"Tcp\",\n          \"frontendPort\": 4586,\n          \"backendPort\": 5754,\n          \"idleTimeoutInMinutes\": 763,\n          \"enableFloatingIP\": true,\n          \"loadDistribution\": \"Default\"\n        }\n      },\n      {\n        \"id\": \"string\",\n        \"name\": \"string\",\n        \"properties\": {\n          \"frontendIPConfiguration\": {\n            \"id\": \"string\"\n          },\n          \"backendAddressPool\": {\n            \"id\": \"string\"\n          },\n          \"probe\": {\n            \"id\": \"string\"\n          },\n          \"protocol\": \"Udp\",\n          \"frontendPort\": 5821,\n          \"backendPort\": 984,\n          \"idleTimeoutInMinutes\": 431,\n          \"enableFloatingIP\": true,\n          \"loadDistribution\": \"Default\"\n        }\n      }\n    ],\n    \"probes\": [\n      {\n        \"id\": \"string\",\n        \"name\": \"string\",\n        \"properties\": {\n          \"protocol\": \"Https\",\n          \"port\": 6588,\n          \"intervalInSeconds\": 4062,\n          \"numberOfProbes\": 1873,\n          \"requestPath\": \"string\"\n        }\n      },\n      {\n        \"id\": \"string\",\n        \"name\": \"string\",\n        \"properties\": {\n          \"protocol\": \"Https\",\n          \"port\": 2400,\n          \"intervalInSeconds\": 1822,\n          \"numberOfProbes\": 7949,\n          \"requestPath\": \"string\"\n        }\n      }\n    ],\n    \"inboundNatRules\": [\n      {\n        \"id\": \"string\",\n        \"name\": \"string\",\n        \"properties\": {\n          \"frontendIPConfiguration\": {\n            \"id\": \"string\"\n          },\n          \"protocol\": \"Udp\",\n          \"frontendPort\": 4574,\n          \"backendPort\": 4344,\n          \"idleTimeoutInMinutes\": 987,\n          \"enableFloatingIP\": true\n        }\n      },\n      {\n        \"id\": \"string\",\n        \"name\": \"string\",\n        \"properties\": {\n          \"frontendIPConfiguration\": {\n            \"id\": \"string\"\n          },\n          \"protocol\": \"All\",\n          \"frontendPort\": 2117,\n          \"backendPort\": 2930,\n          \"idleTimeoutInMinutes\": 493,\n          \"enableFloatingIP\": true\n        }\n      }\n    ],\n    \"outboundRules\": [\n      {\n        \"id\": \"string\",\n        \"name\": \"string\",\n        \"properties\": {\n          \"allocatedOutboundPorts\": 890,\n          \"frontendIPConfigurations\": [\n            {\n              \"id\": \"string\"\n            },\n            {\n              \"id\": \"string\"\n            }\n          ],\n          \"backendAddressPool\": {\n            \"id\": \"string\"\n          },\n          \"protocol\": \"Udp\",\n          \"idleTimeoutInMinutes\": 6833\n        }\n      },\n      {\n        \"id\": \"string\",\n        \"name\": \"string\",\n        \"properties\": {\n          \"allocatedOutboundPorts\": 8074,\n          \"frontendIPConfigurations\": [\n            {\n              \"id\": \"string\"\n            },\n            {\n              \"id\": \"string\"\n            }\n          ],\n          \"backendAddressPool\": {\n            \"id\": \"string\"\n          },\n          \"protocol\": \"Udp\",\n          \"idleTimeoutInMinutes\": 7724\n        }\n      }\n    ],\n    \"provisioningState\": \"Deleting\"\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "b8c12bed-62e8-424c-b51c-12473367a52c",
+              "name": "Successfully created the load balancer.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "subscriptions",
+                    ":subscriptionId",
+                    "resourceGroups",
+                    ":resourceGroupName",
+                    "providers",
+                    "Microsoft.Network",
+                    "loadBalancers",
+                    ":loadBalancerName"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "api-version",
+                      "value": "2024-05-01"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "subscriptionId",
+                      "description": "(Required) The subscription credentials which uniquely identify the Microsoft Azure subscription."
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "resourceGroupName",
+                      "description": "(Required) The name of the resource group."
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "loadBalancerName",
+                      "description": "(Required) The name of the load balancer."
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: oauth2",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "PUT",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"location\": \"<string>\",\n  \"tags\": {\n    \"key_0\": \"<string>\",\n    \"key_1\": \"<string>\",\n    \"key_2\": \"<string>\"\n  },\n  \"sku\": {\n    \"name\": \"<string>\",\n    \"tier\": \"<string>\"\n  },\n  \"properties\": {\n    \"frontendIPConfigurations\": [\n      {\n        \"id\": \"string\",\n        \"name\": \"string\",\n        \"properties\": {\n          \"privateIPAddress\": \"string\",\n          \"privateIPAllocationMethod\": \"Dynamic\",\n          \"publicIPAddress\": {\n            \"id\": \"string\"\n          },\n          \"subnet\": {\n            \"id\": \"string\"\n          }\n        }\n      },\n      {\n        \"id\": \"string\",\n        \"name\": \"string\",\n        \"properties\": {\n          \"privateIPAddress\": \"string\",\n          \"privateIPAllocationMethod\": \"Static\",\n          \"publicIPAddress\": {\n            \"id\": \"string\"\n          },\n          \"subnet\": {\n            \"id\": \"string\"\n          }\n        }\n      }\n    ],\n    \"backendAddressPools\": [\n      {\n        \"id\": \"string\",\n        \"name\": \"string\",\n        \"properties\": {\n          \"loadBalancerBackendAddresses\": [\n            {\n              \"name\": \"string\",\n              \"properties\": {\n                \"virtualNetwork\": {\n                  \"id\": {\n                    \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                  }\n                },\n                \"ipAddress\": \"string\"\n              }\n            },\n            {\n              \"name\": \"string\",\n              \"properties\": {\n                \"virtualNetwork\": {\n                  \"id\": {\n                    \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                  }\n                },\n                \"ipAddress\": \"string\"\n              }\n            }\n          ]\n        }\n      },\n      {\n        \"id\": \"string\",\n        \"name\": \"string\",\n        \"properties\": {\n          \"loadBalancerBackendAddresses\": [\n            {\n              \"name\": \"string\",\n              \"properties\": {\n                \"virtualNetwork\": {\n                  \"id\": {\n                    \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                  }\n                },\n                \"ipAddress\": \"string\"\n              }\n            },\n            {\n              \"name\": \"string\",\n              \"properties\": {\n                \"virtualNetwork\": {\n                  \"id\": {\n                    \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                  }\n                },\n                \"ipAddress\": \"string\"\n              }\n            }\n          ]\n        }\n      }\n    ],\n    \"loadBalancingRules\": [\n      {\n        \"id\": \"string\",\n        \"name\": \"string\",\n        \"properties\": {\n          \"frontendIPConfiguration\": {\n            \"id\": \"string\"\n          },\n          \"backendAddressPool\": {\n            \"id\": \"string\"\n          },\n          \"probe\": {\n            \"id\": \"string\"\n          },\n          \"protocol\": \"Udp\",\n          \"frontendPort\": 2504,\n          \"backendPort\": 1333,\n          \"idleTimeoutInMinutes\": 1766,\n          \"enableFloatingIP\": false,\n          \"loadDistribution\": \"SourceIP\"\n        }\n      },\n      {\n        \"id\": \"string\",\n        \"name\": \"string\",\n        \"properties\": {\n          \"frontendIPConfiguration\": {\n            \"id\": \"string\"\n          },\n          \"backendAddressPool\": {\n            \"id\": \"string\"\n          },\n          \"probe\": {\n            \"id\": \"string\"\n          },\n          \"protocol\": \"Udp\",\n          \"frontendPort\": 6168,\n          \"backendPort\": 4048,\n          \"idleTimeoutInMinutes\": 399,\n          \"enableFloatingIP\": true,\n          \"loadDistribution\": \"Default\"\n        }\n      }\n    ],\n    \"probes\": [\n      {\n        \"id\": \"string\",\n        \"name\": \"string\",\n        \"properties\": {\n          \"protocol\": \"Http\",\n          \"port\": 5067,\n          \"intervalInSeconds\": 3360,\n          \"numberOfProbes\": 7666,\n          \"requestPath\": \"string\"\n        }\n      },\n      {\n        \"id\": \"string\",\n        \"name\": \"string\",\n        \"properties\": {\n          \"protocol\": \"Http\",\n          \"port\": 6974,\n          \"intervalInSeconds\": 7264,\n          \"numberOfProbes\": 3729,\n          \"requestPath\": \"string\"\n        }\n      }\n    ],\n    \"inboundNatRules\": [\n      {\n        \"id\": \"string\",\n        \"name\": \"string\",\n        \"properties\": {\n          \"frontendIPConfiguration\": {\n            \"id\": \"string\"\n          },\n          \"protocol\": \"Udp\",\n          \"frontendPort\": 1951,\n          \"backendPort\": 934,\n          \"idleTimeoutInMinutes\": 9498,\n          \"enableFloatingIP\": true\n        }\n      },\n      {\n        \"id\": \"string\",\n        \"name\": \"string\",\n        \"properties\": {\n          \"frontendIPConfiguration\": {\n            \"id\": \"string\"\n          },\n          \"protocol\": \"All\",\n          \"frontendPort\": 6126,\n          \"backendPort\": 8498,\n          \"idleTimeoutInMinutes\": 9496,\n          \"enableFloatingIP\": false\n        }\n      }\n    ],\n    \"outboundRules\": [\n      {\n        \"id\": \"string\",\n        \"name\": \"string\",\n        \"properties\": {\n          \"allocatedOutboundPorts\": 994,\n          \"frontendIPConfigurations\": [\n            {\n              \"id\": \"string\"\n            },\n            {\n              \"id\": \"string\"\n            }\n          ],\n          \"backendAddressPool\": {\n            \"id\": \"string\"\n          },\n          \"protocol\": \"Udp\",\n          \"idleTimeoutInMinutes\": 4144\n        }\n      },\n      {\n        \"id\": \"string\",\n        \"name\": \"string\",\n        \"properties\": {\n          \"allocatedOutboundPorts\": 3223,\n          \"frontendIPConfigurations\": [\n            {\n              \"id\": \"string\"\n            },\n            {\n              \"id\": \"string\"\n            }\n          ],\n          \"backendAddressPool\": {\n            \"id\": \"string\"\n          },\n          \"protocol\": \"All\",\n          \"idleTimeoutInMinutes\": 8384\n        }\n      }\n    ]\n  }\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Created",
+              "code": 201,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"id\": \"string\",\n  \"name\": \"string\",\n  \"type\": \"string\",\n  \"location\": \"string\",\n  \"tags\": {\n    \"key_0\": \"string\",\n    \"key_1\": \"string\",\n    \"key_2\": \"string\"\n  },\n  \"sku\": {\n    \"name\": \"Basic\",\n    \"tier\": \"Global\"\n  },\n  \"properties\": {\n    \"frontendIPConfigurations\": [\n      {\n        \"id\": \"string\",\n        \"name\": \"string\",\n        \"properties\": {\n          \"privateIPAddress\": \"string\",\n          \"privateIPAllocationMethod\": \"Dynamic\",\n          \"publicIPAddress\": {\n            \"id\": \"string\"\n          },\n          \"subnet\": {\n            \"id\": \"string\"\n          }\n        }\n      },\n      {\n        \"id\": \"string\",\n        \"name\": \"string\",\n        \"properties\": {\n          \"privateIPAddress\": \"string\",\n          \"privateIPAllocationMethod\": \"Dynamic\",\n          \"publicIPAddress\": {\n            \"id\": \"string\"\n          },\n          \"subnet\": {\n            \"id\": \"string\"\n          }\n        }\n      }\n    ],\n    \"backendAddressPools\": [\n      {\n        \"id\": \"string\",\n        \"name\": \"string\",\n        \"properties\": {\n          \"loadBalancerBackendAddresses\": [\n            {\n              \"name\": \"string\",\n              \"properties\": {\n                \"virtualNetwork\": {\n                  \"id\": {\n                    \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                  }\n                },\n                \"ipAddress\": \"string\"\n              }\n            },\n            {\n              \"name\": \"string\",\n              \"properties\": {\n                \"virtualNetwork\": {\n                  \"id\": {\n                    \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                  }\n                },\n                \"ipAddress\": \"string\"\n              }\n            }\n          ],\n          \"provisioningState\": \"string\"\n        }\n      },\n      {\n        \"id\": \"string\",\n        \"name\": \"string\",\n        \"properties\": {\n          \"loadBalancerBackendAddresses\": [\n            {\n              \"name\": \"string\",\n              \"properties\": {\n                \"virtualNetwork\": {\n                  \"id\": {\n                    \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                  }\n                },\n                \"ipAddress\": \"string\"\n              }\n            },\n            {\n              \"name\": \"string\",\n              \"properties\": {\n                \"virtualNetwork\": {\n                  \"id\": {\n                    \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                  }\n                },\n                \"ipAddress\": \"string\"\n              }\n            }\n          ],\n          \"provisioningState\": \"string\"\n        }\n      }\n    ],\n    \"loadBalancingRules\": [\n      {\n        \"id\": \"string\",\n        \"name\": \"string\",\n        \"properties\": {\n          \"frontendIPConfiguration\": {\n            \"id\": \"string\"\n          },\n          \"backendAddressPool\": {\n            \"id\": \"string\"\n          },\n          \"probe\": {\n            \"id\": \"string\"\n          },\n          \"protocol\": \"Tcp\",\n          \"frontendPort\": 4586,\n          \"backendPort\": 5754,\n          \"idleTimeoutInMinutes\": 763,\n          \"enableFloatingIP\": true,\n          \"loadDistribution\": \"Default\"\n        }\n      },\n      {\n        \"id\": \"string\",\n        \"name\": \"string\",\n        \"properties\": {\n          \"frontendIPConfiguration\": {\n            \"id\": \"string\"\n          },\n          \"backendAddressPool\": {\n            \"id\": \"string\"\n          },\n          \"probe\": {\n            \"id\": \"string\"\n          },\n          \"protocol\": \"Udp\",\n          \"frontendPort\": 5821,\n          \"backendPort\": 984,\n          \"idleTimeoutInMinutes\": 431,\n          \"enableFloatingIP\": true,\n          \"loadDistribution\": \"Default\"\n        }\n      }\n    ],\n    \"probes\": [\n      {\n        \"id\": \"string\",\n        \"name\": \"string\",\n        \"properties\": {\n          \"protocol\": \"Https\",\n          \"port\": 6588,\n          \"intervalInSeconds\": 4062,\n          \"numberOfProbes\": 1873,\n          \"requestPath\": \"string\"\n        }\n      },\n      {\n        \"id\": \"string\",\n        \"name\": \"string\",\n        \"properties\": {\n          \"protocol\": \"Https\",\n          \"port\": 2400,\n          \"intervalInSeconds\": 1822,\n          \"numberOfProbes\": 7949,\n          \"requestPath\": \"string\"\n        }\n      }\n    ],\n    \"inboundNatRules\": [\n      {\n        \"id\": \"string\",\n        \"name\": \"string\",\n        \"properties\": {\n          \"frontendIPConfiguration\": {\n            \"id\": \"string\"\n          },\n          \"protocol\": \"Udp\",\n          \"frontendPort\": 4574,\n          \"backendPort\": 4344,\n          \"idleTimeoutInMinutes\": 987,\n          \"enableFloatingIP\": true\n        }\n      },\n      {\n        \"id\": \"string\",\n        \"name\": \"string\",\n        \"properties\": {\n          \"frontendIPConfiguration\": {\n            \"id\": \"string\"\n          },\n          \"protocol\": \"All\",\n          \"frontendPort\": 2117,\n          \"backendPort\": 2930,\n          \"idleTimeoutInMinutes\": 493,\n          \"enableFloatingIP\": true\n        }\n      }\n    ],\n    \"outboundRules\": [\n      {\n        \"id\": \"string\",\n        \"name\": \"string\",\n        \"properties\": {\n          \"allocatedOutboundPorts\": 890,\n          \"frontendIPConfigurations\": [\n            {\n              \"id\": \"string\"\n            },\n            {\n              \"id\": \"string\"\n            }\n          ],\n          \"backendAddressPool\": {\n            \"id\": \"string\"\n          },\n          \"protocol\": \"Udp\",\n          \"idleTimeoutInMinutes\": 6833\n        }\n      },\n      {\n        \"id\": \"string\",\n        \"name\": \"string\",\n        \"properties\": {\n          \"allocatedOutboundPorts\": 8074,\n          \"frontendIPConfigurations\": [\n            {\n              \"id\": \"string\"\n            },\n            {\n              \"id\": \"string\"\n            }\n          ],\n          \"backendAddressPool\": {\n            \"id\": \"string\"\n          },\n          \"protocol\": \"Udp\",\n          \"idleTimeoutInMinutes\": 7724\n        }\n      }\n    ],\n    \"provisioningState\": \"Deleting\"\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "dd1ac898-4ef2-4092-9b0a-ca610325a1a6",
+              "name": "Bad request. The request body is invalid.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "subscriptions",
+                    ":subscriptionId",
+                    "resourceGroups",
+                    ":resourceGroupName",
+                    "providers",
+                    "Microsoft.Network",
+                    "loadBalancers",
+                    ":loadBalancerName"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "api-version",
+                      "value": "2024-05-01"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "subscriptionId",
+                      "description": "(Required) The subscription credentials which uniquely identify the Microsoft Azure subscription."
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "resourceGroupName",
+                      "description": "(Required) The name of the resource group."
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "loadBalancerName",
+                      "description": "(Required) The name of the load balancer."
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: oauth2",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<token>"
+                  }
+                ],
+                "method": "PUT",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"location\": \"<string>\",\n  \"tags\": {\n    \"key_0\": \"<string>\",\n    \"key_1\": \"<string>\",\n    \"key_2\": \"<string>\"\n  },\n  \"sku\": {\n    \"name\": \"<string>\",\n    \"tier\": \"<string>\"\n  },\n  \"properties\": {\n    \"frontendIPConfigurations\": [\n      {\n        \"id\": \"string\",\n        \"name\": \"string\",\n        \"properties\": {\n          \"privateIPAddress\": \"string\",\n          \"privateIPAllocationMethod\": \"Dynamic\",\n          \"publicIPAddress\": {\n            \"id\": \"string\"\n          },\n          \"subnet\": {\n            \"id\": \"string\"\n          }\n        }\n      },\n      {\n        \"id\": \"string\",\n        \"name\": \"string\",\n        \"properties\": {\n          \"privateIPAddress\": \"string\",\n          \"privateIPAllocationMethod\": \"Static\",\n          \"publicIPAddress\": {\n            \"id\": \"string\"\n          },\n          \"subnet\": {\n            \"id\": \"string\"\n          }\n        }\n      }\n    ],\n    \"backendAddressPools\": [\n      {\n        \"id\": \"string\",\n        \"name\": \"string\",\n        \"properties\": {\n          \"loadBalancerBackendAddresses\": [\n            {\n              \"name\": \"string\",\n              \"properties\": {\n                \"virtualNetwork\": {\n                  \"id\": {\n                    \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                  }\n                },\n                \"ipAddress\": \"string\"\n              }\n            },\n            {\n              \"name\": \"string\",\n              \"properties\": {\n                \"virtualNetwork\": {\n                  \"id\": {\n                    \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                  }\n                },\n                \"ipAddress\": \"string\"\n              }\n            }\n          ]\n        }\n      },\n      {\n        \"id\": \"string\",\n        \"name\": \"string\",\n        \"properties\": {\n          \"loadBalancerBackendAddresses\": [\n            {\n              \"name\": \"string\",\n              \"properties\": {\n                \"virtualNetwork\": {\n                  \"id\": {\n                    \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                  }\n                },\n                \"ipAddress\": \"string\"\n              }\n            },\n            {\n              \"name\": \"string\",\n              \"properties\": {\n                \"virtualNetwork\": {\n                  \"id\": {\n                    \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                  }\n                },\n                \"ipAddress\": \"string\"\n              }\n            }\n          ]\n        }\n      }\n    ],\n    \"loadBalancingRules\": [\n      {\n        \"id\": \"string\",\n        \"name\": \"string\",\n        \"properties\": {\n          \"frontendIPConfiguration\": {\n            \"id\": \"string\"\n          },\n          \"backendAddressPool\": {\n            \"id\": \"string\"\n          },\n          \"probe\": {\n            \"id\": \"string\"\n          },\n          \"protocol\": \"Udp\",\n          \"frontendPort\": 2504,\n          \"backendPort\": 1333,\n          \"idleTimeoutInMinutes\": 1766,\n          \"enableFloatingIP\": false,\n          \"loadDistribution\": \"SourceIP\"\n        }\n      },\n      {\n        \"id\": \"string\",\n        \"name\": \"string\",\n        \"properties\": {\n          \"frontendIPConfiguration\": {\n            \"id\": \"string\"\n          },\n          \"backendAddressPool\": {\n            \"id\": \"string\"\n          },\n          \"probe\": {\n            \"id\": \"string\"\n          },\n          \"protocol\": \"Udp\",\n          \"frontendPort\": 6168,\n          \"backendPort\": 4048,\n          \"idleTimeoutInMinutes\": 399,\n          \"enableFloatingIP\": true,\n          \"loadDistribution\": \"Default\"\n        }\n      }\n    ],\n    \"probes\": [\n      {\n        \"id\": \"string\",\n        \"name\": \"string\",\n        \"properties\": {\n          \"protocol\": \"Http\",\n          \"port\": 5067,\n          \"intervalInSeconds\": 3360,\n          \"numberOfProbes\": 7666,\n          \"requestPath\": \"string\"\n        }\n      },\n      {\n        \"id\": \"string\",\n        \"name\": \"string\",\n        \"properties\": {\n          \"protocol\": \"Http\",\n          \"port\": 6974,\n          \"intervalInSeconds\": 7264,\n          \"numberOfProbes\": 3729,\n          \"requestPath\": \"string\"\n        }\n      }\n    ],\n    \"inboundNatRules\": [\n      {\n        \"id\": \"string\",\n        \"name\": \"string\",\n        \"properties\": {\n          \"frontendIPConfiguration\": {\n            \"id\": \"string\"\n          },\n          \"protocol\": \"Udp\",\n          \"frontendPort\": 1951,\n          \"backendPort\": 934,\n          \"idleTimeoutInMinutes\": 9498,\n          \"enableFloatingIP\": true\n        }\n      },\n      {\n        \"id\": \"string\",\n        \"name\": \"string\",\n        \"properties\": {\n          \"frontendIPConfiguration\": {\n            \"id\": \"string\"\n          },\n          \"protocol\": \"All\",\n          \"frontendPort\": 6126,\n          \"backendPort\": 8498,\n          \"idleTimeoutInMinutes\": 9496,\n          \"enableFloatingIP\": false\n        }\n      }\n    ],\n    \"outboundRules\": [\n      {\n        \"id\": \"string\",\n        \"name\": \"string\",\n        \"properties\": {\n          \"allocatedOutboundPorts\": 994,\n          \"frontendIPConfigurations\": [\n            {\n              \"id\": \"string\"\n            },\n            {\n              \"id\": \"string\"\n            }\n          ],\n          \"backendAddressPool\": {\n            \"id\": \"string\"\n          },\n          \"protocol\": \"Udp\",\n          \"idleTimeoutInMinutes\": 4144\n        }\n      },\n      {\n        \"id\": \"string\",\n        \"name\": \"string\",\n        \"properties\": {\n          \"allocatedOutboundPorts\": 3223,\n          \"frontendIPConfigurations\": [\n            {\n              \"id\": \"string\"\n            },\n            {\n              \"id\": \"string\"\n            }\n          ],\n          \"backendAddressPool\": {\n            \"id\": \"string\"\n          },\n          \"protocol\": \"All\",\n          \"idleTimeoutInMinutes\": 8384\n        }\n      }\n    ]\n  }\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Bad Request",
+              "code": 400,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "98c7fb6a-fdfe-46cb-b1b7-90cd6e6b4f5c",
+              "name": "Unauthorized. Authentication credentials are missing or invalid.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "subscriptions",
+                    ":subscriptionId",
+                    "resourceGroups",
+                    ":resourceGroupName",
+                    "providers",
+                    "Microsoft.Network",
+                    "loadBalancers",
+                    ":loadBalancerName"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "api-version",
+                      "value": "2024-05-01"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "subscriptionId",
+                      "description": "(Required) The subscription credentials which uniquely identify the Microsoft Azure subscription."
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "resourceGroupName",
+                      "description": "(Required) The name of the resource group."
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "loadBalancerName",
+                      "description": "(Required) The name of the load balancer."
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: oauth2",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<token>"
+                  }
+                ],
+                "method": "PUT",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"location\": \"<string>\",\n  \"tags\": {\n    \"key_0\": \"<string>\",\n    \"key_1\": \"<string>\",\n    \"key_2\": \"<string>\"\n  },\n  \"sku\": {\n    \"name\": \"<string>\",\n    \"tier\": \"<string>\"\n  },\n  \"properties\": {\n    \"frontendIPConfigurations\": [\n      {\n        \"id\": \"string\",\n        \"name\": \"string\",\n        \"properties\": {\n          \"privateIPAddress\": \"string\",\n          \"privateIPAllocationMethod\": \"Dynamic\",\n          \"publicIPAddress\": {\n            \"id\": \"string\"\n          },\n          \"subnet\": {\n            \"id\": \"string\"\n          }\n        }\n      },\n      {\n        \"id\": \"string\",\n        \"name\": \"string\",\n        \"properties\": {\n          \"privateIPAddress\": \"string\",\n          \"privateIPAllocationMethod\": \"Static\",\n          \"publicIPAddress\": {\n            \"id\": \"string\"\n          },\n          \"subnet\": {\n            \"id\": \"string\"\n          }\n        }\n      }\n    ],\n    \"backendAddressPools\": [\n      {\n        \"id\": \"string\",\n        \"name\": \"string\",\n        \"properties\": {\n          \"loadBalancerBackendAddresses\": [\n            {\n              \"name\": \"string\",\n              \"properties\": {\n                \"virtualNetwork\": {\n                  \"id\": {\n                    \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                  }\n                },\n                \"ipAddress\": \"string\"\n              }\n            },\n            {\n              \"name\": \"string\",\n              \"properties\": {\n                \"virtualNetwork\": {\n                  \"id\": {\n                    \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                  }\n                },\n                \"ipAddress\": \"string\"\n              }\n            }\n          ]\n        }\n      },\n      {\n        \"id\": \"string\",\n        \"name\": \"string\",\n        \"properties\": {\n          \"loadBalancerBackendAddresses\": [\n            {\n              \"name\": \"string\",\n              \"properties\": {\n                \"virtualNetwork\": {\n                  \"id\": {\n                    \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                  }\n                },\n                \"ipAddress\": \"string\"\n              }\n            },\n            {\n              \"name\": \"string\",\n              \"properties\": {\n                \"virtualNetwork\": {\n                  \"id\": {\n                    \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                  }\n                },\n                \"ipAddress\": \"string\"\n              }\n            }\n          ]\n        }\n      }\n    ],\n    \"loadBalancingRules\": [\n      {\n        \"id\": \"string\",\n        \"name\": \"string\",\n        \"properties\": {\n          \"frontendIPConfiguration\": {\n            \"id\": \"string\"\n          },\n          \"backendAddressPool\": {\n            \"id\": \"string\"\n          },\n          \"probe\": {\n            \"id\": \"string\"\n          },\n          \"protocol\": \"Udp\",\n          \"frontendPort\": 2504,\n          \"backendPort\": 1333,\n          \"idleTimeoutInMinutes\": 1766,\n          \"enableFloatingIP\": false,\n          \"loadDistribution\": \"SourceIP\"\n        }\n      },\n      {\n        \"id\": \"string\",\n        \"name\": \"string\",\n        \"properties\": {\n          \"frontendIPConfiguration\": {\n            \"id\": \"string\"\n          },\n          \"backendAddressPool\": {\n            \"id\": \"string\"\n          },\n          \"probe\": {\n            \"id\": \"string\"\n          },\n          \"protocol\": \"Udp\",\n          \"frontendPort\": 6168,\n          \"backendPort\": 4048,\n          \"idleTimeoutInMinutes\": 399,\n          \"enableFloatingIP\": true,\n          \"loadDistribution\": \"Default\"\n        }\n      }\n    ],\n    \"probes\": [\n      {\n        \"id\": \"string\",\n        \"name\": \"string\",\n        \"properties\": {\n          \"protocol\": \"Http\",\n          \"port\": 5067,\n          \"intervalInSeconds\": 3360,\n          \"numberOfProbes\": 7666,\n          \"requestPath\": \"string\"\n        }\n      },\n      {\n        \"id\": \"string\",\n        \"name\": \"string\",\n        \"properties\": {\n          \"protocol\": \"Http\",\n          \"port\": 6974,\n          \"intervalInSeconds\": 7264,\n          \"numberOfProbes\": 3729,\n          \"requestPath\": \"string\"\n        }\n      }\n    ],\n    \"inboundNatRules\": [\n      {\n        \"id\": \"string\",\n        \"name\": \"string\",\n        \"properties\": {\n          \"frontendIPConfiguration\": {\n            \"id\": \"string\"\n          },\n          \"protocol\": \"Udp\",\n          \"frontendPort\": 1951,\n          \"backendPort\": 934,\n          \"idleTimeoutInMinutes\": 9498,\n          \"enableFloatingIP\": true\n        }\n      },\n      {\n        \"id\": \"string\",\n        \"name\": \"string\",\n        \"properties\": {\n          \"frontendIPConfiguration\": {\n            \"id\": \"string\"\n          },\n          \"protocol\": \"All\",\n          \"frontendPort\": 6126,\n          \"backendPort\": 8498,\n          \"idleTimeoutInMinutes\": 9496,\n          \"enableFloatingIP\": false\n        }\n      }\n    ],\n    \"outboundRules\": [\n      {\n        \"id\": \"string\",\n        \"name\": \"string\",\n        \"properties\": {\n          \"allocatedOutboundPorts\": 994,\n          \"frontendIPConfigurations\": [\n            {\n              \"id\": \"string\"\n            },\n            {\n              \"id\": \"string\"\n            }\n          ],\n          \"backendAddressPool\": {\n            \"id\": \"string\"\n          },\n          \"protocol\": \"Udp\",\n          \"idleTimeoutInMinutes\": 4144\n        }\n      },\n      {\n        \"id\": \"string\",\n        \"name\": \"string\",\n        \"properties\": {\n          \"allocatedOutboundPorts\": 3223,\n          \"frontendIPConfigurations\": [\n            {\n              \"id\": \"string\"\n            },\n            {\n              \"id\": \"string\"\n            }\n          ],\n          \"backendAddressPool\": {\n            \"id\": \"string\"\n          },\n          \"protocol\": \"All\",\n          \"idleTimeoutInMinutes\": 8384\n        }\n      }\n    ]\n  }\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Unauthorized",
+              "code": 401,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "5680f757-5e5f-4a99-9442-5e5cf5613767",
+          "name": "Azure Networking Delete load balancer",
+          "request": {
+            "name": "Azure Networking Delete load balancer",
+            "description": {
+              "content": "Deletes the specified load balancer. This is an asynchronous operation that returns a 202 Accepted while in progress.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "subscriptions",
+                ":subscriptionId",
+                "resourceGroups",
+                ":resourceGroupName",
+                "providers",
+                "Microsoft.Network",
+                "loadBalancers",
+                ":loadBalancerName"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "api-version",
+                  "value": "2024-05-01",
+                  "description": "(Required) Client API version."
+                }
+              ],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "subscriptionId",
+                  "description": "(Required) The subscription credentials which uniquely identify the Microsoft Azure subscription."
+                },
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "resourceGroupName",
+                  "description": "(Required) The name of the resource group."
+                },
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "loadBalancerName",
+                  "description": "(Required) The name of the load balancer."
+                }
+              ]
+            },
+            "method": "DELETE",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "a7965ca8-5d89-4162-8d60-b6a43a726dad",
+              "name": "Successfully deleted the load balancer.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "subscriptions",
+                    ":subscriptionId",
+                    "resourceGroups",
+                    ":resourceGroupName",
+                    "providers",
+                    "Microsoft.Network",
+                    "loadBalancers",
+                    ":loadBalancerName"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "api-version",
+                      "value": "2024-05-01"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "subscriptionId",
+                      "description": "(Required) The subscription credentials which uniquely identify the Microsoft Azure subscription."
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "resourceGroupName",
+                      "description": "(Required) The name of the resource group."
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "loadBalancerName",
+                      "description": "(Required) The name of the load balancer."
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: oauth2",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<token>"
+                  }
+                ],
+                "method": "DELETE",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "2cdb420c-fb4f-45ca-a6fd-716706eab7d9",
+              "name": "Accepted. The delete operation is in progress.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "subscriptions",
+                    ":subscriptionId",
+                    "resourceGroups",
+                    ":resourceGroupName",
+                    "providers",
+                    "Microsoft.Network",
+                    "loadBalancers",
+                    ":loadBalancerName"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "api-version",
+                      "value": "2024-05-01"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "subscriptionId",
+                      "description": "(Required) The subscription credentials which uniquely identify the Microsoft Azure subscription."
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "resourceGroupName",
+                      "description": "(Required) The name of the resource group."
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "loadBalancerName",
+                      "description": "(Required) The name of the load balancer."
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: oauth2",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<token>"
+                  }
+                ],
+                "method": "DELETE",
+                "body": {}
+              },
+              "status": "Accepted",
+              "code": 202,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "63ce1ece-0204-41bf-9d43-16a7d5c3760c",
+              "name": "No content. The load balancer does not exist.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "subscriptions",
+                    ":subscriptionId",
+                    "resourceGroups",
+                    ":resourceGroupName",
+                    "providers",
+                    "Microsoft.Network",
+                    "loadBalancers",
+                    ":loadBalancerName"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "api-version",
+                      "value": "2024-05-01"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "subscriptionId",
+                      "description": "(Required) The subscription credentials which uniquely identify the Microsoft Azure subscription."
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "resourceGroupName",
+                      "description": "(Required) The name of the resource group."
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "loadBalancerName",
+                      "description": "(Required) The name of the load balancer."
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: oauth2",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<token>"
+                  }
+                ],
+                "method": "DELETE",
+                "body": {}
+              },
+              "status": "No Content",
+              "code": 204,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "34a0f8fd-eeac-4b9c-b484-43dbee752360",
+              "name": "Unauthorized. Authentication credentials are missing or invalid.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "subscriptions",
+                    ":subscriptionId",
+                    "resourceGroups",
+                    ":resourceGroupName",
+                    "providers",
+                    "Microsoft.Network",
+                    "loadBalancers",
+                    ":loadBalancerName"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "api-version",
+                      "value": "2024-05-01"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "subscriptionId",
+                      "description": "(Required) The subscription credentials which uniquely identify the Microsoft Azure subscription."
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "resourceGroupName",
+                      "description": "(Required) The name of the resource group."
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "loadBalancerName",
+                      "description": "(Required) The name of the load balancer."
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: oauth2",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<token>"
+                  }
+                ],
+                "method": "DELETE",
+                "body": {}
+              },
+              "status": "Unauthorized",
+              "code": 401,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "8134cdc0-62e0-4006-a374-07e9472f0ba9",
+          "name": "Azure Networking List all load balancers",
+          "request": {
+            "name": "Azure Networking List all load balancers",
+            "description": {
+              "content": "Gets all the load balancers in a subscription across all resource groups.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "subscriptions",
+                ":subscriptionId",
+                "providers",
+                "Microsoft.Network",
+                "loadBalancers"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "api-version",
+                  "value": "2024-05-01",
+                  "description": "(Required) Client API version."
+                }
+              ],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "subscriptionId",
+                  "description": "(Required) The subscription credentials which uniquely identify the Microsoft Azure subscription."
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "b0d1a770-84d8-42ef-96cb-71d6b5648bab",
+              "name": "Successfully retrieved all load balancers in the subscription.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "subscriptions",
+                    ":subscriptionId",
+                    "providers",
+                    "Microsoft.Network",
+                    "loadBalancers"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "api-version",
+                      "value": "2024-05-01"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "subscriptionId",
+                      "description": "(Required) The subscription credentials which uniquely identify the Microsoft Azure subscription."
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: oauth2",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"value\": [\n    {\n      \"id\": \"string\",\n      \"name\": \"string\",\n      \"type\": \"string\",\n      \"location\": \"string\",\n      \"tags\": {\n        \"key_0\": \"string\"\n      },\n      \"sku\": {\n        \"name\": \"Standard\",\n        \"tier\": \"Global\"\n      },\n      \"properties\": {\n        \"frontendIPConfigurations\": [\n          {\n            \"id\": \"string\",\n            \"name\": \"string\",\n            \"properties\": {\n              \"privateIPAddress\": \"string\",\n              \"privateIPAllocationMethod\": \"Static\",\n              \"publicIPAddress\": {\n                \"id\": {\n                  \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                }\n              },\n              \"subnet\": {\n                \"id\": {\n                  \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                }\n              }\n            }\n          },\n          {\n            \"id\": \"string\",\n            \"name\": \"string\",\n            \"properties\": {\n              \"privateIPAddress\": \"string\",\n              \"privateIPAllocationMethod\": \"Static\",\n              \"publicIPAddress\": {\n                \"id\": {\n                  \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                }\n              },\n              \"subnet\": {\n                \"id\": {\n                  \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                }\n              }\n            }\n          }\n        ],\n        \"backendAddressPools\": [\n          {\n            \"id\": \"string\",\n            \"name\": \"string\",\n            \"properties\": {\n              \"loadBalancerBackendAddresses\": [\n                {\n                  \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                },\n                {\n                  \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                }\n              ],\n              \"provisioningState\": \"string\"\n            }\n          },\n          {\n            \"id\": \"string\",\n            \"name\": \"string\",\n            \"properties\": {\n              \"loadBalancerBackendAddresses\": [\n                {\n                  \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                },\n                {\n                  \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                }\n              ],\n              \"provisioningState\": \"string\"\n            }\n          }\n        ],\n        \"loadBalancingRules\": [\n          {\n            \"id\": \"string\",\n            \"name\": \"string\",\n            \"properties\": {\n              \"frontendIPConfiguration\": {\n                \"id\": {\n                  \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                }\n              },\n              \"backendAddressPool\": {\n                \"id\": {\n                  \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                }\n              },\n              \"probe\": {\n                \"id\": {\n                  \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                }\n              },\n              \"protocol\": \"All\",\n              \"frontendPort\": 2814,\n              \"backendPort\": 7897,\n              \"idleTimeoutInMinutes\": 6701,\n              \"enableFloatingIP\": false,\n              \"loadDistribution\": \"Default\"\n            }\n          },\n          {\n            \"id\": \"string\",\n            \"name\": \"string\",\n            \"properties\": {\n              \"frontendIPConfiguration\": {\n                \"id\": {\n                  \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                }\n              },\n              \"backendAddressPool\": {\n                \"id\": {\n                  \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                }\n              },\n              \"probe\": {\n                \"id\": {\n                  \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                }\n              },\n              \"protocol\": \"All\",\n              \"frontendPort\": 8688,\n              \"backendPort\": 8301,\n              \"idleTimeoutInMinutes\": 8975,\n              \"enableFloatingIP\": true,\n              \"loadDistribution\": \"SourceIPProtocol\"\n            }\n          }\n        ],\n        \"probes\": [\n          {\n            \"id\": \"string\",\n            \"name\": \"string\",\n            \"properties\": {\n              \"protocol\": \"Https\",\n              \"port\": 9253,\n              \"intervalInSeconds\": 4995,\n              \"numberOfProbes\": 9206,\n              \"requestPath\": \"string\"\n            }\n          },\n          {\n            \"id\": \"string\",\n            \"name\": \"string\",\n            \"properties\": {\n              \"protocol\": \"Http\",\n              \"port\": 4323,\n              \"intervalInSeconds\": 2804,\n              \"numberOfProbes\": 9761,\n              \"requestPath\": \"string\"\n            }\n          }\n        ],\n        \"inboundNatRules\": [\n          {\n            \"id\": \"string\",\n            \"name\": \"string\",\n            \"properties\": {\n              \"frontendIPConfiguration\": {\n                \"id\": {\n                  \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                }\n              },\n              \"protocol\": \"All\",\n              \"frontendPort\": 2961,\n              \"backendPort\": 8406,\n              \"idleTimeoutInMinutes\": 8366,\n              \"enableFloatingIP\": true\n            }\n          },\n          {\n            \"id\": \"string\",\n            \"name\": \"string\",\n            \"properties\": {\n              \"frontendIPConfiguration\": {\n                \"id\": {\n                  \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                }\n              },\n              \"protocol\": \"Udp\",\n              \"frontendPort\": 2956,\n              \"backendPort\": 3303,\n              \"idleTimeoutInMinutes\": 197,\n              \"enableFloatingIP\": true\n            }\n          }\n        ],\n        \"outboundRules\": [\n          {\n            \"id\": \"string\",\n            \"name\": \"string\",\n            \"properties\": {\n              \"allocatedOutboundPorts\": 1162,\n              \"frontendIPConfigurations\": [\n                {\n                  \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                },\n                {\n                  \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                }\n              ],\n              \"backendAddressPool\": {\n                \"id\": {\n                  \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                }\n              },\n              \"protocol\": \"Tcp\",\n              \"idleTimeoutInMinutes\": 5774\n            }\n          },\n          {\n            \"id\": \"string\",\n            \"name\": \"string\",\n            \"properties\": {\n              \"allocatedOutboundPorts\": 2308,\n              \"frontendIPConfigurations\": [\n                {\n                  \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                },\n                {\n                  \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                }\n              ],\n              \"backendAddressPool\": {\n                \"id\": {\n                  \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                }\n              },\n              \"protocol\": \"Udp\",\n              \"idleTimeoutInMinutes\": 1230\n            }\n          }\n        ],\n        \"provisioningState\": \"Succeeded\"\n      }\n    },\n    {\n      \"id\": \"string\",\n      \"name\": \"string\",\n      \"type\": \"string\",\n      \"location\": \"string\",\n      \"tags\": {\n        \"key_0\": \"string\",\n        \"key_1\": \"string\"\n      },\n      \"sku\": {\n        \"name\": \"Basic\",\n        \"tier\": \"Global\"\n      },\n      \"properties\": {\n        \"frontendIPConfigurations\": [\n          {\n            \"id\": \"string\",\n            \"name\": \"string\",\n            \"properties\": {\n              \"privateIPAddress\": \"string\",\n              \"privateIPAllocationMethod\": \"Dynamic\",\n              \"publicIPAddress\": {\n                \"id\": {\n                  \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                }\n              },\n              \"subnet\": {\n                \"id\": {\n                  \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                }\n              }\n            }\n          },\n          {\n            \"id\": \"string\",\n            \"name\": \"string\",\n            \"properties\": {\n              \"privateIPAddress\": \"string\",\n              \"privateIPAllocationMethod\": \"Static\",\n              \"publicIPAddress\": {\n                \"id\": {\n                  \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                }\n              },\n              \"subnet\": {\n                \"id\": {\n                  \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                }\n              }\n            }\n          }\n        ],\n        \"backendAddressPools\": [\n          {\n            \"id\": \"string\",\n            \"name\": \"string\",\n            \"properties\": {\n              \"loadBalancerBackendAddresses\": [\n                {\n                  \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                },\n                {\n                  \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                }\n              ],\n              \"provisioningState\": \"string\"\n            }\n          },\n          {\n            \"id\": \"string\",\n            \"name\": \"string\",\n            \"properties\": {\n              \"loadBalancerBackendAddresses\": [\n                {\n                  \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                },\n                {\n                  \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                }\n              ],\n              \"provisioningState\": \"string\"\n            }\n          }\n        ],\n        \"loadBalancingRules\": [\n          {\n            \"id\": \"string\",\n            \"name\": \"string\",\n            \"properties\": {\n              \"frontendIPConfiguration\": {\n                \"id\": {\n                  \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                }\n              },\n              \"backendAddressPool\": {\n                \"id\": {\n                  \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                }\n              },\n              \"probe\": {\n                \"id\": {\n                  \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                }\n              },\n              \"protocol\": \"All\",\n              \"frontendPort\": 7158,\n              \"backendPort\": 1570,\n              \"idleTimeoutInMinutes\": 4060,\n              \"enableFloatingIP\": false,\n              \"loadDistribution\": \"Default\"\n            }\n          },\n          {\n            \"id\": \"string\",\n            \"name\": \"string\",\n            \"properties\": {\n              \"frontendIPConfiguration\": {\n                \"id\": {\n                  \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                }\n              },\n              \"backendAddressPool\": {\n                \"id\": {\n                  \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                }\n              },\n              \"probe\": {\n                \"id\": {\n                  \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                }\n              },\n              \"protocol\": \"Udp\",\n              \"frontendPort\": 4201,\n              \"backendPort\": 8138,\n              \"idleTimeoutInMinutes\": 2187,\n              \"enableFloatingIP\": true,\n              \"loadDistribution\": \"SourceIP\"\n            }\n          }\n        ],\n        \"probes\": [\n          {\n            \"id\": \"string\",\n            \"name\": \"string\",\n            \"properties\": {\n              \"protocol\": \"Https\",\n              \"port\": 7579,\n              \"intervalInSeconds\": 3495,\n              \"numberOfProbes\": 1197,\n              \"requestPath\": \"string\"\n            }\n          },\n          {\n            \"id\": \"string\",\n            \"name\": \"string\",\n            \"properties\": {\n              \"protocol\": \"Https\",\n              \"port\": 9338,\n              \"intervalInSeconds\": 1810,\n              \"numberOfProbes\": 3983,\n              \"requestPath\": \"string\"\n            }\n          }\n        ],\n        \"inboundNatRules\": [\n          {\n            \"id\": \"string\",\n            \"name\": \"string\",\n            \"properties\": {\n              \"frontendIPConfiguration\": {\n                \"id\": {\n                  \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                }\n              },\n              \"protocol\": \"Tcp\",\n              \"frontendPort\": 5189,\n              \"backendPort\": 5734,\n              \"idleTimeoutInMinutes\": 4845,\n              \"enableFloatingIP\": true\n            }\n          },\n          {\n            \"id\": \"string\",\n            \"name\": \"string\",\n            \"properties\": {\n              \"frontendIPConfiguration\": {\n                \"id\": {\n                  \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                }\n              },\n              \"protocol\": \"Tcp\",\n              \"frontendPort\": 5995,\n              \"backendPort\": 3156,\n              \"idleTimeoutInMinutes\": 8158,\n              \"enableFloatingIP\": true\n            }\n          }\n        ],\n        \"outboundRules\": [\n          {\n            \"id\": \"string\",\n            \"name\": \"string\",\n            \"properties\": {\n              \"allocatedOutboundPorts\": 1597,\n              \"frontendIPConfigurations\": [\n                {\n                  \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                },\n                {\n                  \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                }\n              ],\n              \"backendAddressPool\": {\n                \"id\": {\n                  \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                }\n              },\n              \"protocol\": \"All\",\n              \"idleTimeoutInMinutes\": 6544\n            }\n          },\n          {\n            \"id\": \"string\",\n            \"name\": \"string\",\n            \"properties\": {\n              \"allocatedOutboundPorts\": 8149,\n              \"frontendIPConfigurations\": [\n                {\n                  \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                },\n                {\n                  \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                }\n              ],\n              \"backendAddressPool\": {\n                \"id\": {\n                  \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                }\n              },\n              \"protocol\": \"Tcp\",\n              \"idleTimeoutInMinutes\": 3828\n            }\n          }\n        ],\n        \"provisioningState\": \"Succeeded\"\n      }\n    }\n  ],\n  \"nextLink\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "4b13b7da-5c67-4b78-938c-a2db9e815c24",
+              "name": "Unauthorized. Authentication credentials are missing or invalid.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "subscriptions",
+                    ":subscriptionId",
+                    "providers",
+                    "Microsoft.Network",
+                    "loadBalancers"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "api-version",
+                      "value": "2024-05-01"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "subscriptionId",
+                      "description": "(Required) The subscription credentials which uniquely identify the Microsoft Azure subscription."
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: oauth2",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<token>"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Unauthorized",
+              "code": 401,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "https://management.azure.com",
+      "key": "baseUrl"
+    }
+  ],
+  "auth": {
+    "type": "oauth2",
+    "oauth2": [
+      {
+        "key": "scope",
+        "value": "user_impersonation"
+      },
+      {
+        "key": "authUrl",
+        "value": "https://login.microsoftonline.com/common/oauth2/authorize"
+      },
+      {
+        "key": "grant_type",
+        "value": "implicit"
+      }
+    ]
+  },
+  "info": {
+    "_postman_id": "03ca5112-60a2-4823-be19-80e9550df46a",
+    "name": "Azure Networking Azure Load Balancer Backend Address Pools Load Balancers API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "Distribute traffic across multiple virtual machines and services with Azure Load Balancer. This API provides operations for creating, configuring, and managing load balancers including frontend IP configurations, backend address pools, health probes, load balancing rules, inbound NAT rules, and outbound rules.\n\nContact Support:\n Name: Microsoft Azure Support",
+      "type": "text/plain"
+    }
+  }
+}
