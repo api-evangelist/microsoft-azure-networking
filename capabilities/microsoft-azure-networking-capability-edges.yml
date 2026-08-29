@@ -1,0 +1,81 @@
+slug: microsoft-azure-networking
+provider: Azure Networking
+generated_by: planning/capability-mapping/scripts/classify_capabilities.py
+model: claude-opus-5
+frame:
+- Telecommunications
+min_confidence: 0.7
+capability_model:
+  source: https://github.com/vincentmakes/turbo-ea-capabilities
+  license: CC-BY-4.0
+  attribution: Turbo EA Capabilities by Vincent Verdet — Turbo EA, https://github.com/vincentmakes/turbo-ea-capabilities,
+    CC BY 4.0
+  notice: NOTICE
+edge_count: 7
+edges:
+- tag: Virtual Networks
+  spec_file: microsoft-azure-networking-virtual-networks-api-openapi.yml
+  capability_id: BC-600.50
+  capability_id_l1: BC-600
+  capability_name: IT Infrastructure Management
+  confidence: 0.85
+  evidence: VirtualNetworks_CreateOrUpdate  'Azure Networking Create or update virtual network'; schemas
+    AddressSpace, DhcpOptions, Subnet
+  reason: Lifecycle management of Azure virtual networks and address spaces is squarely cloud network
+    infrastructure provisioning.
+- tag: Load Balancers
+  spec_file: microsoft-azure-networking-load-balancers-api-openapi.yml
+  capability_id: BC-600.50
+  capability_id_l1: BC-600
+  capability_name: IT Infrastructure Management
+  confidence: 0.8
+  evidence: LoadBalancers_CreateOrUpdate  'Azure Networking Create or update load balancer'
+  reason: Full lifecycle CRUD of cloud load balancers = provisioning and managing network infrastructure
+    (compute, storage, network, cloud).
+- tag: Subnets
+  spec_file: microsoft-azure-networking-subnets-api-openapi.yml
+  capability_id: BC-600.50
+  capability_id_l1: BC-600
+  capability_name: IT Infrastructure Management
+  confidence: 0.8
+  evidence: Subnets_CreateOrUpdate  'Azure Networking Create or update subnet' under /virtualNetworks/{virtualNetworkName}/subnets
+  reason: Creating and deleting subnets within cloud virtual networks is cloud/network infrastructure
+    management.
+- tag: Virtual Network Peerings
+  spec_file: microsoft-azure-networking-virtual-network-peerings-api-openapi.yml
+  capability_id: BC-600.50
+  capability_id_l1: BC-600
+  capability_name: IT Infrastructure Management
+  confidence: 0.8
+  evidence: VirtualNetworkPeerings_CreateOrUpdate  'Azure Networking Create or update virtual network
+    peering'
+  reason: VNet peering configuration is cloud network infrastructure management; the telecom 'peering'
+    capability (BC-2680.30) concerns inter-operator interconnect agreements, a different thing entirely.
+- tag: Backend Address Pools
+  spec_file: microsoft-azure-networking-backend-address-pools-api-openapi.yml
+  capability_id: BC-600.50
+  capability_id_l1: BC-600
+  capability_name: IT Infrastructure Management
+  confidence: 0.75
+  evidence: GET .../loadBalancers/{loadBalancerName}/backendAddressPools  LoadBalancerBackendAddressPools_List  'List
+    backend address pools'
+  reason: Cloud load-balancer backend pool configuration is IT infrastructure (network) management, not
+    telecom network operations — Azure is a cloud provider, this is enterprise IT plumbing configuration.
+- tag: Load Balancer Probes
+  spec_file: microsoft-azure-networking-load-balancer-probes-api-openapi.yml
+  capability_id: BC-600.50
+  capability_id_l1: BC-600
+  capability_name: IT Infrastructure Management
+  confidence: 0.7
+  evidence: LoadBalancerProbes_List  'Azure Networking List health probes'
+  reason: Listing load-balancer health probes is cloud network infrastructure configuration; maps to IT
+    Infrastructure Management rather than any telecom-specific capability.
+- tag: Load Balancing Rules
+  spec_file: microsoft-azure-networking-load-balancing-rules-api-openapi.yml
+  capability_id: BC-600.50
+  capability_id_l1: BC-600
+  capability_name: IT Infrastructure Management
+  confidence: 0.7
+  evidence: LoadBalancerLoadBalancingRules_List  'Azure Networking List load balancing rules'
+  reason: Traffic distribution rules on a cloud load balancer are IT infrastructure configuration, not
+    telecom network element configuration.

@@ -645,6 +645,9 @@ apis:
     url: >-
       https://learn.microsoft.com/en-us/azure/virtual-network/quickstart-create-virtual-network
 common:
+  - type: CapabilityMap
+    url: capabilities/microsoft-azure-networking-capability-edges.yml
+    name: Azure Networking Business Capability Map
   - type: IssueTracker
     url: https://github.com/Azure/azure-rest-api-specs/issues
   - type: Releases
