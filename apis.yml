@@ -117,9 +117,9 @@ apis:
     https://management.azure.com/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Network/virtualNetworkGateways
   tags:
   - Gateway
-  - Hybrid Connectivity
+  - Hybrid-Connectivity
   - Site-To-Site
-  - Vpn
+  - VPN
   tags_raw:
   - Gateway
   - Hybrid Connectivity
@@ -144,7 +144,7 @@ apis:
   baseURL: >-
     https://management.azure.com/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Network/trafficManagerProfiles
   tags:
-  - Dns
+  - DNS
   - Failover
   - Global Load Balancing
   - Traffic Manager
@@ -173,7 +173,7 @@ apis:
     https://management.azure.com/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Network/expressRouteCircuits
   tags:
   - Dedicated Connection
-  - Expressroute
+  - ExpressRoute
   - Hybrid
   - Private Connectivity
   tags_raw:
@@ -493,7 +493,7 @@ apis:
   baseURL: >-
     https://management.azure.com/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Network/virtualNetworks
   tags:
-  - Load Balancers
+  - Load Balancer
   tags_raw:
   - Load Balancers
   properties:
