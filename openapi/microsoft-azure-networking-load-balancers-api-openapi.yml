@@ -1,4 +1,4 @@
-openapi: 3.1.0
+openapi: 3.2.0
 info:
   title: Azure Networking Azure Load Balancer Backend Address Pools Load Balancers API
   description: Distribute traffic across multiple virtual machines and services with Azure Load Balancer. This API provides operations for creating, configuring, and managing load balancers including frontend IP configurations, backend address pools, health probes, load balancing rules, inbound NAT rules, and outbound rules.
@@ -136,42 +136,6 @@ paths:
           description: Unauthorized. Authentication credentials are missing or invalid.
 components:
   schemas:
-    FrontendIPConfiguration:
-      type: object
-      description: Frontend IP address of the load balancer.
-      properties:
-        id:
-          type: string
-          description: Resource ID.
-        name:
-          type: string
-          description: The name of the resource.
-        properties:
-          type: object
-          properties:
-            privateIPAddress:
-              type: string
-              description: The private IP address of the IP configuration.
-            privateIPAllocationMethod:
-              type: string
-              enum:
-              - Static
-              - Dynamic
-              description: The private IP address allocation method.
-            publicIPAddress:
-              type: object
-              properties:
-                id:
-                  type: string
-                  description: Resource ID.
-              description: The reference to the public IP resource.
-            subnet:
-              type: object
-              properties:
-                id:
-                  type: string
-                  description: Resource ID.
-              description: The reference to the subnet resource.
     BackendAddressPool:
       type: object
       description: Pool of backend IP addresses.
@@ -210,9 +174,9 @@ components:
               type: string
               readOnly: true
               description: The provisioning state of the backend address pool resource.
-    LoadBalancingRule:
+    Probe:
       type: object
-      description: A load balancing rule for a load balancer.
+      description: A load balancer probe.
       properties:
         id:
           type: string
@@ -223,63 +187,25 @@ components:
         properties:
           type: object
           properties:
-            frontendIPConfiguration:
-              type: object
-              properties:
-                id:
-                  type: string
-              description: A reference to frontend IP addresses.
-            backendAddressPool:
-              type: object
-              properties:
-                id:
-                  type: string
-              description: A reference to a pool of DIPs.
-            probe:
-              type: object
-              properties:
-                id:
-                  type: string
-              description: The reference to the load balancer probe.
             protocol:
               type: string
               enum:
-              - Udp
+              - Http
               - Tcp
-              - All
-              description: The reference to the transport protocol.
-            frontendPort:
+              - Https
+              description: The protocol of the endpoint.
+            port:
               type: integer
-              description: The port for the external endpoint.
-            backendPort:
+              description: The port for communicating the probe.
+            intervalInSeconds:
               type: integer
-              description: The port used for internal connections on the endpoint.
-            idleTimeoutInMinutes:
+              description: The interval between probes in seconds.
+            numberOfProbes:
               type: integer
-              description: The timeout for the TCP idle connection.
-            enableFloatingIP:
-              type: boolean
-              description: Configures a virtual machine endpoint for the floating IP capability.
-            loadDistribution:
+              description: The number of probes where if no response the load balancer marks the status as down.
+            requestPath:
               type: string
-              enum:
-              - Default
-              - SourceIP
-              - SourceIPProtocol
-              description: The load distribution policy for this rule.
-    LoadBalancerListResult:
-      type: object
-      description: Response for ListLoadBalancers API service call.
-      properties:
-        value:
-          type: array
-          items:
-            $ref: '#/components/schemas/LoadBalancer'
-          description: A list of load balancers in a resource group.
-        nextLink:
-          type: string
-          readOnly: true
-          description: The URL to get the next set of results.
+              description: The URI used for requesting health status from the VM.
     LoadBalancer:
       type: object
       description: A load balancer resource.
@@ -404,9 +330,22 @@ components:
             idleTimeoutInMinutes:
               type: integer
               description: The timeout for the TCP idle connection.
-    Probe:
+    LoadBalancerListResult:
       type: object
-      description: A load balancer probe.
+      description: Response for ListLoadBalancers API service call.
+      properties:
+        value:
+          type: array
+          items:
+            $ref: '#/components/schemas/LoadBalancer'
+          description: A list of load balancers in a resource group.
+        nextLink:
+          type: string
+          readOnly: true
+          description: The URL to get the next set of results.
+    LoadBalancingRule:
+      type: object
+      description: A load balancing rule for a load balancer.
       properties:
         id:
           type: string
@@ -417,25 +356,50 @@ components:
         properties:
           type: object
           properties:
+            frontendIPConfiguration:
+              type: object
+              properties:
+                id:
+                  type: string
+              description: A reference to frontend IP addresses.
+            backendAddressPool:
+              type: object
+              properties:
+                id:
+                  type: string
+              description: A reference to a pool of DIPs.
+            probe:
+              type: object
+              properties:
+                id:
+                  type: string
+              description: The reference to the load balancer probe.
             protocol:
               type: string
               enum:
-              - Http
+              - Udp
               - Tcp
-              - Https
-              description: The protocol of the endpoint.
-            port:
+              - All
+              description: The reference to the transport protocol.
+            frontendPort:
               type: integer
-              description: The port for communicating the probe.
-            intervalInSeconds:
+              description: The port for the external endpoint.
+            backendPort:
               type: integer
-              description: The interval between probes in seconds.
-            numberOfProbes:
+              description: The port used for internal connections on the endpoint.
+            idleTimeoutInMinutes:
               type: integer
-              description: The number of probes where if no response the load balancer marks the status as down.
-            requestPath:
+              description: The timeout for the TCP idle connection.
+            enableFloatingIP:
+              type: boolean
+              description: Configures a virtual machine endpoint for the floating IP capability.
+            loadDistribution:
               type: string
-              description: The URI used for requesting health status from the VM.
+              enum:
+              - Default
+              - SourceIP
+              - SourceIPProtocol
+              description: The load distribution policy for this rule.
     InboundNatRule:
       type: object
       description: Inbound NAT rule of the load balancer.
@@ -474,12 +438,56 @@ components:
             enableFloatingIP:
               type: boolean
               description: Configures a virtual machine endpoint for the floating IP capability.
+    FrontendIPConfiguration:
+      type: object
+      description: Frontend IP address of the load balancer.
+      properties:
+        id:
+          type: string
+          description: Resource ID.
+        name:
+          type: string
+          description: The name of the resource.
+        properties:
+          type: object
+          properties:
+            privateIPAddress:
+              type: string
+              description: The private IP address of the IP configuration.
+            privateIPAllocationMethod:
+              type: string
+              enum:
+              - Static
+              - Dynamic
+              description: The private IP address allocation method.
+            publicIPAddress:
+              type: object
+              properties:
+                id:
+                  type: string
+                  description: Resource ID.
+              description: The reference to the public IP resource.
+            subnet:
+              type: object
+              properties:
+                id:
+                  type: string
+                  description: Resource ID.
+              description: The reference to the subnet resource.
   parameters:
-    SubscriptionIdParameter:
-      name: subscriptionId
+    ApiVersionParameter:
+      name: api-version
+      in: query
+      required: true
+      description: Client API version.
+      schema:
+        type: string
+        default: '2024-05-01'
+    LoadBalancerNameParameter:
+      name: loadBalancerName
       in: path
       required: true
-      description: The subscription credentials which uniquely identify the Microsoft Azure subscription.
+      description: The name of the load balancer.
       schema:
         type: string
     ResourceGroupNameParameter:
@@ -489,21 +497,13 @@ components:
       description: The name of the resource group.
       schema:
         type: string
-    LoadBalancerNameParameter:
-      name: loadBalancerName
+    SubscriptionIdParameter:
+      name: subscriptionId
       in: path
       required: true
-      description: The name of the load balancer.
+      description: The subscription credentials which uniquely identify the Microsoft Azure subscription.
       schema:
         type: string
-    ApiVersionParameter:
-      name: api-version
-      in: query
-      required: true
-      description: Client API version.
-      schema:
-        type: string
-        default: '2024-05-01'
   securitySchemes:
     OAuth2Auth:
       type: oauth2

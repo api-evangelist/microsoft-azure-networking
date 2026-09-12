@@ -1,4 +1,4 @@
-openapi: 3.1.0
+openapi: 3.2.0
 info:
   title: Azure Networking Azure Load Balancer Backend Address Pools Virtual Network Peerings API
   description: Distribute traffic across multiple virtual machines and services with Azure Load Balancer. This API provides operations for creating, configuring, and managing load balancers including frontend IP configurations, backend address pools, health probes, load balancing rules, inbound NAT rules, and outbound rules.
@@ -135,7 +135,49 @@ paths:
         '401':
           description: Unauthorized. Authentication credentials are missing or invalid.
 components:
+  parameters:
+    ApiVersionParameter:
+      name: api-version
+      in: query
+      required: true
+      description: Client API version.
+      schema:
+        type: string
+        default: '2024-05-01'
+    ResourceGroupNameParameter:
+      name: resourceGroupName
+      in: path
+      required: true
+      description: The name of the resource group.
+      schema:
+        type: string
+    VirtualNetworkNameParameter:
+      name: virtualNetworkName
+      in: path
+      required: true
+      description: The name of the virtual network.
+      schema:
+        type: string
+    SubscriptionIdParameter:
+      name: subscriptionId
+      in: path
+      required: true
+      description: The subscription credentials which uniquely identify the Microsoft Azure subscription.
+      schema:
+        type: string
   schemas:
+    VirtualNetworkPeeringListResult:
+      type: object
+      description: Response for the ListVirtualNetworkPeerings API service call.
+      properties:
+        value:
+          type: array
+          items:
+            $ref: '#/components/schemas/VirtualNetworkPeering'
+          description: The peerings in a virtual network.
+        nextLink:
+          type: string
+          description: The URL to get the next set of results.
     VirtualNetworkPeering:
       type: object
       description: Peerings in a virtual network resource.
@@ -182,48 +224,6 @@ components:
               type: string
               readOnly: true
               description: The provisioning state of the virtual network peering resource.
-    VirtualNetworkPeeringListResult:
-      type: object
-      description: Response for the ListVirtualNetworkPeerings API service call.
-      properties:
-        value:
-          type: array
-          items:
-            $ref: '#/components/schemas/VirtualNetworkPeering'
-          description: The peerings in a virtual network.
-        nextLink:
-          type: string
-          description: The URL to get the next set of results.
-  parameters:
-    VirtualNetworkNameParameter:
-      name: virtualNetworkName
-      in: path
-      required: true
-      description: The name of the virtual network.
-      schema:
-        type: string
-    SubscriptionIdParameter:
-      name: subscriptionId
-      in: path
-      required: true
-      description: The subscription credentials which uniquely identify the Microsoft Azure subscription.
-      schema:
-        type: string
-    ApiVersionParameter:
-      name: api-version
-      in: query
-      required: true
-      description: Client API version.
-      schema:
-        type: string
-        default: '2024-05-01'
-    ResourceGroupNameParameter:
-      name: resourceGroupName
-      in: path
-      required: true
-      description: The name of the resource group.
-      schema:
-        type: string
   securitySchemes:
     OAuth2Auth:
       type: oauth2

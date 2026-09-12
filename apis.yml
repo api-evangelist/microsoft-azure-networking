@@ -645,6 +645,8 @@ apis:
     url: >-
       https://learn.microsoft.com/en-us/azure/virtual-network/quickstart-create-virtual-network
 common:
+  - type: Website
+    url: https://www.microsoft.com/
   - type: CapabilityMap
     url: capabilities/microsoft-azure-networking-capability-edges.yml
     name: Azure Networking Business Capability Map
@@ -711,3 +713,5 @@ maintainers:
   - FN: Kin Lane
     email: kin@apievangelist.com
     url: https://azure.microsoft.com
+x-parent: microsoft-azure
+x-relationship: product

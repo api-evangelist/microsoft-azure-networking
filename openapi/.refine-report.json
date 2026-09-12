@@ -23,6 +23,16 @@
   "archived": [],
   "errors": [],
   "warnings": [],
-  "notes": [],
+  "notes": [
+    "microsoft-azure-networking-backend-address-pools-api-openapi.yml: upgraded openapi 3.1.0 -> OpenAPI 3.2.0",
+    "microsoft-azure-networking-load-balancer-probes-api-openapi.yml: upgraded openapi 3.1.0 -> OpenAPI 3.2.0",
+    "microsoft-azure-networking-load-balancers-api-openapi.yml: upgraded openapi 3.1.0 -> OpenAPI 3.2.0",
+    "microsoft-azure-networking-load-balancing-rules-api-openapi.yml: upgraded openapi 3.1.0 -> OpenAPI 3.2.0",
+    "microsoft-azure-networking-operations-api-openapi.yml: upgraded openapi 3.1.0 -> OpenAPI 3.2.0",
+    "microsoft-azure-networking-subnets-api-openapi.yml: upgraded openapi 3.1.0 -> OpenAPI 3.2.0",
+    "microsoft-azure-networking-virtual-network-peerings-api-openapi.yml: upgraded openapi 3.1.0 -> OpenAPI 3.2.0",
+    "microsoft-azure-networking-virtual-networks-api-openapi.yml: upgraded openapi 3.1.0 -> OpenAPI 3.2.0",
+    "apis.yml register: already-registered"
+  ],
   "skipped": []
 }
